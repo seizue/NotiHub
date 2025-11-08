@@ -39,7 +39,6 @@
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.btnNotification = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.panelIndicator = new ReaLTaiizor.Controls.Panel();
@@ -50,6 +49,7 @@
             this.btnPreviousPage = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnNotification = new System.Windows.Forms.Button();
             this.btnCalendar = new System.Windows.Forms.Button();
             this.btnNotes = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -217,35 +217,13 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label26.ForeColor = System.Drawing.Color.Cornsilk;
             this.label26.Location = new System.Drawing.Point(71, 45);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(69, 16);
             this.label26.TabIndex = 284;
             this.label26.Text = "NotiHub";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnNotification
-            // 
-            this.btnNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNotification.BackColor = System.Drawing.Color.Transparent;
-            this.btnNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNotification.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnNotification.FlatAppearance.BorderSize = 0;
-            this.btnNotification.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnNotification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNotification.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotification.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnNotification.Image = global::NotiHub.Properties.Resources.alarm_24px;
-            this.btnNotification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotification.Location = new System.Drawing.Point(176, 4);
-            this.btnNotification.Name = "btnNotification";
-            this.btnNotification.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnNotification.Size = new System.Drawing.Size(49, 38);
-            this.btnNotification.TabIndex = 238;
-            this.btnNotification.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnNotification.UseVisualStyleBackColor = false;
             // 
             // btnClose
             // 
@@ -423,6 +401,28 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 283;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnNotification
+            // 
+            this.btnNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNotification.BackColor = System.Drawing.Color.Transparent;
+            this.btnNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNotification.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnNotification.FlatAppearance.BorderSize = 0;
+            this.btnNotification.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnNotification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotification.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotification.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnNotification.Image = global::NotiHub.Properties.Resources.alarm_24px;
+            this.btnNotification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotification.Location = new System.Drawing.Point(176, 4);
+            this.btnNotification.Name = "btnNotification";
+            this.btnNotification.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnNotification.Size = new System.Drawing.Size(49, 38);
+            this.btnNotification.TabIndex = 238;
+            this.btnNotification.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnNotification.UseVisualStyleBackColor = false;
             // 
             // btnCalendar
             // 
