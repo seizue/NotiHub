@@ -77,10 +77,20 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionManager.cs" />
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +100,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -104,6 +115,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unchecked_checkbox_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_button_15px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_button_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_do_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\schedule_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_button_24px5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\last_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Previous_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planner_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarm_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
