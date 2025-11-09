@@ -243,34 +243,63 @@ namespace NotiHub
             btnNotes.ForeColor = notesColor;
             btnCalendar.ForeColor = calendarColor;
         }
+        private enum ActiveView
+        {
+            Notes,
+            Calendar,
+            Settings
+        }
+
+        private void SetActiveView(ActiveView view)
+        {
+            switch (view)
+            {
+                case ActiveView.Notes:
+                    UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray);
+                    eventNotes1.LoadEvents();
+                    eventNotes1.Visible = true;
+                    calendarSchedule1.Visible = false;
+                    btnCDate.Visible = false;
+                    labelCDate.Visible = false;
+                    break;
+
+                case ActiveView.Calendar:
+                    UpdateUI(new Point(-1, 187), Color.DarkGray, Color.White);
+                    calendarSchedule1.Visible = true;
+                    eventNotes1.Visible = false;
+                    btnCDate.Visible = true;
+                    labelCDate.Visible = true;
+                    break;
+
+                case ActiveView.Settings:
+                    UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray);
+                    calendarSchedule1.Visible = false;
+                    eventNotes1.Visible = true;
+                    btnCDate.Visible = false;
+                    labelCDate.Visible = false;
+
+                    // Show settings modal
+                    using (var settings = new Settings(this))
+                        settings.ShowDialog();
+                    break;
+            }
+        }
 
         private void btnNotes_Click(object sender, EventArgs e)
         {
-            UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray);
-            eventNotes1.LoadEvents();
-            eventNotes1.Visible = true;
-            calendarSchedule1.Visible = false;
-            btnCDate.Visible = false;
-            labelCDate.Visible = false;
+            SetActiveView(ActiveView.Notes);
         }
 
         private void btnCalendar_Click(object sender, EventArgs e)
         {
-            UpdateUI(new Point(-1, 187), Color.DarkGray, Color.White);
-            calendarSchedule1.Visible = true;
-            eventNotes1.Visible = false;
-            btnCDate.Visible = true;
-            labelCDate.Visible = true;
+            SetActiveView(ActiveView.Calendar);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray);
-            Settings settings = new Settings(this);
-            settings.ShowDialog();
-            calendarSchedule1.Visible = false;
-            eventNotes1.Visible = true;
+            SetActiveView(ActiveView.Settings);
         }
+
 
         public void LoadEvents()
         {
