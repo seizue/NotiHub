@@ -93,15 +93,29 @@ namespace NotiHub
         private void SelectDay()
         {
             checkBox1.Checked = true;
-            this.BackColor = Color.FromArgb(255, 151, 127); // Highlight color
+            this.BackColor = Color.FromArgb(255, 151, 127); // Highlight color (orange-red)
         }
+
 
         // Method to deselect the current day
         private void DeselectDay()
         {
             checkBox1.Checked = false;
-            this.BackColor = Color.FromArgb(43, 50, 52); // Default color
+
+            // Restore light green if this day is today
+            if (!string.IsNullOrWhiteSpace(date) && DateTime.TryParse(date, out DateTime thisDate))
+            {
+                if (thisDate.Date == DateTime.Now.Date)
+                {
+                    this.BackColor = Color.FromArgb(144, 238, 144); // LightGreen for today
+                    return;
+                }
+            }
+
+            // Otherwise use default dark background
+            this.BackColor = Color.FromArgb(43, 50, 52);
         }
+
 
         public static List<EventData> GetEventsForMonth(int month, int year)
         {
@@ -193,8 +207,23 @@ namespace NotiHub
             sundays();
             LoadEventData();
             CheckEventForDay();
+            HighlightToday();
         }
 
-       
+        private void HighlightToday()
+        {
+            // Skip if this is an empty placeholder day
+            if (string.IsNullOrWhiteSpace(date) || !DateTime.TryParse(date, out DateTime thisDate))
+                return;
+
+            DateTime today = DateTime.Now.Date;
+
+            // Compare date (ignore time)
+            if (thisDate.Date == today)
+            {
+                // Light green highlight for current date
+                this.BackColor = Color.FromArgb(144, 238, 144); // LightGreen
+            }
+        }
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panelDays = new System.Windows.Forms.Panel();
-            this.pictureBoxScheduleEvent = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxScheduleEvent = new System.Windows.Forms.PictureBox();
             this.panelDays.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScheduleEvent)).BeginInit();
             this.SuspendLayout();
@@ -43,24 +43,12 @@
             this.panelDays.Controls.Add(this.pictureBoxScheduleEvent);
             this.panelDays.Controls.Add(this.checkBox1);
             this.panelDays.Controls.Add(this.label1);
-            this.panelDays.Location = new System.Drawing.Point(2, 3);
+            this.panelDays.Location = new System.Drawing.Point(2, 2);
             this.panelDays.Margin = new System.Windows.Forms.Padding(5);
             this.panelDays.Name = "panelDays";
-            this.panelDays.Size = new System.Drawing.Size(101, 58);
+            this.panelDays.Size = new System.Drawing.Size(101, 59);
             this.panelDays.TabIndex = 2;
             this.panelDays.Click += new System.EventHandler(this.panelDays_Click);
-            // 
-            // pictureBoxScheduleEvent
-            // 
-            this.pictureBoxScheduleEvent.Image = global::NotiHub.Properties.Resources.schedulecal_24px;
-            this.pictureBoxScheduleEvent.Location = new System.Drawing.Point(70, 7);
-            this.pictureBoxScheduleEvent.Name = "pictureBoxScheduleEvent";
-            this.pictureBoxScheduleEvent.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxScheduleEvent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBoxScheduleEvent.TabIndex = 241;
-            this.pictureBoxScheduleEvent.TabStop = false;
-            this.pictureBoxScheduleEvent.Visible = false;
-            this.pictureBoxScheduleEvent.Click += new System.EventHandler(this.pictureBoxScheduleEvent_Click);
             // 
             // checkBox1
             // 
@@ -81,6 +69,18 @@
             this.label1.Size = new System.Drawing.Size(41, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
+            // 
+            // pictureBoxScheduleEvent
+            // 
+            this.pictureBoxScheduleEvent.Image = global::NotiHub.Properties.Resources.schedulecal_24px;
+            this.pictureBoxScheduleEvent.Location = new System.Drawing.Point(70, 7);
+            this.pictureBoxScheduleEvent.Name = "pictureBoxScheduleEvent";
+            this.pictureBoxScheduleEvent.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxScheduleEvent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxScheduleEvent.TabIndex = 241;
+            this.pictureBoxScheduleEvent.TabStop = false;
+            this.pictureBoxScheduleEvent.Visible = false;
+            this.pictureBoxScheduleEvent.Click += new System.EventHandler(this.pictureBoxScheduleEvent_Click);
             // 
             // CalendarDay
             // 
