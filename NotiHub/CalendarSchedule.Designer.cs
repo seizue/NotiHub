@@ -270,6 +270,7 @@
             // 
             // btnEventCount
             // 
+            this.btnEventCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEventCount.BackColor = System.Drawing.Color.Transparent;
             this.btnEventCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEventCount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
@@ -281,7 +282,7 @@
             this.btnEventCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnEventCount.Image = global::NotiHub.Properties.Resources.important_month_24px;
             this.btnEventCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEventCount.Location = new System.Drawing.Point(253, 5);
+            this.btnEventCount.Location = new System.Drawing.Point(740, 5);
             this.btnEventCount.Name = "btnEventCount";
             this.btnEventCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEventCount.Size = new System.Drawing.Size(55, 38);

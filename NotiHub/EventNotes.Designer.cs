@@ -41,18 +41,20 @@
             this.btnEventCount = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new ReaLTaiizor.Controls.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnCSV);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.btnEventCount);
             this.panel1.Controls.Add(this.btnPreviousMonth);
             this.panel1.Controls.Add(this.btnNextMonth);
             this.panel1.Controls.Add(this.lbMonth);
-            this.panel1.Controls.Add(this.btnEventCount);
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.panel13);
             this.panel1.Controls.Add(this.labelProductPromo);
@@ -76,7 +78,7 @@
             this.btnCSV.ForeColor = System.Drawing.Color.DarkGray;
             this.btnCSV.Image = global::NotiHub.Properties.Resources.export_csv_24px;
             this.btnCSV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCSV.Location = new System.Drawing.Point(746, 9);
+            this.btnCSV.Location = new System.Drawing.Point(683, 9);
             this.btnCSV.Name = "btnCSV";
             this.btnCSV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnCSV.Size = new System.Drawing.Size(34, 30);
@@ -199,6 +201,7 @@
             // 
             // btnEventCount
             // 
+            this.btnEventCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEventCount.BackColor = System.Drawing.Color.Transparent;
             this.btnEventCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEventCount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
@@ -210,7 +213,7 @@
             this.btnEventCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnEventCount.Image = global::NotiHub.Properties.Resources.commercial_24px;
             this.btnEventCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEventCount.Location = new System.Drawing.Point(253, 5);
+            this.btnEventCount.Location = new System.Drawing.Point(743, 6);
             this.btnEventCount.Name = "btnEventCount";
             this.btnEventCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEventCount.Size = new System.Drawing.Size(55, 38);
@@ -243,6 +246,19 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(781, 432);
             this.flowLayoutPanel1.TabIndex = 338;
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.panel3.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.panel3.Location = new System.Drawing.Point(730, 15);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(5);
+            this.panel3.Size = new System.Drawing.Size(2, 20);
+            this.panel3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel3.TabIndex = 370;
+            this.panel3.Text = "panel3";
+            // 
             // EventNotes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -274,5 +290,6 @@
         private System.Windows.Forms.Label labelProductPromo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private ReaLTaiizor.Controls.Panel panel3;
     }
 }

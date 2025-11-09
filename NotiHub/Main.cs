@@ -23,6 +23,8 @@ namespace NotiHub
         private const string SubFolderName = "EventCalendar";
         private const string FileName = "eventcalendar.json";
         private List<EventData> eventsList = new List<EventData>();
+        private CalendarSchedule calendarControl;
+
         public Main()
         {
             InitializeComponent();
@@ -116,7 +118,12 @@ namespace NotiHub
             else
                 labelCurrentSignedAccount.Text = "NO USER.";
 
-            // Initial load of event count
+            calendarControl = calendarSchedule1; 
+
+            // Subscribe to its update event
+            calendarControl.EventsUpdated += CalendarControl_EventsUpdated;
+
+            // Load events initially
             LoadEvents();
 
             BeginInvoke(new Action(() =>
@@ -240,8 +247,9 @@ namespace NotiHub
         private void btnNotes_Click(object sender, EventArgs e)
         {
             UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray);
-            calendarSchedule1.Visible = false;
+            eventNotes1.LoadEvents();
             eventNotes1.Visible = true;
+            calendarSchedule1.Visible = false;                
         }
 
         private void btnCalendar_Click(object sender, EventArgs e)
@@ -302,6 +310,12 @@ namespace NotiHub
         private void btnNotification_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"There are {eventsList.Count} total events.");
+        }
+
+        private void CalendarControl_EventsUpdated()
+        {
+            // Refresh the events count when the calendar updates
+            LoadEvents();
         }
     }
 }

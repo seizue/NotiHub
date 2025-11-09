@@ -15,6 +15,7 @@ namespace NotiHub
     public partial class CalendarSchedule : UserControl
     {       
         public static int _year, _month;
+        public event Action EventsUpdated;
 
         public CalendarSchedule()
         {
@@ -28,7 +29,9 @@ namespace NotiHub
 
         public void RefreshEventData()
         {
-            showDays(_month, _year);                  
+            showDays(_month, _year);
+            UpdateEventCount();
+            EventsUpdated?.Invoke();
         }
 
         private void btnPreviousMonth_Click(object sender, EventArgs e)

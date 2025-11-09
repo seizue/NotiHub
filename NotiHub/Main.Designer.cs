@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
+            this.eventNotes1 = new NotiHub.EventNotes();
+            this.calendarSchedule1 = new NotiHub.CalendarSchedule();
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelCurrentSignedAccount = new System.Windows.Forms.Label();
             this.panel7 = new ReaLTaiizor.Controls.Panel();
@@ -48,8 +50,6 @@
             this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.panelIndicator = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            this.eventNotes1 = new NotiHub.EventNotes();
-            this.calendarSchedule1 = new NotiHub.CalendarSchedule();
             this.nightForm1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -82,6 +82,29 @@
             this.nightForm1.TabIndex = 1;
             this.nightForm1.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.nightForm1.TitleBarTextColor = System.Drawing.Color.Gainsboro;
+            // 
+            // eventNotes1
+            // 
+            this.eventNotes1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.eventNotes1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.eventNotes1.Location = new System.Drawing.Point(249, 36);
+            this.eventNotes1.Name = "eventNotes1";
+            this.eventNotes1.Size = new System.Drawing.Size(814, 548);
+            this.eventNotes1.TabIndex = 375;
+            // 
+            // calendarSchedule1
+            // 
+            this.calendarSchedule1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.calendarSchedule1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.calendarSchedule1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.calendarSchedule1.Location = new System.Drawing.Point(248, 35);
+            this.calendarSchedule1.Name = "calendarSchedule1";
+            this.calendarSchedule1.Size = new System.Drawing.Size(814, 548);
+            this.calendarSchedule1.TabIndex = 373;
             // 
             // panel4
             // 
@@ -191,11 +214,11 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Berlin Sans FB", 9.85F);
+            this.label25.Font = new System.Drawing.Font("Berlin Sans FB", 9.55F);
             this.label25.ForeColor = System.Drawing.Color.Gray;
-            this.label25.Location = new System.Drawing.Point(69, 66);
+            this.label25.Location = new System.Drawing.Point(69, 77);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(122, 16);
+            this.label25.Size = new System.Drawing.Size(111, 15);
             this.label25.TabIndex = 285;
             this.label25.Text = "Event Management";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -205,7 +228,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label26.Location = new System.Drawing.Point(71, 45);
+            this.label26.Location = new System.Drawing.Point(71, 56);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(69, 16);
             this.label26.TabIndex = 284;
@@ -215,7 +238,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::NotiHub.Properties.Resources.planner_48px;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 37);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 48);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -385,29 +408,6 @@
             this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.parrotGradientPanel1.TopLeft = System.Drawing.Color.Lime;
             this.parrotGradientPanel1.TopRight = System.Drawing.Color.Red;
-            // 
-            // eventNotes1
-            // 
-            this.eventNotes1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.eventNotes1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.eventNotes1.Location = new System.Drawing.Point(249, 36);
-            this.eventNotes1.Name = "eventNotes1";
-            this.eventNotes1.Size = new System.Drawing.Size(814, 548);
-            this.eventNotes1.TabIndex = 375;
-            // 
-            // calendarSchedule1
-            // 
-            this.calendarSchedule1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.calendarSchedule1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.calendarSchedule1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.calendarSchedule1.Location = new System.Drawing.Point(248, 35);
-            this.calendarSchedule1.Name = "calendarSchedule1";
-            this.calendarSchedule1.Size = new System.Drawing.Size(814, 548);
-            this.calendarSchedule1.TabIndex = 373;
             // 
             // Main
             // 
