@@ -230,9 +230,9 @@
             this.label3.ForeColor = System.Drawing.Color.Silver;
             this.label3.Location = new System.Drawing.Point(23, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(262, 15);
+            this.label3.Size = new System.Drawing.Size(297, 15);
             this.label3.TabIndex = 336;
-            this.label3.Text = "Go to the Calendar tab to add or schedule notes!";
+            this.label3.Text = "Go to the Calendar tab to add or delete schedule notes!";
             // 
             // flowLayoutPanel1
             // 
