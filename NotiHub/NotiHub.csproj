@@ -71,8 +71,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalendarAddSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalendarAddSchedule.Designer.cs">
+      <DependentUpon>CalendarAddSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalendarDay.Designer.cs">
+      <DependentUpon>CalendarDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalendarSchedule.Designer.cs">
+      <DependentUpon>CalendarSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomDatePicker.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EventNoteCards.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventNoteCards.Designer.cs">
+      <DependentUpon>EventNoteCards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventNotes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventNotes.Designer.cs">
+      <DependentUpon>EventNotes.cs</DependentUpon>
     </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
@@ -107,6 +137,21 @@
     <Compile Include="UserAccount.Designer.cs">
       <DependentUpon>UserAccount.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CalendarAddSchedule.resx">
+      <DependentUpon>CalendarAddSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalendarDay.resx">
+      <DependentUpon>CalendarDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalendarSchedule.resx">
+      <DependentUpon>CalendarSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventNoteCards.resx">
+      <DependentUpon>EventNoteCards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventNotes.resx">
+      <DependentUpon>EventNotes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +256,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendarDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\schedulecal_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_pointing_left_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\important_month_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\commercial_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

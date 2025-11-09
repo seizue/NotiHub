@@ -139,8 +139,8 @@
   <data name="trash_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trash_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="planner_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\planner_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="calendar_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Previous_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Previous_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,14 +148,32 @@
   <data name="to_do_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\to_do_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="calendarDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendarDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="planner_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\planner_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="forward_24px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\forward_24px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alarm_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alarm_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="feather_384px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\feather_384px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="alarm_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alarm_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="schedulecal_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schedulecal_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow_pointing_left_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_pointing_left_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="important_month_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\important_month_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="export_csv_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\export_csv_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,10 +184,7 @@
   <data name="schedule_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schedule_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calendar_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\calendar_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="calendarDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\calendarDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="commercial_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\commercial_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

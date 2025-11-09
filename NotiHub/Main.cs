@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +17,12 @@ namespace NotiHub
     public partial class Main : Form
     {
         private bool isStateChanging = false;
-        private const int DEFAULT_WIDTH = 1055;
+        private const int DEFAULT_WIDTH = 1068;
         private const int DEFAULT_HEIGHT = 640;
-
+        private const string FolderName = "NotiHub";
+        private const string SubFolderName = "EventCalendar";
+        private const string FileName = "eventcalendar.json";
+        private List<EventData> eventsList = new List<EventData>();
         public Main()
         {
             InitializeComponent();
@@ -109,6 +115,9 @@ namespace NotiHub
                 labelCurrentSignedAccount.Text = $"ACCOUNT: {SessionManager.FullName}";
             else
                 labelCurrentSignedAccount.Text = "NO USER.";
+
+            // Initial load of event count
+            LoadEvents();
 
             BeginInvoke(new Action(() =>
             {
@@ -231,11 +240,15 @@ namespace NotiHub
         private void btnNotes_Click(object sender, EventArgs e)
         {
             UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray);
+            calendarSchedule1.Visible = false;
+            eventNotes1.Visible = true;
         }
 
         private void btnCalendar_Click(object sender, EventArgs e)
         {
             UpdateUI(new Point(-1, 187), Color.DarkGray, Color.White);
+            calendarSchedule1.Visible = true;
+            eventNotes1.Visible = false;
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -243,6 +256,52 @@ namespace NotiHub
             UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray);
             Settings settings = new Settings(this);
             settings.ShowDialog();
+            calendarSchedule1.Visible = false;
+            eventNotes1.Visible = true;
+        }
+
+        public void LoadEvents()
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string folderPath = Path.Combine(appDataPath, FolderName, SubFolderName);
+            string filePath = Path.Combine(folderPath, FileName);
+
+            if (File.Exists(filePath))
+            {
+                try
+                {
+                    // Read JSON file content
+                    string jsonContent = File.ReadAllText(filePath);
+
+                    // Deserialize JSON content to a list of EventData
+                    eventsList = JsonConvert.DeserializeObject<List<EventData>>(jsonContent) ?? new List<EventData>();
+
+                    // Debug log all events with their dates
+                    Console.WriteLine("All loaded events:");
+                    foreach (var evt in eventsList)
+                    {
+                        Console.WriteLine($"Event: {evt.EventName}, Date: {evt.EventDate}");
+                    }
+
+                    // Update button text with total event count
+                    btnNotification.Text = $"{eventsList.Count} Events";
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error loading events: {ex.Message}");
+                    btnNotification.Text = "0 Events";
+                }
+            }
+            else
+            {
+                Console.WriteLine("Event calendar file not found.");
+                btnNotification.Text = "0 Events";
+            }
+        }
+
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"There are {eventsList.Count} total events.");
         }
     }
 }
