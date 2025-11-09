@@ -350,5 +350,14 @@ namespace NotiHub
             // Refresh the events count when the calendar updates
             LoadEvents();
         }
+
+        private void btnGithub_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/seizue/NotiHub/issues",
+                UseShellExecute = true
+            });
+        }
     }
 }

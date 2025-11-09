@@ -32,10 +32,13 @@
             this.eventNotes1 = new NotiHub.EventNotes();
             this.calendarSchedule1 = new NotiHub.CalendarSchedule();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.labelCDate = new System.Windows.Forms.Label();
+            this.btnCDate = new System.Windows.Forms.Button();
             this.labelCurrentSignedAccount = new System.Windows.Forms.Label();
             this.panel7 = new ReaLTaiizor.Controls.Panel();
             this.panel3 = new ReaLTaiizor.Controls.Panel();
             this.panel2 = new ReaLTaiizor.Controls.Panel();
+            this.btnGithub = new System.Windows.Forms.Button();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
@@ -50,8 +53,6 @@
             this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.panelIndicator = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            this.btnCDate = new System.Windows.Forms.Button();
-            this.labelCDate = new System.Windows.Forms.Label();
             this.nightForm1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -121,6 +122,41 @@
             this.panel4.Size = new System.Drawing.Size(823, 43);
             this.panel4.TabIndex = 372;
             // 
+            // labelCDate
+            // 
+            this.labelCDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCDate.AutoSize = true;
+            this.labelCDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCDate.ForeColor = System.Drawing.Color.DarkGray;
+            this.labelCDate.Location = new System.Drawing.Point(685, 15);
+            this.labelCDate.Name = "labelCDate";
+            this.labelCDate.Size = new System.Drawing.Size(79, 13);
+            this.labelCDate.TabIndex = 281;
+            this.labelCDate.Text = "Current Date :";
+            this.labelCDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelCDate.Visible = false;
+            // 
+            // btnCDate
+            // 
+            this.btnCDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCDate.BackColor = System.Drawing.Color.LightGreen;
+            this.btnCDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCDate.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCDate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGreen;
+            this.btnCDate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
+            this.btnCDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCDate.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCDate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCDate.Location = new System.Drawing.Point(770, 15);
+            this.btnCDate.Name = "btnCDate";
+            this.btnCDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnCDate.Size = new System.Drawing.Size(15, 14);
+            this.btnCDate.TabIndex = 280;
+            this.btnCDate.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnCDate.UseVisualStyleBackColor = false;
+            this.btnCDate.Visible = false;
+            // 
             // labelCurrentSignedAccount
             // 
             this.labelCurrentSignedAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -163,6 +199,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.panel2.Controls.Add(this.btnGithub);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.btnSettings);
             this.panel2.Controls.Add(this.label25);
@@ -180,6 +217,26 @@
             this.panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel2.TabIndex = 207;
             this.panel2.Text = "panel2";
+            // 
+            // btnGithub
+            // 
+            this.btnGithub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGithub.BackColor = System.Drawing.Color.Transparent;
+            this.btnGithub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGithub.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGithub.FlatAppearance.BorderSize = 0;
+            this.btnGithub.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGithub.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGithub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnGithub.Image = global::NotiHub.Properties.Resources.github_24px;
+            this.btnGithub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGithub.Location = new System.Drawing.Point(94, 551);
+            this.btnGithub.Name = "btnGithub";
+            this.btnGithub.Size = new System.Drawing.Size(31, 31);
+            this.btnGithub.TabIndex = 288;
+            this.btnGithub.UseVisualStyleBackColor = false;
+            this.btnGithub.Click += new System.EventHandler(this.btnGithub_Click);
             // 
             // panel1
             // 
@@ -413,41 +470,6 @@
             this.parrotGradientPanel1.TopLeft = System.Drawing.Color.Lime;
             this.parrotGradientPanel1.TopRight = System.Drawing.Color.Red;
             // 
-            // btnCDate
-            // 
-            this.btnCDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCDate.BackColor = System.Drawing.Color.LightGreen;
-            this.btnCDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCDate.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.btnCDate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGreen;
-            this.btnCDate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
-            this.btnCDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCDate.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCDate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCDate.Location = new System.Drawing.Point(770, 15);
-            this.btnCDate.Name = "btnCDate";
-            this.btnCDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnCDate.Size = new System.Drawing.Size(15, 14);
-            this.btnCDate.TabIndex = 280;
-            this.btnCDate.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCDate.UseVisualStyleBackColor = false;
-            this.btnCDate.Visible = false;
-            // 
-            // labelCDate
-            // 
-            this.labelCDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelCDate.AutoSize = true;
-            this.labelCDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCDate.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelCDate.Location = new System.Drawing.Point(685, 15);
-            this.labelCDate.Name = "labelCDate";
-            this.labelCDate.Size = new System.Drawing.Size(79, 13);
-            this.labelCDate.TabIndex = 281;
-            this.labelCDate.Text = "Current Date :";
-            this.labelCDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelCDate.Visible = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -501,5 +523,6 @@
         private EventNotes eventNotes1;
         private System.Windows.Forms.Button btnCDate;
         private System.Windows.Forms.Label labelCDate;
+        private System.Windows.Forms.Button btnGithub;
     }
 }
