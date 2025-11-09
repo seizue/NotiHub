@@ -50,6 +50,8 @@
             this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.panelIndicator = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.btnCDate = new System.Windows.Forms.Button();
+            this.labelCDate = new System.Windows.Forms.Label();
             this.nightForm1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -109,6 +111,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.panel4.Controls.Add(this.labelCDate);
+            this.panel4.Controls.Add(this.btnCDate);
             this.panel4.Controls.Add(this.labelCurrentSignedAccount);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -409,6 +413,41 @@
             this.parrotGradientPanel1.TopLeft = System.Drawing.Color.Lime;
             this.parrotGradientPanel1.TopRight = System.Drawing.Color.Red;
             // 
+            // btnCDate
+            // 
+            this.btnCDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCDate.BackColor = System.Drawing.Color.LightGreen;
+            this.btnCDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCDate.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCDate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGreen;
+            this.btnCDate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
+            this.btnCDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCDate.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCDate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCDate.Location = new System.Drawing.Point(770, 15);
+            this.btnCDate.Name = "btnCDate";
+            this.btnCDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnCDate.Size = new System.Drawing.Size(15, 14);
+            this.btnCDate.TabIndex = 280;
+            this.btnCDate.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnCDate.UseVisualStyleBackColor = false;
+            this.btnCDate.Visible = false;
+            // 
+            // labelCDate
+            // 
+            this.labelCDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCDate.AutoSize = true;
+            this.labelCDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCDate.ForeColor = System.Drawing.Color.DarkGray;
+            this.labelCDate.Location = new System.Drawing.Point(685, 15);
+            this.labelCDate.Name = "labelCDate";
+            this.labelCDate.Size = new System.Drawing.Size(79, 13);
+            this.labelCDate.TabIndex = 281;
+            this.labelCDate.Text = "Current Date :";
+            this.labelCDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelCDate.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,5 +499,7 @@
         private ReaLTaiizor.Controls.Panel panel7;
         private CalendarSchedule calendarSchedule1;
         private EventNotes eventNotes1;
+        private System.Windows.Forms.Button btnCDate;
+        private System.Windows.Forms.Label labelCDate;
     }
 }

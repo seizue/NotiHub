@@ -249,7 +249,9 @@ namespace NotiHub
             UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray);
             eventNotes1.LoadEvents();
             eventNotes1.Visible = true;
-            calendarSchedule1.Visible = false;                
+            calendarSchedule1.Visible = false;
+            btnCDate.Visible = false;
+            labelCDate.Visible = false;
         }
 
         private void btnCalendar_Click(object sender, EventArgs e)
@@ -257,6 +259,8 @@ namespace NotiHub
             UpdateUI(new Point(-1, 187), Color.DarkGray, Color.White);
             calendarSchedule1.Visible = true;
             eventNotes1.Visible = false;
+            btnCDate.Visible = true;
+            labelCDate.Visible = true;
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
