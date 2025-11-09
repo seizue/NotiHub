@@ -63,9 +63,49 @@ namespace NotiHub.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_user_48px {
+            get {
+                object obj = ResourceManager.GetObject("add_user_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap alarm_24px {
             get {
                 object obj = ResourceManager.GetObject("alarm_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap database_backup_24px {
+            get {
+                object obj = ResourceManager.GetObject("database_backup_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap export_csv_24px {
+            get {
+                object obj = ResourceManager.GetObject("export_csv_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap feather_384px1 {
+            get {
+                object obj = ResourceManager.GetObject("feather_384px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +206,16 @@ namespace NotiHub.Properties {
         internal static System.Drawing.Bitmap to_do_24px {
             get {
                 object obj = ResourceManager.GetObject("to_do_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_24px {
+            get {
+                object obj = ResourceManager.GetObject("trash_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

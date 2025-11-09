@@ -241,6 +241,8 @@ namespace NotiHub
         private void btnSettings_Click(object sender, EventArgs e)
         {
             UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray);
+            Settings settings = new Settings(this);
+            settings.ShowDialog();
         }
     }
 }
