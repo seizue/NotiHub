@@ -41,14 +41,16 @@
             this.btnCreateNewUsers = new ReaLTaiizor.Controls.HopeButton();
             this.txtboxPass = new ReaLTaiizor.Controls.HopeTextBox();
             this.txtboxUsername = new ReaLTaiizor.Controls.HopeTextBox();
-            this.comboBoxUsers = new ReaLTaiizor.Controls.DungeonComboBox();
+            this.comboBoxAccessRole = new ReaLTaiizor.Controls.DungeonComboBox();
+            this.datePickerRegister = new NotiHub.CustomDatePicker();
             this.nightForm1.SuspendLayout();
             this.SuspendLayout();
             // 
             // nightForm1
             // 
             this.nightForm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.nightForm1.Controls.Add(this.comboBoxUsers);
+            this.nightForm1.Controls.Add(this.datePickerRegister);
+            this.nightForm1.Controls.Add(this.comboBoxAccessRole);
             this.nightForm1.Controls.Add(this.label11);
             this.nightForm1.Controls.Add(this.label21);
             this.nightForm1.Controls.Add(this.label2);
@@ -234,6 +236,7 @@
             this.btnCreateNewUsers.Text = "CREATE";
             this.btnCreateNewUsers.TextColor = System.Drawing.Color.White;
             this.btnCreateNewUsers.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnCreateNewUsers.Click += new System.EventHandler(this.btnCreateNewUsers_Click);
             // 
             // txtboxPass
             // 
@@ -281,33 +284,47 @@
             this.txtboxUsername.TabStop = false;
             this.txtboxUsername.UseSystemPasswordChar = false;
             // 
-            // comboBoxUsers
+            // comboBoxAccessRole
             // 
-            this.comboBoxUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.comboBoxUsers.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(132)))), ((int)(((byte)(85)))));
-            this.comboBoxUsers.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(108)))), ((int)(((byte)(57)))));
-            this.comboBoxUsers.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.comboBoxUsers.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.comboBoxUsers.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.comboBoxUsers.ColorF = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.comboBoxUsers.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
-            this.comboBoxUsers.ColorH = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.comboBoxUsers.ColorI = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.comboBoxUsers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxUsers.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxUsers.DropDownHeight = 150;
-            this.comboBoxUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxUsers.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.comboBoxUsers.ForeColor = System.Drawing.Color.White;
-            this.comboBoxUsers.FormattingEnabled = true;
-            this.comboBoxUsers.HoverSelectionColor = System.Drawing.Color.Transparent;
-            this.comboBoxUsers.IntegralHeight = false;
-            this.comboBoxUsers.ItemHeight = 23;
-            this.comboBoxUsers.Location = new System.Drawing.Point(114, 354);
-            this.comboBoxUsers.Name = "comboBoxUsers";
-            this.comboBoxUsers.Size = new System.Drawing.Size(339, 29);
-            this.comboBoxUsers.StartIndex = 0;
-            this.comboBoxUsers.TabIndex = 448;
+            this.comboBoxAccessRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxAccessRole.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(132)))), ((int)(((byte)(85)))));
+            this.comboBoxAccessRole.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(108)))), ((int)(((byte)(57)))));
+            this.comboBoxAccessRole.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxAccessRole.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxAccessRole.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxAccessRole.ColorF = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.comboBoxAccessRole.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
+            this.comboBoxAccessRole.ColorH = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxAccessRole.ColorI = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxAccessRole.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxAccessRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxAccessRole.DropDownHeight = 150;
+            this.comboBoxAccessRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAccessRole.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.comboBoxAccessRole.ForeColor = System.Drawing.Color.White;
+            this.comboBoxAccessRole.FormattingEnabled = true;
+            this.comboBoxAccessRole.HoverSelectionColor = System.Drawing.Color.Transparent;
+            this.comboBoxAccessRole.IntegralHeight = false;
+            this.comboBoxAccessRole.ItemHeight = 23;
+            this.comboBoxAccessRole.Location = new System.Drawing.Point(114, 354);
+            this.comboBoxAccessRole.Name = "comboBoxAccessRole";
+            this.comboBoxAccessRole.Size = new System.Drawing.Size(339, 29);
+            this.comboBoxAccessRole.StartIndex = 0;
+            this.comboBoxAccessRole.TabIndex = 448;
+            // 
+            // datePickerRegister
+            // 
+            this.datePickerRegister.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerRegister.BorderSize = 0;
+            this.datePickerRegister.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.datePickerRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerRegister.Location = new System.Drawing.Point(148, 114);
+            this.datePickerRegister.MinimumSize = new System.Drawing.Size(0, 35);
+            this.datePickerRegister.Name = "datePickerRegister";
+            this.datePickerRegister.ShowIconOnly = false;
+            this.datePickerRegister.Size = new System.Drawing.Size(268, 35);
+            this.datePickerRegister.TabIndex = 449;
+            this.datePickerRegister.TextColor = System.Drawing.Color.White;
             // 
             // NewUsers
             // 
@@ -342,6 +359,7 @@
         private ReaLTaiizor.Controls.Panel panel3;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private System.Windows.Forms.Button btnClose;
-        private ReaLTaiizor.Controls.DungeonComboBox comboBoxUsers;
+        private ReaLTaiizor.Controls.DungeonComboBox comboBoxAccessRole;
+        private CustomDatePicker datePickerRegister;
     }
 }

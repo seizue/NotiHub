@@ -71,6 +71,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomDatePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +205,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\feather_384px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarDark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
