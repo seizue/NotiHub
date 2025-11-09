@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new ReaLTaiizor.Controls.Panel();
             this.btnCSV = new System.Windows.Forms.Button();
             this.panel2 = new ReaLTaiizor.Controls.Panel();
             this.panel8 = new ReaLTaiizor.Controls.Panel();
+            this.btnEventCount = new System.Windows.Forms.Button();
             this.btnPreviousMonth = new System.Windows.Forms.Button();
             this.btnNextMonth = new System.Windows.Forms.Button();
             this.lbMonth = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.panel13 = new ReaLTaiizor.Controls.Panel();
             this.labelProductPromo = new System.Windows.Forms.Label();
-            this.btnEventCount = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new ReaLTaiizor.Controls.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,19 @@
             this.panel1.Size = new System.Drawing.Size(814, 49);
             this.panel1.TabIndex = 3;
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.panel3.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.panel3.Location = new System.Drawing.Point(730, 14);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(5);
+            this.panel3.Size = new System.Drawing.Size(1, 20);
+            this.panel3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel3.TabIndex = 370;
+            this.panel3.Text = "panel3";
+            // 
             // btnCSV
             // 
             this.btnCSV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -78,7 +91,7 @@
             this.btnCSV.ForeColor = System.Drawing.Color.DarkGray;
             this.btnCSV.Image = global::NotiHub.Properties.Resources.export_csv_24px;
             this.btnCSV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCSV.Location = new System.Drawing.Point(683, 9);
+            this.btnCSV.Location = new System.Drawing.Point(685, 8);
             this.btnCSV.Name = "btnCSV";
             this.btnCSV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnCSV.Size = new System.Drawing.Size(34, 30);
@@ -93,7 +106,7 @@
             this.panel2.Location = new System.Drawing.Point(338, 14);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(2, 20);
+            this.panel2.Size = new System.Drawing.Size(1, 20);
             this.panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel2.TabIndex = 368;
             this.panel2.Text = "panel2";
@@ -105,10 +118,34 @@
             this.panel8.Location = new System.Drawing.Point(510, 15);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(5);
-            this.panel8.Size = new System.Drawing.Size(2, 20);
+            this.panel8.Size = new System.Drawing.Size(1, 20);
             this.panel8.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel8.TabIndex = 367;
             this.panel8.Text = "panel8";
+            // 
+            // btnEventCount
+            // 
+            this.btnEventCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEventCount.BackColor = System.Drawing.Color.Transparent;
+            this.btnEventCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEventCount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnEventCount.FlatAppearance.BorderSize = 0;
+            this.btnEventCount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnEventCount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnEventCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEventCount.Font = new System.Drawing.Font("Bahnschrift", 11F);
+            this.btnEventCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEventCount.Image = global::NotiHub.Properties.Resources.commercial_24px;
+            this.btnEventCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEventCount.Location = new System.Drawing.Point(743, 4);
+            this.btnEventCount.Name = "btnEventCount";
+            this.btnEventCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnEventCount.Size = new System.Drawing.Size(55, 38);
+            this.btnEventCount.TabIndex = 363;
+            this.btnEventCount.Text = "0";
+            this.btnEventCount.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnEventCount.UseVisualStyleBackColor = false;
+            this.btnEventCount.Click += new System.EventHandler(this.btnEventCount_Click);
             // 
             // btnPreviousMonth
             // 
@@ -199,30 +236,6 @@
             this.labelProductPromo.TabIndex = 355;
             this.labelProductPromo.Text = "EVENT NOTES LIST";
             // 
-            // btnEventCount
-            // 
-            this.btnEventCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEventCount.BackColor = System.Drawing.Color.Transparent;
-            this.btnEventCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEventCount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnEventCount.FlatAppearance.BorderSize = 0;
-            this.btnEventCount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnEventCount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnEventCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEventCount.Font = new System.Drawing.Font("Bahnschrift", 11F);
-            this.btnEventCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEventCount.Image = global::NotiHub.Properties.Resources.commercial_24px;
-            this.btnEventCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEventCount.Location = new System.Drawing.Point(743, 6);
-            this.btnEventCount.Name = "btnEventCount";
-            this.btnEventCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnEventCount.Size = new System.Drawing.Size(55, 38);
-            this.btnEventCount.TabIndex = 363;
-            this.btnEventCount.Text = "0";
-            this.btnEventCount.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnEventCount.UseVisualStyleBackColor = false;
-            this.btnEventCount.Click += new System.EventHandler(this.btnEventCount_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -245,19 +258,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(781, 432);
             this.flowLayoutPanel1.TabIndex = 338;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel3.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel3.Location = new System.Drawing.Point(730, 15);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(5);
-            this.panel3.Size = new System.Drawing.Size(2, 20);
-            this.panel3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel3.TabIndex = 370;
-            this.panel3.Text = "panel3";
             // 
             // EventNotes
             // 

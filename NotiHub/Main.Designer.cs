@@ -91,7 +91,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.eventNotes1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.eventNotes1.Location = new System.Drawing.Point(249, 36);
+            this.eventNotes1.Location = new System.Drawing.Point(248, 35);
             this.eventNotes1.Name = "eventNotes1";
             this.eventNotes1.Size = new System.Drawing.Size(814, 548);
             this.eventNotes1.TabIndex = 375;

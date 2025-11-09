@@ -93,6 +93,21 @@ namespace NotiHub
             UpdateEventCount();
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show(
+                "Do you want to refresh the events?",
+                "Confirm Refresh",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                RefreshEventData();
+                MessageBox.Show("Events refreshed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         public void UpdateEventCount()
         {
             // Get events for the current month and year from the static method in uDay
