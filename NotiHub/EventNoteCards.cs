@@ -66,7 +66,17 @@ namespace NotiHub
             HandleTaskCardsClick();
         }
 
-        private void richTextBoxLocation_TextChanged(object sender, EventArgs e)
+        private void panelNav_Click(object sender, EventArgs e)
+        {
+            HandleTaskCardsClick();
+        }
+
+        private void richTextBoxTitle_Click(object sender, EventArgs e)
+        {
+            HandleTaskCardsClick();
+        }
+
+        private void richTextBoxLocation_Click(object sender, EventArgs e)
         {
             HandleTaskCardsClick();
         }

@@ -28,3 +28,4 @@ C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.exe
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.pdb
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.EventNoteCards.resources
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.EventNotes.resources
+C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.exe.config
