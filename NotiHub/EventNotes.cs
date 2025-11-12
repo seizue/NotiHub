@@ -197,5 +197,10 @@ namespace NotiHub
         {
             MessageBox.Show($"There are {btnEventCount.Text} events for the month of {currentMonth}");
         }
+
+        private void btnLabelAction_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

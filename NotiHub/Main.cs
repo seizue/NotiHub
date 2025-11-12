@@ -29,6 +29,11 @@ namespace NotiHub
         {
             InitializeComponent();
             InitializeControls();
+            this.Load += (s, e) =>
+            {
+                this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+                this.WindowState = FormWindowState.Maximized;
+            };
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -213,6 +218,7 @@ namespace NotiHub
                 if (this.WindowState == FormWindowState.Maximized)
                 {
                     this.WindowState = FormWindowState.Normal;
+
                     // Ensure correct position when restoring
                     PositionForm();
                 }
@@ -225,9 +231,8 @@ namespace NotiHub
             }
             finally
             {
-                // Re-enable handlers and refresh using the active date filter/search
-                isStateChanging = false;
-               
+                // Re-enable handlers 
+                isStateChanging = false;              
             }
         }
 
