@@ -12,14 +12,24 @@ namespace NotiHub
 {
     public partial class EventNoteCards : UserControl
     {
-        private static EventNoteCards _selectedCard;
+        private static List<EventNoteCards> _selectedCards = new List<EventNoteCards>();
+        private EventData _eventData;
+
         public EventNoteCards()
         {
             InitializeComponent();
         }
 
+        public EventData GetEventData()
+        {
+            return _eventData;
+        }
+
         public void LoadEventData(EventData eventData)
         {
+            // Store reference to event data for later use
+            _eventData = eventData;
+
             // Set the event details
             richTextBoxTitle.Text = eventData.EventName;
             richTextBoxLocation.Text = eventData.EventLocation;
@@ -31,19 +41,46 @@ namespace NotiHub
 
             // Combine the times into a single string
             labelTime.Text = $"{timeFromFormatted} - {timeToFormatted}";
+
+            // Apply the status color if it exists
+            if (!string.IsNullOrWhiteSpace(eventData.Status))
+            {
+                UpdateStatus(eventData.Status);
+            }
         }
 
         private void HandleTaskCardsClick()
         {
-            // Deselect the previously selected card (if any)
-            if (_selectedCard != null && _selectedCard != this)
+            // Check if Ctrl key is held for multiple selection
+            if (Control.ModifierKeys == Keys.Control)
             {
-                _selectedCard.DeselectedCard();
+                // Toggle selection for this card
+                if (_selectedCards.Contains(this))
+                {
+                    _selectedCards.Remove(this);
+                    DeselectedCard();
+                }
+                else
+                {
+                    _selectedCards.Add(this);
+                    SelectCard();
+                }
             }
+            else
+            {
+                // Single selection: deselect all others
+                foreach (var card in _selectedCards)
+                {
+                    if (card != this)
+                    {
+                        card.DeselectedCard();
+                    }
+                }
 
-            // Select the current card
-            _selectedCard = this;
-            SelectCard(); // Highlight the current card
+                _selectedCards.Clear();
+                _selectedCards.Add(this);
+                SelectCard();
+            }
         }
 
         private void SelectCard()
@@ -54,6 +91,20 @@ namespace NotiHub
         private void DeselectedCard()
         {
             this.BackColor = Color.FromArgb(43, 50, 52); // Default color
+        }
+
+        public static List<EventNoteCards> GetSelectedCards()
+        {
+            return _selectedCards;
+        }
+
+        public static void ClearSelection()
+        {
+            foreach (var card in _selectedCards)
+            {
+                card.DeselectedCard();
+            }
+            _selectedCards.Clear();
         }
 
         private void richTextBoxTitle_TextChanged(object sender, EventArgs e)
@@ -79,6 +130,41 @@ namespace NotiHub
         private void richTextBoxLocation_Click(object sender, EventArgs e)
         {
             HandleTaskCardsClick();
+        }
+
+        private Color GetStatusColor(string status)
+        {
+            switch (status?.ToLower() ?? "upcoming")
+            {
+                case "completed":
+                    return Color.FromArgb(34, 177, 76); // Green
+                case "pending":
+                    return Color.Silver; // Silver
+                case "reschedule":
+                    return Color.FromArgb(0, 176, 240); // Blue
+                case "cancel":
+                    return Color.FromArgb(192, 0, 0); // Red
+                case "expired":
+                    return Color.FromArgb(128, 128, 128); // Gray
+                case "near expiry":
+                    return Color.FromArgb(255, 0, 0); // Bright Red
+                case "ongoing":
+                    return Color.FromArgb(255, 192, 0); // Yellow/Orange
+                case "ended":
+                    return Color.FromArgb(192, 0, 0); // Red
+                case "upcoming":
+                default:
+                    return Color.FromArgb(0, 176, 240); // Blue
+            }
+        }
+
+        public void UpdateStatus(string status)
+        {
+            panelNav.BackColor = GetStatusColor(status);
+            if (_eventData != null)
+            {
+                _eventData.Status = status;
+            }
         }
     }
 }

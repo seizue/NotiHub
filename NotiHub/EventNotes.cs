@@ -200,7 +200,8 @@ namespace NotiHub
 
         private void btnLabelAction_Click(object sender, EventArgs e)
         {
-
+            EventNoteAction eventNoteAction = new EventNoteAction();
+            eventNoteAction.ShowDialog();
         }
     }
 }

@@ -60,7 +60,7 @@
             // 
             // panelNav
             // 
-            this.panelNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(156)))), ((int)(((byte)(0)))));
+            this.panelNav.BackColor = System.Drawing.Color.Silver;
             this.panelNav.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNav.Location = new System.Drawing.Point(2, 2);
             this.panelNav.Name = "panelNav";
