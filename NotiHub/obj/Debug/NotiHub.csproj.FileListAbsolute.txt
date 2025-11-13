@@ -5,8 +5,6 @@ C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\EntityFramework.dll
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\ReaLTaiizor.dll
-C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\System.Data.SQLite.dll
-C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\System.Data.SQLite.EF6.dll
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\EntityFramework.xml
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\Newtonsoft.Json.xml
@@ -29,4 +27,8 @@ C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.csproj.CoreCompi
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.csproj.Up2Date
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.exe
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.pdb
+C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\System.Data.SQLite.dll
+C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Ven\Documents\Github\NotiHub\NotiHub\bin\Debug\System.Data.SQLite.xml
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.exe.config

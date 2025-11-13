@@ -48,6 +48,7 @@ namespace NotiHub
                 UpdateStatus(eventData.Status);
             }
 
+
             // Apply the status color and text if it exists
             if (!string.IsNullOrWhiteSpace(eventData.Status))
             {

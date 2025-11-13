@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace NotiHub
 {
@@ -22,10 +23,12 @@ namespace NotiHub
         {
             InitializeComponent();
             selectedDate = date;
-            calendarControl = calendar;  // Store the reference to the calendar control
-            lblSelectedDate.Text = $"Selected Date: {selectedDate}"; // Display the selected date in the label
-            eventData = null;  // No event data by default
+            calendarControl = calendar;
+            lblSelectedDate.Text = $"Selected Date: {selectedDate}";
+            eventData = null;
+            InitializeStatusComboBox();  // Ensure ComboBox is ready
         }
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -38,9 +41,12 @@ namespace NotiHub
             selectedDate = date;
             eventData = eventDetails;
             calendarControl = calendar;
-            lblSelectedDate.Text = $"Selected Date: {selectedDate}"; // Display the selected date in the label
-            LoadEventDetails();  // If there's an event, load its details into the form
+            lblSelectedDate.Text = $"Selected Date: {selectedDate}";
+
+            InitializeStatusComboBox();  // Initialize first
+            LoadEventDetails();          // Then load the event details
         }
+
 
         // Load event details into the form fields if an event exists
         private void LoadEventDetails()
@@ -53,7 +59,37 @@ namespace NotiHub
                 comboBoxTo.SelectedItem = eventData.TimeTo;
                 comboBoxToAMPM.SelectedItem = eventData.ToAMPM;
                 txtboxEventLocation.Text = eventData.EventLocation;
+
+                // Make sure ComboBox has all possible statuses
+                if (comboBoxStatus.Items.Count == 0)
+                {
+                    comboBoxStatus.Items.AddRange(new string[] { "Pending", "Completed", "Reschedule", "Cancel", "Expired" });
+                }
+
+                // Default to Pending if Status is empty
+                string statusToLoad = string.IsNullOrWhiteSpace(eventData.Status) ? "Pending" : eventData.Status.Trim();
+
+                // Find exact match in items
+                int statusIndex = comboBoxStatus.Items.IndexOf(statusToLoad);
+
+                if (statusIndex >= 0)
+                {
+                    comboBoxStatus.SelectedIndex = statusIndex;
+                }
+                else
+                {
+                    // If not found, fallback to first item
+                    comboBoxStatus.SelectedIndex = 0;
+                }
             }
+        }
+
+
+        private void InitializeStatusComboBox()
+        {
+            comboBoxStatus.Items.Clear();
+            comboBoxStatus.Items.AddRange(new string[] { "Pending", "Completed", "Reschedule", "Cancel", "Expired" });
+            comboBoxStatus.SelectedIndex = 0; // Default to Pending
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -72,6 +108,7 @@ namespace NotiHub
             string timeTo = comboBoxTo.SelectedItem.ToString();
             string toAMPM = comboBoxToAMPM.SelectedItem.ToString();
             string eventLocation = txtboxEventLocation.Text;
+            string status = comboBoxStatus.SelectedItem?.ToString() ?? "Pending";
 
             // Create the EventData object with the selected date
             EventData newEventData = new EventData
@@ -82,11 +119,15 @@ namespace NotiHub
                 TimeTo = timeTo,
                 ToAMPM = toAMPM,
                 EventLocation = eventLocation,
-                EventDate = selectedDate // Include the date in the event data
+                EventDate = selectedDate,
+                Status = status
             };
 
             // Save the event data to the JSON file
             SaveEventData(newEventData);
+
+            // Log the save action
+            AuditLogger.LogEvent(newEventData, "Saved");
 
             // Refresh the calendar to reflect the new event
             calendarControl.RefreshEventData();
@@ -150,13 +191,19 @@ namespace NotiHub
 
             if (File.Exists(filePath))
             {
-                // Read the existing events from the file
                 List<EventData> events = JsonConvert.DeserializeObject<List<EventData>>(File.ReadAllText(filePath)) ?? new List<EventData>();
 
-                // Remove the event matching the selected date
+                // Get the event being deleted
+                var deletedEvent = events.FirstOrDefault(e => e.EventDate == eventDate);
+                if (deletedEvent != null)
+                {
+                    // Log before removing
+                    AuditLogger.LogEvent(deletedEvent, "Deleted");
+                }
+
+                // Remove from list
                 events.RemoveAll(e => e.EventDate == eventDate);
 
-                // Save the updated list back to the file
                 File.WriteAllText(filePath, JsonConvert.SerializeObject(events, Formatting.Indented));
             }
             else
@@ -164,5 +211,6 @@ namespace NotiHub
                 MessageBox.Show("Event calendar file not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

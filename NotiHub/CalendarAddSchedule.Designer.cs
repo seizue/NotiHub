@@ -30,7 +30,6 @@
         {
             this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,14 +48,19 @@
             this.comboBoxTimeFrom = new ReaLTaiizor.Controls.DungeonComboBox();
             this.txtboxEventLocation = new ReaLTaiizor.Controls.HopeTextBox();
             this.txtboxEventName = new ReaLTaiizor.Controls.HopeTextBox();
+            this.comboBoxStatus = new ReaLTaiizor.Controls.DungeonComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.nightForm1.SuspendLayout();
             this.SuspendLayout();
             // 
             // nightForm1
             // 
             this.nightForm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.nightForm1.Controls.Add(this.btnClose);
             this.nightForm1.Controls.Add(this.label6);
+            this.nightForm1.Controls.Add(this.label7);
+            this.nightForm1.Controls.Add(this.comboBoxStatus);
+            this.nightForm1.Controls.Add(this.btnClose);
             this.nightForm1.Controls.Add(this.label4);
             this.nightForm1.Controls.Add(this.label5);
             this.nightForm1.Controls.Add(this.label3);
@@ -83,7 +87,7 @@
             this.nightForm1.MinimumSize = new System.Drawing.Size(100, 42);
             this.nightForm1.Name = "nightForm1";
             this.nightForm1.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
-            this.nightForm1.Size = new System.Drawing.Size(550, 424);
+            this.nightForm1.Size = new System.Drawing.Size(550, 520);
             this.nightForm1.TabIndex = 2;
             this.nightForm1.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.nightForm1.TitleBarTextColor = System.Drawing.Color.Gainsboro;
@@ -108,24 +112,12 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(67, 60);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 17);
-            this.label6.TabIndex = 450;
-            this.label6.Text = "NEW EVENT NOTE";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MistyRose;
-            this.label4.Location = new System.Drawing.Point(106, 263);
+            this.label4.Location = new System.Drawing.Point(106, 343);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 372;
@@ -136,7 +128,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(67, 261);
+            this.label5.Location = new System.Drawing.Point(67, 341);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 17);
             this.label5.TabIndex = 371;
@@ -147,7 +139,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MistyRose;
-            this.label3.Location = new System.Drawing.Point(106, 95);
+            this.label3.Location = new System.Drawing.Point(106, 175);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 15);
             this.label3.TabIndex = 370;
@@ -158,7 +150,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(67, 93);
+            this.label2.Location = new System.Drawing.Point(67, 173);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 369;
@@ -171,7 +163,7 @@
             this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             this.parrotGradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotGradientPanel1.Location = new System.Drawing.Point(1, 416);
+            this.parrotGradientPanel1.Location = new System.Drawing.Point(1, 512);
             this.parrotGradientPanel1.Name = "parrotGradientPanel1";
             this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
@@ -187,7 +179,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel8.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel8.Location = new System.Drawing.Point(277, 354);
+            this.panel8.Location = new System.Drawing.Point(277, 434);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(5);
             this.panel8.Size = new System.Drawing.Size(1, 20);
@@ -208,7 +200,7 @@
             this.btnDelete.ForeColor = System.Drawing.Color.LightGray;
             this.btnDelete.Image = global::NotiHub.Properties.Resources.trash_24px;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(143, 344);
+            this.btnDelete.Location = new System.Drawing.Point(143, 424);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDelete.Size = new System.Drawing.Size(120, 38);
@@ -223,7 +215,7 @@
             this.lblSelectedDate.AutoSize = true;
             this.lblSelectedDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F, System.Drawing.FontStyle.Bold);
             this.lblSelectedDate.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedDate.Location = new System.Drawing.Point(282, 93);
+            this.lblSelectedDate.Location = new System.Drawing.Point(282, 173);
             this.lblSelectedDate.Name = "lblSelectedDate";
             this.lblSelectedDate.Size = new System.Drawing.Size(0, 17);
             this.lblSelectedDate.TabIndex = 294;
@@ -236,7 +228,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 31);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(1, 393);
+            this.panel2.Size = new System.Drawing.Size(1, 489);
             this.panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel2.TabIndex = 292;
             this.panel2.Text = "panel2";
@@ -249,7 +241,7 @@
             this.panel1.Location = new System.Drawing.Point(549, 31);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(1, 393);
+            this.panel1.Size = new System.Drawing.Size(1, 489);
             this.panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel1.TabIndex = 291;
             this.panel1.Text = "panel1";
@@ -259,7 +251,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(263, 218);
+            this.label1.Location = new System.Drawing.Point(263, 298);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 15);
             this.label1.TabIndex = 290;
@@ -275,7 +267,7 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSave.HoverTextColor = System.Drawing.Color.White;
             this.btnSave.InfoColor = System.Drawing.Color.Gray;
-            this.btnSave.Location = new System.Drawing.Point(304, 348);
+            this.btnSave.Location = new System.Drawing.Point(304, 428);
             this.btnSave.Name = "btnSave";
             this.btnSave.PrimaryColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.Size = new System.Drawing.Size(180, 33);
@@ -311,7 +303,7 @@
             this.comboBoxToAMPM.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.comboBoxToAMPM.Location = new System.Drawing.Point(395, 213);
+            this.comboBoxToAMPM.Location = new System.Drawing.Point(395, 293);
             this.comboBoxToAMPM.Name = "comboBoxToAMPM";
             this.comboBoxToAMPM.Size = new System.Drawing.Size(79, 26);
             this.comboBoxToAMPM.StartIndex = 0;
@@ -353,7 +345,7 @@
             "10:00",
             "11:00",
             "12:00"});
-            this.comboBoxTo.Location = new System.Drawing.Point(300, 212);
+            this.comboBoxTo.Location = new System.Drawing.Point(300, 292);
             this.comboBoxTo.Name = "comboBoxTo";
             this.comboBoxTo.Size = new System.Drawing.Size(79, 26);
             this.comboBoxTo.StartIndex = 0;
@@ -385,7 +377,7 @@
             this.comboBoxFromAMPM.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.comboBoxFromAMPM.Location = new System.Drawing.Point(168, 212);
+            this.comboBoxFromAMPM.Location = new System.Drawing.Point(168, 292);
             this.comboBoxFromAMPM.Name = "comboBoxFromAMPM";
             this.comboBoxFromAMPM.Size = new System.Drawing.Size(79, 26);
             this.comboBoxFromAMPM.StartIndex = 0;
@@ -427,7 +419,7 @@
             "10:00",
             "11:00",
             "12:00"});
-            this.comboBoxTimeFrom.Location = new System.Drawing.Point(73, 212);
+            this.comboBoxTimeFrom.Location = new System.Drawing.Point(73, 292);
             this.comboBoxTimeFrom.Name = "comboBoxTimeFrom";
             this.comboBoxTimeFrom.Size = new System.Drawing.Size(79, 26);
             this.comboBoxTimeFrom.StartIndex = 0;
@@ -443,7 +435,7 @@
             this.txtboxEventLocation.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxEventLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtboxEventLocation.Hint = "Location";
-            this.txtboxEventLocation.Location = new System.Drawing.Point(67, 288);
+            this.txtboxEventLocation.Location = new System.Drawing.Point(67, 368);
             this.txtboxEventLocation.MaxLength = 32767;
             this.txtboxEventLocation.Multiline = false;
             this.txtboxEventLocation.Name = "txtboxEventLocation";
@@ -466,7 +458,7 @@
             this.txtboxEventName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxEventName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtboxEventName.Hint = "Enter Name";
-            this.txtboxEventName.Location = new System.Drawing.Point(67, 120);
+            this.txtboxEventName.Location = new System.Drawing.Point(67, 200);
             this.txtboxEventName.MaxLength = 32767;
             this.txtboxEventName.Multiline = true;
             this.txtboxEventName.Name = "txtboxEventName";
@@ -480,11 +472,61 @@
             this.txtboxEventName.TabStop = false;
             this.txtboxEventName.UseSystemPasswordChar = false;
             // 
+            // comboBoxStatus
+            // 
+            this.comboBoxStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxStatus.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(132)))), ((int)(((byte)(85)))));
+            this.comboBoxStatus.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(108)))), ((int)(((byte)(57)))));
+            this.comboBoxStatus.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxStatus.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxStatus.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxStatus.ColorF = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.comboBoxStatus.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
+            this.comboBoxStatus.ColorH = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxStatus.ColorI = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxStatus.DropDownHeight = 150;
+            this.comboBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.comboBoxStatus.ForeColor = System.Drawing.Color.White;
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.HoverSelectionColor = System.Drawing.Color.Transparent;
+            this.comboBoxStatus.IntegralHeight = false;
+            this.comboBoxStatus.ItemHeight = 23;
+            this.comboBoxStatus.Location = new System.Drawing.Point(67, 128);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(417, 29);
+            this.comboBoxStatus.StartIndex = 0;
+            this.comboBoxStatus.TabIndex = 458;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Forte", 12.25F);
+            this.label7.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label7.Location = new System.Drawing.Point(242, 66);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 19);
+            this.label7.TabIndex = 459;
+            this.label7.Text = "NotiHub";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Silver;
+            this.label6.Location = new System.Drawing.Point(67, 100);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 17);
+            this.label6.TabIndex = 460;
+            this.label6.Text = "Select Status";
+            // 
             // CalendarAddSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 424);
+            this.ClientSize = new System.Drawing.Size(550, 520);
             this.Controls.Add(this.nightForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1366, 738);
@@ -519,7 +561,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnClose;
+        private ReaLTaiizor.Controls.DungeonComboBox comboBoxStatus;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
