@@ -15,6 +15,7 @@ C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.csproj.AssemblyR
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.CalendarAddSchedule.resources
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.CalendarDay.resources
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.CalendarSchedule.resources
+C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.EventNoteAction.resources
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.EventNoteCards.resources
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.EventNotes.resources
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.LogIn.resources
@@ -29,4 +30,3 @@ C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.csproj.Up2Date
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.exe
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.pdb
 C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.exe.config
-C:\Users\Ven\Documents\Github\NotiHub\NotiHub\obj\Debug\NotiHub.EventNoteAction.resources

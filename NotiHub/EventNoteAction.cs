@@ -30,16 +30,12 @@ namespace NotiHub
 
             // Add all status options
             string[] statuses = new string[]
-            {
-                "Upcoming",
+            {           
                 "Completed",
                 "Pending",
                 "Reschedule",
                 "Cancel",
-                "Expired",
-                "Near Expiry",
-                "Ongoing",
-                "Ended"
+                "Expired",             
             };
 
             // Add each status to the combo box

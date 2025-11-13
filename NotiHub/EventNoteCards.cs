@@ -134,27 +134,20 @@ namespace NotiHub
 
         private Color GetStatusColor(string status)
         {
-            switch (status?.ToLower() ?? "upcoming")
+            switch (status?.ToLower() ?? "pending")
             {
                 case "completed":
                     return Color.FromArgb(34, 177, 76); // Green
                 case "pending":
                     return Color.Silver; // Silver
                 case "reschedule":
-                    return Color.FromArgb(0, 176, 240); // Blue
+                    return Color.LightPink; // LightPink
                 case "cancel":
-                    return Color.Salmon; // Salmon
+                    return Color.SandyBrown; // SandyBrown
                 case "expired":
-                    return Color.FromArgb(128, 128, 128); // Gray
-                case "near expiry":
-                    return Color.FromArgb(255, 0, 0); // Bright Red
-                case "ongoing":
-                    return Color.FromArgb(255, 192, 0); // Yellow/Orange
-                case "ended":
-                    return Color.DimGray; // DimGray
-                case "upcoming":
+                    return Color.IndianRed; //IndianRed
                 default:
-                    return Color.FromArgb(0, 176, 240); // Blue
+                    return Color.Silver; // Silver
             }
         }
 

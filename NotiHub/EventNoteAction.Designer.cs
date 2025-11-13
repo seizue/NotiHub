@@ -99,11 +99,6 @@
             this.comboBoxSelection.HoverSelectionColor = System.Drawing.Color.Transparent;
             this.comboBoxSelection.IntegralHeight = false;
             this.comboBoxSelection.ItemHeight = 23;
-            this.comboBoxSelection.Items.AddRange(new object[] {
-            "COMPLETED",
-            "PENDING",
-            "CANCEL",
-            "RESCHED"});
             this.comboBoxSelection.Location = new System.Drawing.Point(61, 142);
             this.comboBoxSelection.Name = "comboBoxSelection";
             this.comboBoxSelection.Size = new System.Drawing.Size(278, 29);
