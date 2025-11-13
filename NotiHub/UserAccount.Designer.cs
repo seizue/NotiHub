@@ -30,21 +30,21 @@
         {
             this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
             this.btnChangePassword = new ReaLTaiizor.Controls.HopeButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtFullName = new ReaLTaiizor.Controls.HopeTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelAsking = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.txtRole = new ReaLTaiizor.Controls.HopeTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.txtNewPassword = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtUsername = new ReaLTaiizor.Controls.HopeTextBox();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.panel3 = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtNewPassword = new ReaLTaiizor.Controls.HopeTextBox();
-            this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelAsking = new System.Windows.Forms.Label();
-            this.txtUsername = new ReaLTaiizor.Controls.HopeTextBox();
-            this.txtRole = new ReaLTaiizor.Controls.HopeTextBox();
-            this.txtFullName = new ReaLTaiizor.Controls.HopeTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.nightForm1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +99,64 @@
             this.btnChangePassword.Text = "CHANGE NEW PASSWORD";
             this.btnChangePassword.TextColor = System.Drawing.Color.White;
             this.btnChangePassword.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.Location = new System.Drawing.Point(46, 164);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.TabIndex = 455;
+            this.label3.Text = "Full Name";
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.txtFullName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtFullName.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtFullName.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtFullName.Enabled = false;
+            this.txtFullName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtFullName.Hint = "Full Name";
+            this.txtFullName.Location = new System.Drawing.Point(49, 188);
+            this.txtFullName.MaxLength = 32767;
+            this.txtFullName.Multiline = false;
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.PasswordChar = '\0';
+            this.txtFullName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFullName.SelectedText = "";
+            this.txtFullName.SelectionLength = 0;
+            this.txtFullName.SelectionStart = 0;
+            this.txtFullName.Size = new System.Drawing.Size(369, 35);
+            this.txtFullName.TabIndex = 454;
+            this.txtFullName.TabStop = false;
+            this.txtFullName.UseSystemPasswordChar = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(46, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 453;
+            this.label2.Text = "Username";
+            // 
+            // labelAsking
+            // 
+            this.labelAsking.AutoSize = true;
+            this.labelAsking.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAsking.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelAsking.Location = new System.Drawing.Point(247, 89);
+            this.labelAsking.Name = "labelAsking";
+            this.labelAsking.Size = new System.Drawing.Size(104, 13);
+            this.labelAsking.TabIndex = 452;
+            this.labelAsking.Text = "Access Level / Role";
             // 
             // label11
             // 
@@ -112,6 +170,30 @@
             this.label11.TabIndex = 451;
             this.label11.Text = "Note: Enter your New Password";
             // 
+            // txtRole
+            // 
+            this.txtRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.txtRole.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtRole.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtRole.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtRole.Enabled = false;
+            this.txtRole.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtRole.Hint = "Role";
+            this.txtRole.Location = new System.Drawing.Point(246, 113);
+            this.txtRole.MaxLength = 32767;
+            this.txtRole.Multiline = false;
+            this.txtRole.Name = "txtRole";
+            this.txtRole.PasswordChar = '\0';
+            this.txtRole.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtRole.SelectedText = "";
+            this.txtRole.SelectionLength = 0;
+            this.txtRole.SelectionStart = 0;
+            this.txtRole.Size = new System.Drawing.Size(172, 35);
+            this.txtRole.TabIndex = 450;
+            this.txtRole.TabStop = false;
+            this.txtRole.UseSystemPasswordChar = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -123,6 +205,83 @@
             this.label1.Size = new System.Drawing.Size(104, 17);
             this.label1.TabIndex = 449;
             this.label1.Text = "ACCOUNT INFO";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label22.Location = new System.Drawing.Point(46, 260);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(175, 17);
+            this.label22.TabIndex = 448;
+            this.label22.Text = "CHANGE NEW PASSWORD?";
+            // 
+            // parrotGradientPanel2
+            // 
+            this.parrotGradientPanel2.BottomLeft = System.Drawing.Color.Orange;
+            this.parrotGradientPanel2.BottomRight = System.Drawing.Color.Gold;
+            this.parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotGradientPanel2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotGradientPanel2.Location = new System.Drawing.Point(44, 243);
+            this.parrotGradientPanel2.Name = "parrotGradientPanel2";
+            this.parrotGradientPanel2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotGradientPanel2.PrimerColor = System.Drawing.Color.White;
+            this.parrotGradientPanel2.Size = new System.Drawing.Size(376, 2);
+            this.parrotGradientPanel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            this.parrotGradientPanel2.TabIndex = 447;
+            this.parrotGradientPanel2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotGradientPanel2.TopLeft = System.Drawing.Color.DeepSkyBlue;
+            this.parrotGradientPanel2.TopRight = System.Drawing.Color.Fuchsia;
+            // 
+            // txtNewPassword
+            // 
+            this.txtNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.txtNewPassword.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtNewPassword.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtNewPassword.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtNewPassword.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtNewPassword.Hint = "New Password";
+            this.txtNewPassword.Location = new System.Drawing.Point(49, 294);
+            this.txtNewPassword.MaxLength = 32767;
+            this.txtNewPassword.Multiline = false;
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.PasswordChar = '\0';
+            this.txtNewPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNewPassword.SelectedText = "";
+            this.txtNewPassword.SelectionLength = 0;
+            this.txtNewPassword.SelectionStart = 0;
+            this.txtNewPassword.Size = new System.Drawing.Size(369, 35);
+            this.txtNewPassword.TabIndex = 446;
+            this.txtNewPassword.TabStop = false;
+            this.txtNewPassword.UseSystemPasswordChar = true;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.txtUsername.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtUsername.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtUsername.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtUsername.Enabled = false;
+            this.txtUsername.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtUsername.Hint = "Username";
+            this.txtUsername.Location = new System.Drawing.Point(49, 113);
+            this.txtUsername.MaxLength = 32767;
+            this.txtUsername.Multiline = false;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.PasswordChar = '\0';
+            this.txtUsername.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUsername.SelectedText = "";
+            this.txtUsername.SelectionLength = 0;
+            this.txtUsername.SelectionStart = 0;
+            this.txtUsername.Size = new System.Drawing.Size(172, 35);
+            this.txtUsername.TabIndex = 445;
+            this.txtUsername.TabStop = false;
+            this.txtUsername.UseSystemPasswordChar = false;
             // 
             // panel1
             // 
@@ -189,164 +348,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // txtNewPassword
-            // 
-            this.txtNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.txtNewPassword.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.txtNewPassword.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtNewPassword.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtNewPassword.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtNewPassword.Hint = "New Password";
-            this.txtNewPassword.Location = new System.Drawing.Point(49, 294);
-            this.txtNewPassword.MaxLength = 32767;
-            this.txtNewPassword.Multiline = false;
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.PasswordChar = '\0';
-            this.txtNewPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNewPassword.SelectedText = "";
-            this.txtNewPassword.SelectionLength = 0;
-            this.txtNewPassword.SelectionStart = 0;
-            this.txtNewPassword.Size = new System.Drawing.Size(369, 35);
-            this.txtNewPassword.TabIndex = 446;
-            this.txtNewPassword.TabStop = false;
-            this.txtNewPassword.UseSystemPasswordChar = true;
-            // 
-            // parrotGradientPanel2
-            // 
-            this.parrotGradientPanel2.BottomLeft = System.Drawing.Color.Orange;
-            this.parrotGradientPanel2.BottomRight = System.Drawing.Color.Gold;
-            this.parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotGradientPanel2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotGradientPanel2.Location = new System.Drawing.Point(44, 243);
-            this.parrotGradientPanel2.Name = "parrotGradientPanel2";
-            this.parrotGradientPanel2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotGradientPanel2.PrimerColor = System.Drawing.Color.White;
-            this.parrotGradientPanel2.Size = new System.Drawing.Size(376, 2);
-            this.parrotGradientPanel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
-            this.parrotGradientPanel2.TabIndex = 447;
-            this.parrotGradientPanel2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotGradientPanel2.TopLeft = System.Drawing.Color.DeepSkyBlue;
-            this.parrotGradientPanel2.TopRight = System.Drawing.Color.Fuchsia;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label22.Location = new System.Drawing.Point(46, 260);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(175, 17);
-            this.label22.TabIndex = 448;
-            this.label22.Text = "CHANGE NEW PASSWORD?";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(46, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 453;
-            this.label2.Text = "Username";
-            // 
-            // labelAsking
-            // 
-            this.labelAsking.AutoSize = true;
-            this.labelAsking.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAsking.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelAsking.Location = new System.Drawing.Point(247, 89);
-            this.labelAsking.Name = "labelAsking";
-            this.labelAsking.Size = new System.Drawing.Size(104, 13);
-            this.labelAsking.TabIndex = 452;
-            this.labelAsking.Text = "Access Level / Role";
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.txtUsername.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.txtUsername.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtUsername.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtUsername.Enabled = false;
-            this.txtUsername.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtUsername.Hint = "Username";
-            this.txtUsername.Location = new System.Drawing.Point(49, 113);
-            this.txtUsername.MaxLength = 32767;
-            this.txtUsername.Multiline = false;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.PasswordChar = '\0';
-            this.txtUsername.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUsername.SelectedText = "";
-            this.txtUsername.SelectionLength = 0;
-            this.txtUsername.SelectionStart = 0;
-            this.txtUsername.Size = new System.Drawing.Size(172, 35);
-            this.txtUsername.TabIndex = 445;
-            this.txtUsername.TabStop = false;
-            this.txtUsername.UseSystemPasswordChar = false;
-            // 
-            // txtRole
-            // 
-            this.txtRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.txtRole.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.txtRole.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtRole.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtRole.Enabled = false;
-            this.txtRole.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtRole.Hint = "Role";
-            this.txtRole.Location = new System.Drawing.Point(246, 113);
-            this.txtRole.MaxLength = 32767;
-            this.txtRole.Multiline = false;
-            this.txtRole.Name = "txtRole";
-            this.txtRole.PasswordChar = '\0';
-            this.txtRole.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtRole.SelectedText = "";
-            this.txtRole.SelectionLength = 0;
-            this.txtRole.SelectionStart = 0;
-            this.txtRole.Size = new System.Drawing.Size(172, 35);
-            this.txtRole.TabIndex = 450;
-            this.txtRole.TabStop = false;
-            this.txtRole.UseSystemPasswordChar = false;
-            // 
-            // txtFullName
-            // 
-            this.txtFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.txtFullName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.txtFullName.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtFullName.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtFullName.Enabled = false;
-            this.txtFullName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtFullName.Hint = "Full Name";
-            this.txtFullName.Location = new System.Drawing.Point(49, 188);
-            this.txtFullName.MaxLength = 32767;
-            this.txtFullName.Multiline = false;
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.PasswordChar = '\0';
-            this.txtFullName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtFullName.SelectedText = "";
-            this.txtFullName.SelectionLength = 0;
-            this.txtFullName.SelectionStart = 0;
-            this.txtFullName.Size = new System.Drawing.Size(369, 35);
-            this.txtFullName.TabIndex = 454;
-            this.txtFullName.TabStop = false;
-            this.txtFullName.UseSystemPasswordChar = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(46, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
-            this.label3.TabIndex = 455;
-            this.label3.Text = "Full Name";
-            // 
             // UserAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,6 +360,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserAccount";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
+            this.Load += new System.EventHandler(this.UserAccount_Load);
             this.nightForm1.ResumeLayout(false);
             this.nightForm1.PerformLayout();
             this.ResumeLayout(false);

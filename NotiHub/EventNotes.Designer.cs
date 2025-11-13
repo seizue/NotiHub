@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new ReaLTaiizor.Controls.Panel();
+            this.btnAccount = new System.Windows.Forms.Button();
             this.panel4 = new ReaLTaiizor.Controls.Panel();
             this.btnLabelAction = new System.Windows.Forms.Button();
             this.panel3 = new ReaLTaiizor.Controls.Panel();
@@ -49,6 +51,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.btnAccount);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btnLabelAction);
             this.panel1.Controls.Add(this.panel3);
@@ -68,12 +72,47 @@
             this.panel1.Size = new System.Drawing.Size(814, 49);
             this.panel1.TabIndex = 3;
             // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.panel5.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.panel5.Location = new System.Drawing.Point(613, 15);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(5);
+            this.panel5.Size = new System.Drawing.Size(1, 20);
+            this.panel5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel5.TabIndex = 373;
+            this.panel5.Text = "panel5";
+            // 
+            // btnAccount
+            // 
+            this.btnAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAccount.BackColor = System.Drawing.Color.Transparent;
+            this.btnAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAccount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnAccount.FlatAppearance.BorderSize = 0;
+            this.btnAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnAccount.Image = global::NotiHub.Properties.Resources.account_24px;
+            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAccount.Location = new System.Drawing.Point(627, 8);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnAccount.Size = new System.Drawing.Size(34, 30);
+            this.btnAccount.TabIndex = 372;
+            this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            // 
             // panel4
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel4.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel4.Location = new System.Drawing.Point(673, 15);
+            this.panel4.Location = new System.Drawing.Point(674, 15);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5);
             this.panel4.Size = new System.Drawing.Size(1, 20);
@@ -95,7 +134,7 @@
             this.btnLabelAction.ForeColor = System.Drawing.Color.DarkGray;
             this.btnLabelAction.Image = global::NotiHub.Properties.Resources.labels_24vpx;
             this.btnLabelAction.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLabelAction.Location = new System.Drawing.Point(627, 8);
+            this.btnLabelAction.Location = new System.Drawing.Point(564, 8);
             this.btnLabelAction.Name = "btnLabelAction";
             this.btnLabelAction.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnLabelAction.Size = new System.Drawing.Size(34, 30);
@@ -130,7 +169,7 @@
             this.btnCSV.ForeColor = System.Drawing.Color.DarkGray;
             this.btnCSV.Image = global::NotiHub.Properties.Resources.export_csv_24px;
             this.btnCSV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCSV.Location = new System.Drawing.Point(684, 8);
+            this.btnCSV.Location = new System.Drawing.Point(685, 8);
             this.btnCSV.Name = "btnCSV";
             this.btnCSV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnCSV.Size = new System.Drawing.Size(34, 30);
@@ -142,7 +181,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel2.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel2.Location = new System.Drawing.Point(304, 14);
+            this.panel2.Location = new System.Drawing.Point(255, 14);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
             this.panel2.Size = new System.Drawing.Size(1, 20);
@@ -154,7 +193,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel8.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel8.Location = new System.Drawing.Point(476, 15);
+            this.panel8.Location = new System.Drawing.Point(424, 15);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(5);
             this.panel8.Size = new System.Drawing.Size(1, 20);
@@ -198,7 +237,7 @@
             this.btnPreviousMonth.Font = new System.Drawing.Font("Bahnschrift", 11F);
             this.btnPreviousMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnPreviousMonth.Image = global::NotiHub.Properties.Resources.arrow_pointing_left_24px;
-            this.btnPreviousMonth.Location = new System.Drawing.Point(501, 10);
+            this.btnPreviousMonth.Location = new System.Drawing.Point(445, 10);
             this.btnPreviousMonth.Name = "btnPreviousMonth";
             this.btnPreviousMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnPreviousMonth.Size = new System.Drawing.Size(32, 29);
@@ -219,7 +258,7 @@
             this.btnNextMonth.Font = new System.Drawing.Font("Bahnschrift", 11F);
             this.btnNextMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnNextMonth.Image = global::NotiHub.Properties.Resources.arrow_24px;
-            this.btnNextMonth.Location = new System.Drawing.Point(541, 10);
+            this.btnNextMonth.Location = new System.Drawing.Point(485, 10);
             this.btnNextMonth.Name = "btnNextMonth";
             this.btnNextMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnNextMonth.Size = new System.Drawing.Size(32, 29);
@@ -233,11 +272,12 @@
             this.lbMonth.AutoSize = true;
             this.lbMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbMonth.ForeColor = System.Drawing.Color.White;
-            this.lbMonth.Location = new System.Drawing.Point(338, 15);
+            this.lbMonth.Location = new System.Drawing.Point(284, 15);
             this.lbMonth.Name = "lbMonth";
             this.lbMonth.Size = new System.Drawing.Size(81, 19);
             this.lbMonth.TabIndex = 364;
             this.lbMonth.Text = "Month Year";
+            this.lbMonth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label26
             // 
@@ -332,5 +372,7 @@
         private ReaLTaiizor.Controls.Panel panel3;
         private System.Windows.Forms.Button btnLabelAction;
         private ReaLTaiizor.Controls.Panel panel4;
+        private ReaLTaiizor.Controls.Panel panel5;
+        private System.Windows.Forms.Button btnAccount;
     }
 }

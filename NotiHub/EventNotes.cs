@@ -203,5 +203,11 @@ namespace NotiHub
             EventNoteAction eventNoteAction = new EventNoteAction();
             eventNoteAction.ShowDialog();
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            UserAccount userAccount = new UserAccount();
+            userAccount.ShowDialog();
+        }
     }
 }

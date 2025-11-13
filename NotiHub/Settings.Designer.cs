@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.panel8 = new ReaLTaiizor.Controls.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -58,8 +60,6 @@
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.btnNewUser = new System.Windows.Forms.Button();
             this.btnExportData = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -121,6 +121,28 @@
             this.nightForm1.TabIndex = 3;
             this.nightForm1.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.nightForm1.TitleBarTextColor = System.Drawing.Color.Gainsboro;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 9F);
+            this.label4.ForeColor = System.Drawing.Color.Silver;
+            this.label4.Location = new System.Drawing.Point(506, 104);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(157, 14);
+            this.label4.TabIndex = 419;
+            this.label4.Text = "Option to create new users!";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label13.Location = new System.Drawing.Point(506, 74);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(132, 17);
+            this.label13.TabIndex = 418;
+            this.label13.Text = "Create System Users";
             // 
             // panel5
             // 
@@ -544,8 +566,8 @@
             // 
             // parrotGradientPanel1
             // 
-            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.Orange;
-            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Gold;
+            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             this.parrotGradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
@@ -558,8 +580,8 @@
             this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             this.parrotGradientPanel1.TabIndex = 293;
             this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.DeepSkyBlue;
-            this.parrotGradientPanel1.TopRight = System.Drawing.Color.Fuchsia;
+            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.Lime;
+            this.parrotGradientPanel1.TopRight = System.Drawing.Color.Red;
             // 
             // btnClose
             // 
@@ -580,28 +602,6 @@
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 9F);
-            this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(506, 104);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 14);
-            this.label4.TabIndex = 419;
-            this.label4.Text = "Option to create new users!";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label13.Location = new System.Drawing.Point(506, 74);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(132, 17);
-            this.label13.TabIndex = 418;
-            this.label13.Text = "Create System Users";
             // 
             // btnNewUser
             // 
