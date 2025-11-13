@@ -34,6 +34,7 @@
             this.richTextBoxTitle = new System.Windows.Forms.RichTextBox();
             this.labelDate = new System.Windows.Forms.Label();
             this.richTextBoxLocation = new System.Windows.Forms.RichTextBox();
+            this.labelStatus = new System.Windows.Forms.Label();
             this.panelCards.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,6 +44,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCards.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.panelCards.Controls.Add(this.labelStatus);
             this.panelCards.Controls.Add(this.panelNav);
             this.panelCards.Controls.Add(this.labelTime);
             this.panelCards.Controls.Add(this.richTextBoxTitle);
@@ -128,6 +130,18 @@
             this.richTextBoxLocation.Text = "Location";
             this.richTextBoxLocation.Click += new System.EventHandler(this.richTextBoxLocation_Click);
             // 
+            // labelStatus
+            // 
+            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
+            this.labelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelStatus.Location = new System.Drawing.Point(133, 69);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(34, 12);
+            this.labelStatus.TabIndex = 250;
+            this.labelStatus.Text = "Status";
+            // 
             // EventNoteCards
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,5 +164,6 @@
         private System.Windows.Forms.RichTextBox richTextBoxTitle;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.RichTextBox richTextBoxLocation;
+        private System.Windows.Forms.Label labelStatus;
     }
 }

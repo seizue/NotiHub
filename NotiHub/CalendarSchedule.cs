@@ -130,6 +130,6 @@ namespace NotiHub
         public string ToAMPM { get; set; }
         public string EventLocation { get; set; }
         public string EventDate { get; set; }
-        public string Status { get; set; } = "Upcoming"; // Default status
+        public string Status { get; set; } = "Pending"; // Default status
     }
 }

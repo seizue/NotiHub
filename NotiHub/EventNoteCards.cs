@@ -47,6 +47,18 @@ namespace NotiHub
             {
                 UpdateStatus(eventData.Status);
             }
+
+            // Apply the status color and text if it exists
+            if (!string.IsNullOrWhiteSpace(eventData.Status))
+            {
+                UpdateStatus(eventData.Status);
+                labelStatus.Text = eventData.Status; // Display the status text
+            }
+            else
+            {
+                labelStatus.Text = "Pending"; // Default if no status found
+            }
+
         }
 
         private void HandleTaskCardsClick()
@@ -154,10 +166,13 @@ namespace NotiHub
         public void UpdateStatus(string status)
         {
             panelNav.BackColor = GetStatusColor(status);
+            labelStatus.Text = status; // Update label text dynamically
+
             if (_eventData != null)
             {
                 _eventData.Status = status;
             }
         }
+
     }
 }
