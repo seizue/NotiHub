@@ -143,7 +143,7 @@ namespace NotiHub
                 case "reschedule":
                     return Color.FromArgb(0, 176, 240); // Blue
                 case "cancel":
-                    return Color.FromArgb(192, 0, 0); // Red
+                    return Color.Salmon; // Salmon
                 case "expired":
                     return Color.FromArgb(128, 128, 128); // Gray
                 case "near expiry":
@@ -151,7 +151,7 @@ namespace NotiHub
                 case "ongoing":
                     return Color.FromArgb(255, 192, 0); // Yellow/Orange
                 case "ended":
-                    return Color.FromArgb(192, 0, 0); // Red
+                    return Color.DimGray; // DimGray
                 case "upcoming":
                 default:
                     return Color.FromArgb(0, 176, 240); // Blue
