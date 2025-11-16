@@ -320,7 +320,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(23, 67);
+            this.label3.Location = new System.Drawing.Point(24, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(297, 15);
             this.label3.TabIndex = 336;
@@ -331,12 +331,13 @@
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 99);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 93);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(781, 432);
-            this.flowLayoutPanel1.TabIndex = 338;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(778, 427);
+            this.flowLayoutPanel1.TabIndex = 335;
             // 
             // EventNotes
             // 

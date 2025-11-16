@@ -72,6 +72,8 @@ namespace NotiHub
                     // Load schedule notes cards into the flow layout panel
                     LoadScheduleCards(filteredEvents);
 
+                    flowLayoutPanel1.AutoScroll = true;
+
                     // Update the month label to show the current month and year
                     lbMonth.Text = currentMonth.ToString("MMMM yyyy");
 
