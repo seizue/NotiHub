@@ -286,8 +286,18 @@ namespace NotiHub
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            LoadAuditData();
-            ApplyAllFilters();
+            var confirmResult = MessageBox.Show(
+               "Do you want to refresh the events?",
+               "Confirm Refresh",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                LoadAuditData();
+                ApplyAllFilters();
+                MessageBox.Show("Events refreshed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }     
         }
 
         private void btnCSV_Click(object sender, EventArgs e)

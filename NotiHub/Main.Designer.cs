@@ -101,6 +101,7 @@
             this.auditTrail1.Name = "auditTrail1";
             this.auditTrail1.Size = new System.Drawing.Size(816, 594);
             this.auditTrail1.TabIndex = 376;
+            this.auditTrail1.Visible = false;
             // 
             // eventNotes1
             // 

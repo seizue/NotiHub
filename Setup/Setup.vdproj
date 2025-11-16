@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_14119495CD59426C95900D97B9E18A07"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1D0054B31685451828345CC61E3491E8"
         "OwnerKey" = "8:_8BFD58AE38B648AE97A02C80F08A7CE9"
         "MsmSig" = "8:_UNDEFINED"
@@ -99,8 +105,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9B9B2E98B38971F7A871D5409B66BD8E"
+        "MsmKey" = "8:_F463BEF7C5744475B079246EF77F8C55"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -151,6 +157,12 @@
         "OwnerKey" = "8:_1D0054B31685451828345CC61E3491E8"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9B9B2E98B38971F7A871D5409B66BD8E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -169,6 +181,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -290,6 +310,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_14119495CD59426C95900D97B9E18A07"
+            {
+            "SourcePath" = "8:..\\NotiHub\\bin\\Debug\\x86\\SQLite.Interop.dll"
+            "TargetName" = "8:SQLite.Interop.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_A4F64CA48E2C4548B86CC009D26B7678"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1D0054B31685451828345CC61E3491E8"
@@ -498,6 +538,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F463BEF7C5744475B079246EF77F8C55"
+            {
+            "SourcePath" = "8:..\\NotiHub\\bin\\Debug\\x64\\SQLite.Interop.dll"
+            "TargetName" = "8:SQLite.Interop.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_A4F64CA48E2C4548B86CC009D26B7678"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -555,7 +615,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:NotiHub"
         "ProductCode" = "8:{1DD693BB-1D85-4198-A086-9F2FC27E8FF5}"
-        "PackageCode" = "8:{C6C14E67-E2ED-444C-8D5C-D8E07DCF8803}"
+        "PackageCode" = "8:{FB9FEAA5-C111-4EBC-8541-78C42C840A3C}"
         "UpgradeCode" = "8:{E827A408-A06F-4440-A080-3F32D8055FBB}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
