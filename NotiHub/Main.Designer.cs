@@ -323,10 +323,10 @@
             this.btnNotification.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnNotification.Image = global::NotiHub.Properties.Resources.alarm_24px;
             this.btnNotification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotification.Location = new System.Drawing.Point(176, 4);
+            this.btnNotification.Location = new System.Drawing.Point(163, 4);
             this.btnNotification.Name = "btnNotification";
             this.btnNotification.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnNotification.Size = new System.Drawing.Size(49, 38);
+            this.btnNotification.Size = new System.Drawing.Size(62, 38);
             this.btnNotification.TabIndex = 238;
             this.btnNotification.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnNotification.UseVisualStyleBackColor = false;
