@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NotiHub")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Event Management Application")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("NotiHub")]
-[assembly: AssemblyCopyright("Copyright ©  2025")]
+[assembly: AssemblyCopyright("Copyright © 2025 Seizue")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
