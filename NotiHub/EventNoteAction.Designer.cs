@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventNoteAction));
             this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxSelection = new ReaLTaiizor.Controls.DungeonComboBox();
@@ -222,6 +223,7 @@
             this.ClientSize = new System.Drawing.Size(401, 345);
             this.Controls.Add(this.nightForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1366, 738);
             this.Name = "EventNoteAction";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

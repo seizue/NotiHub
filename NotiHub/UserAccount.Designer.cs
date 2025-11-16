@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAccount));
             this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
             this.btnChangePassword = new ReaLTaiizor.Controls.HopeButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -355,6 +356,7 @@
             this.ClientSize = new System.Drawing.Size(464, 460);
             this.Controls.Add(this.nightForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1366, 738);
             this.Name = "UserAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
