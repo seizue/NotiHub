@@ -1,2 +1,2 @@
 # NotiHub
-Event Calendar Desktop Application
+Event Management Application
