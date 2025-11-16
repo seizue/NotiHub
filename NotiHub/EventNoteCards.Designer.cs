@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panelCards = new ReaLTaiizor.Controls.Panel();
+            this.labelStatus = new System.Windows.Forms.Label();
             this.panelNav = new System.Windows.Forms.Panel();
             this.labelTime = new System.Windows.Forms.Label();
             this.richTextBoxTitle = new System.Windows.Forms.RichTextBox();
             this.labelDate = new System.Windows.Forms.Label();
             this.richTextBoxLocation = new System.Windows.Forms.RichTextBox();
-            this.labelStatus = new System.Windows.Forms.Label();
             this.panelCards.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,18 @@
             this.panelCards.TabIndex = 7;
             this.panelCards.Text = "panel5";
             this.panelCards.Click += new System.EventHandler(this.panelCards_Click);
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
+            this.labelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelStatus.Location = new System.Drawing.Point(133, 69);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(34, 12);
+            this.labelStatus.TabIndex = 250;
+            this.labelStatus.Text = "Status";
             // 
             // panelNav
             // 
@@ -95,7 +107,7 @@
             this.richTextBoxTitle.Name = "richTextBoxTitle";
             this.richTextBoxTitle.ReadOnly = true;
             this.richTextBoxTitle.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBoxTitle.Size = new System.Drawing.Size(133, 30);
+            this.richTextBoxTitle.Size = new System.Drawing.Size(246, 30);
             this.richTextBoxTitle.TabIndex = 247;
             this.richTextBoxTitle.Text = "Title";
             this.richTextBoxTitle.Click += new System.EventHandler(this.richTextBoxTitle_Click);
@@ -129,18 +141,6 @@
             this.richTextBoxLocation.TabIndex = 244;
             this.richTextBoxLocation.Text = "Location";
             this.richTextBoxLocation.Click += new System.EventHandler(this.richTextBoxLocation_Click);
-            // 
-            // labelStatus
-            // 
-            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
-            this.labelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.labelStatus.Location = new System.Drawing.Point(133, 69);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(34, 12);
-            this.labelStatus.TabIndex = 250;
-            this.labelStatus.Text = "Status";
             // 
             // EventNoteCards
             // 

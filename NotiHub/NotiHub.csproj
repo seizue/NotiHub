@@ -75,6 +75,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuditLogger.cs" />
+    <Compile Include="AuditTrail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AuditTrail.Designer.cs">
+      <DependentUpon>AuditTrail.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalendarAddSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     <Compile Include="UserAccount.Designer.cs">
       <DependentUpon>UserAccount.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AuditTrail.resx">
+      <DependentUpon>AuditTrail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CalendarAddSchedule.resx">
       <DependentUpon>CalendarAddSchedule.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +308,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\account_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analyze_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\broom_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -242,17 +242,19 @@ namespace NotiHub
         }
 
 
-        public void UpdateUI(Point panelLocation, Color notesColor, Color calendarColor)
+        public void UpdateUI(Point panelLocation, Color notesColor, Color calendarColor, Color auditColor)
         {
             panelIndicator.Location = panelLocation;        
             btnNotes.ForeColor = notesColor;
             btnCalendar.ForeColor = calendarColor;
+            btnAudit.ForeColor = auditColor;
         }
         private enum ActiveView
         {
             Notes,
             Calendar,
-            Settings
+            Settings,
+            Audit
         }
 
         private void SetActiveView(ActiveView view)
@@ -260,26 +262,38 @@ namespace NotiHub
             switch (view)
             {
                 case ActiveView.Notes:
-                    UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray);
+                    UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray, Color.DarkGray);
                     eventNotes1.LoadEvents();
                     eventNotes1.Visible = true;
                     calendarSchedule1.Visible = false;
+                    auditTrail1.Visible = false;
                     btnCDate.Visible = false;
                     labelCDate.Visible = false;
                     break;
 
                 case ActiveView.Calendar:
-                    UpdateUI(new Point(-1, 187), Color.DarkGray, Color.White);
+                    UpdateUI(new Point(-1, 187), Color.DarkGray, Color.White, Color.DarkGray);
                     calendarSchedule1.Visible = true;
                     eventNotes1.Visible = false;
+                    auditTrail1.Visible = false;
                     btnCDate.Visible = true;
                     labelCDate.Visible = true;
                     break;
 
+                case ActiveView.Audit:
+                    UpdateUI(new Point(-1, 242), Color.DarkGray, Color.DarkGray, Color.White);
+                    calendarSchedule1.Visible = false;
+                    eventNotes1.Visible = false;
+                    auditTrail1.Visible = true;
+                    btnCDate.Visible = false;
+                    labelCDate.Visible = false;
+                    break;
+
                 case ActiveView.Settings:
-                    UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray);
+                    UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray, Color.DarkGray);
                     calendarSchedule1.Visible = false;
                     eventNotes1.Visible = true;
+                    auditTrail1.Visible = false;
                     btnCDate.Visible = false;
                     labelCDate.Visible = false;
 
@@ -305,6 +319,10 @@ namespace NotiHub
             SetActiveView(ActiveView.Settings);
         }
 
+        private void btnAudit_Click(object sender, EventArgs e)
+        {
+            SetActiveView(ActiveView.Audit);
+        }
 
         public void LoadEvents()
         {
@@ -364,5 +382,7 @@ namespace NotiHub
                 UseShellExecute = true
             });
         }
+
+      
     }
 }

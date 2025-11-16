@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SQLite;
-using System.IO;
 
 namespace NotiHub
 {
@@ -64,10 +65,10 @@ namespace NotiHub
             using (var conn = GetConnection())
             {
                 string insertSql = @"
-                    INSERT INTO EventAudit 
-                    (EventName, EventDate, TimeFrom, FromAMPM, TimeTo, ToAMPM, EventLocation, Status, ActionType, Timestamp)
-                    VALUES (@EventName, @EventDate, @TimeFrom, @FromAMPM, @TimeTo, @ToAMPM, @EventLocation, @Status, @ActionType, @Timestamp);
-                ";
+            INSERT INTO EventAudit 
+            (EventName, EventDate, TimeFrom, FromAMPM, TimeTo, ToAMPM, EventLocation, Status, ActionType, Timestamp)
+            VALUES (@EventName, @EventDate, @TimeFrom, @FromAMPM, @TimeTo, @ToAMPM, @EventLocation, @Status, @ActionType, @Timestamp);
+        ";
 
                 using (var cmd = new SQLiteCommand(insertSql, conn))
                 {
@@ -78,12 +79,59 @@ namespace NotiHub
                     cmd.Parameters.AddWithValue("@TimeTo", data.TimeTo);
                     cmd.Parameters.AddWithValue("@ToAMPM", data.ToAMPM);
                     cmd.Parameters.AddWithValue("@EventLocation", data.EventLocation);
-                    cmd.Parameters.AddWithValue("@Status", string.IsNullOrWhiteSpace(data.Status) ? "Pending" : data.Status); // <-- Save status
+                    cmd.Parameters.AddWithValue("@Status", string.IsNullOrWhiteSpace(data.Status) ? "Pending" : data.Status);
                     cmd.Parameters.AddWithValue("@ActionType", actionType);
                     cmd.Parameters.AddWithValue("@Timestamp", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     cmd.ExecuteNonQuery();
                 }
             }
+
+            // Save to JSON file
+            SaveToJson(data, actionType);
         }
+
+
+        private static void SaveToJson(EventData data, string actionType)
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string folderPath = Path.Combine(appDataPath, "NotiHub", "SQLite");
+
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+
+            string filePath = Path.Combine(folderPath, "NotiHub.json");
+
+            List<object> auditList;
+
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                auditList = JsonConvert.DeserializeObject<List<object>>(json) ?? new List<object>();
+            }
+            else
+            {
+                auditList = new List<object>();
+            }
+
+            // Create audit log entry
+            var auditEntry = new
+            {
+                data.EventName,
+                data.EventDate,
+                data.TimeFrom,
+                data.FromAMPM,
+                data.TimeTo,
+                data.ToAMPM,
+                data.EventLocation,
+                Status = string.IsNullOrWhiteSpace(data.Status) ? "Pending" : data.Status,
+                ActionType = actionType,
+                Timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+            };
+
+            auditList.Add(auditEntry);
+
+            File.WriteAllText(filePath, JsonConvert.SerializeObject(auditList, Formatting.Indented));
+        }
+
     }
 }

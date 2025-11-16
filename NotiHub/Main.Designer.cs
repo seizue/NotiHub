@@ -36,6 +36,7 @@
             this.panel7 = new ReaLTaiizor.Controls.Panel();
             this.panel3 = new ReaLTaiizor.Controls.Panel();
             this.panel2 = new ReaLTaiizor.Controls.Panel();
+            this.btnAudit = new System.Windows.Forms.Button();
             this.btnGithub = new System.Windows.Forms.Button();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -51,6 +52,7 @@
             this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.panelIndicator = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.auditTrail1 = new NotiHub.AuditTrail();
             this.eventNotes1 = new NotiHub.EventNotes();
             this.calendarSchedule1 = new NotiHub.CalendarSchedule();
             this.nightForm1.SuspendLayout();
@@ -63,6 +65,7 @@
             // nightForm1
             // 
             this.nightForm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.nightForm1.Controls.Add(this.auditTrail1);
             this.nightForm1.Controls.Add(this.eventNotes1);
             this.nightForm1.Controls.Add(this.calendarSchedule1);
             this.nightForm1.Controls.Add(this.panel4);
@@ -176,6 +179,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.panel2.Controls.Add(this.btnAudit);
             this.panel2.Controls.Add(this.btnGithub);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.btnSettings);
@@ -194,6 +198,28 @@
             this.panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel2.TabIndex = 207;
             this.panel2.Text = "panel2";
+            // 
+            // btnAudit
+            // 
+            this.btnAudit.BackColor = System.Drawing.Color.Transparent;
+            this.btnAudit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAudit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnAudit.FlatAppearance.BorderSize = 0;
+            this.btnAudit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnAudit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnAudit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAudit.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAudit.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnAudit.Image = global::NotiHub.Properties.Resources.analyze_24px;
+            this.btnAudit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAudit.Location = new System.Drawing.Point(12, 235);
+            this.btnAudit.Name = "btnAudit";
+            this.btnAudit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnAudit.Size = new System.Drawing.Size(209, 38);
+            this.btnAudit.TabIndex = 289;
+            this.btnAudit.Text = "     Audit Trail";
+            this.btnAudit.UseVisualStyleBackColor = false;
+            this.btnAudit.Click += new System.EventHandler(this.btnAudit_Click);
             // 
             // btnGithub
             // 
@@ -219,7 +245,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel1.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel1.Location = new System.Drawing.Point(15, 231);
+            this.panel1.Location = new System.Drawing.Point(15, 226);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(180, 1);
@@ -240,7 +266,7 @@
             this.btnSettings.ForeColor = System.Drawing.Color.DarkGray;
             this.btnSettings.Image = global::NotiHub.Properties.Resources.settings_24px;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSettings.Location = new System.Drawing.Point(12, 235);
+            this.btnSettings.Location = new System.Drawing.Point(12, 289);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSettings.Size = new System.Drawing.Size(209, 38);
@@ -447,6 +473,18 @@
             this.parrotGradientPanel1.TopLeft = System.Drawing.Color.Lime;
             this.parrotGradientPanel1.TopRight = System.Drawing.Color.Red;
             // 
+            // auditTrail1
+            // 
+            this.auditTrail1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.auditTrail1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.auditTrail1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.auditTrail1.Location = new System.Drawing.Point(248, 35);
+            this.auditTrail1.Name = "auditTrail1";
+            this.auditTrail1.Size = new System.Drawing.Size(816, 594);
+            this.auditTrail1.TabIndex = 376;
+            // 
             // eventNotes1
             // 
             this.eventNotes1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -523,5 +561,7 @@
         private System.Windows.Forms.Button btnCDate;
         private System.Windows.Forms.Label labelCDate;
         private System.Windows.Forms.Button btnGithub;
+        private System.Windows.Forms.Button btnAudit;
+        private AuditTrail auditTrail1;
     }
 }
