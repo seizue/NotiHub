@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace NotiHub
@@ -291,7 +292,69 @@ namespace NotiHub
 
         private void btnCSV_Click(object sender, EventArgs e)
         {
+            if (dataGridAuditTrail.Rows.Count == 0)
+            {
+                MessageBox.Show("No data to export.", "Export CSV", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "CSV Files (*.csv)|*.csv";
+            saveDialog.FileName = $"NotiHub_Audit_{DateTime.Now:yyyyMMdd_HHmm}.csv";
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    StringBuilder sb = new StringBuilder();
+
+                    // Header
+                    sb.AppendLine("ID,Name,Date,Location,Status,Action Type,Timestamp,Duration");
+
+                    // Rows displayed in DataGridView
+                    foreach (DataGridViewRow row in dataGridAuditTrail.Rows)
+                    {
+                        if (!row.IsNewRow)
+                        {
+                            sb.AppendLine(
+                                $"{row.Cells["auID"].Value}," +
+                                $"{Escape(row.Cells["auEventName"].Value?.ToString())}," +
+                                $"{row.Cells["auEventDate"].Value}," +
+                                $"{Escape(row.Cells["auEventLocation"].Value?.ToString())}," +
+                                $"{row.Cells["auStatus"].Value}," +
+                                $"{row.Cells["auActionType"].Value}," +
+                                $"{row.Cells["auTimestamp"].Value}," +
+                                $"{Escape(row.Cells["auEventDuration"].Value?.ToString())}"
+                            );
+                        }
+                    }
+
+                    File.WriteAllText(saveDialog.FileName, sb.ToString(), Encoding.UTF8);
+
+                    MessageBox.Show("CSV exported successfully!",
+                        "Export CSV",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error exporting CSV:\n" + ex.Message,
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private string Escape(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return "";
+
+            if (text.Contains(",") || text.Contains("\""))
+                return $"\"{text.Replace("\"", "\"\"")}\"";
+
+            return text;
         }
 
         private class EventRow
