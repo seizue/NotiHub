@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,13 +25,6 @@ namespace NotiHub
         private void CalendarSchedule_Load(object sender, EventArgs e)
         {
             showDays(DateTime.Now.Month, DateTime.Now.Year);
-        }
-
-        public void RefreshEventData()
-        {
-            showDays(_month, _year);
-            UpdateEventCount();
-            EventsUpdated?.Invoke();
         }
 
         private void btnPreviousMonth_Click(object sender, EventArgs e)
@@ -88,7 +81,6 @@ namespace NotiHub
                 flowLayoutPanel1.Controls.Add(actualDay);
             }
 
-
             // Update event count after rendering
             UpdateEventCount();
         }
@@ -108,6 +100,13 @@ namespace NotiHub
             }
         }
 
+        public void RefreshEventData()
+        {
+            showDays(_month, _year);
+            UpdateEventCount();
+            EventsUpdated?.Invoke();
+        }
+
         public void UpdateEventCount()
         {
             // Get events for the current month and year from the static method in uDay
@@ -123,6 +122,7 @@ namespace NotiHub
 
     public class EventData
     {
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public string EventName { get; set; }
         public string TimeFrom { get; set; }
         public string FromAMPM { get; set; }
@@ -131,5 +131,12 @@ namespace NotiHub
         public string EventLocation { get; set; }
         public string EventDate { get; set; }
         public string Status { get; set; } = "Pending"; // Default status
+        
+        // New properties for enhancements
+        public Models.RecurrencePattern Recurrence { get; set; }
+        public List<Models.EventTag> Tags { get; set; } = new List<Models.EventTag>();
+        public Models.ReminderSettings Reminders { get; set; } = new Models.ReminderSettings();
+        public string Notes { get; set; }
+        public int Priority { get; set; } = 0; // 0=Normal, 1=High, 2=Urgent
     }
 }

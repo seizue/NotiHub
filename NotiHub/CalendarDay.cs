@@ -58,24 +58,38 @@ namespace NotiHub
                 _selectedDay = this;
                 SelectDay();
 
-                EventData eventForDay = eventsList.FirstOrDefault(eventItem => eventItem.EventDate == date);
-
-                CalendarAddSchedule scheduleCalendarForm;
-                if (eventForDay != null)
+                // Get events for this specific date (including recurring events)
+                var allEvents = Services.EventDataService.Instance.LoadAllEvents();
+                var eventsForDate = Services.RecurrenceService.Instance.GetEventsForDate(allEvents, parsedDate);
+                
+                if (eventsForDate.Count == 0)
                 {
-                    scheduleCalendarForm = new CalendarAddSchedule(date, eventForDay, calendarControl);
+                    // No events, open empty form
+                    CalendarAddSchedule eventForm = new CalendarAddSchedule(date, calendarControl, null);
+                    eventForm.ShowDialog();
+                }
+                else if (eventsForDate.Count == 1)
+                {
+                    // Single event, open directly
+                    CalendarAddSchedule eventForm = new CalendarAddSchedule(date, calendarControl, eventsForDate[0]);
+                    eventForm.ShowDialog();
                 }
                 else
                 {
-                    scheduleCalendarForm = new CalendarAddSchedule(date, calendarControl);
+                    // Multiple events, show selection dialog
+                    ShowEventSelectionDialog(eventsForDate, date);
                 }
-
-                scheduleCalendarForm.ShowDialog();
             }
             catch (FormatException ex)
             {
                 Debug.WriteLine($"Invalid date format in HandlePanelDaysClick(): {date}. Exception: {ex.Message}");
             }
+        }
+
+        private void ShowEventSelectionDialog(List<EventData> events, string date)
+        {
+            SelectionEvent selectionForm = new SelectionEvent(events, date, calendarControl);
+            selectionForm.ShowDialog();
         }
 
         private void panelDays_Click(object sender, EventArgs e)
@@ -86,6 +100,26 @@ namespace NotiHub
         private void pictureBoxScheduleEvent_Click(object sender, EventArgs e)
         {
             HandlePanelDaysClick();
+        }
+
+        private void lblEventCount_Click(object sender, EventArgs e)
+        {
+            // Show event selection dialog when clicking the event count indicator
+            try
+            {
+                DateTime parsedDate = DateTime.Parse(date);
+                var allEvents = Services.EventDataService.Instance.LoadAllEvents();
+                var eventsForDate = Services.RecurrenceService.Instance.GetEventsForDate(allEvents, parsedDate);
+                
+                if (eventsForDate.Count > 1)
+                {
+                    ShowEventSelectionDialog(eventsForDate, date);
+                }
+            }
+            catch (FormatException ex)
+            {
+                Debug.WriteLine($"Invalid date format in lblEventCount_Click(): {date}. Exception: {ex.Message}");
+            }
         }
 
 
@@ -176,15 +210,38 @@ namespace NotiHub
         public void CheckEventForDay()
         {
             string currentDay = date;
-            EventData eventForDay = eventsList.FirstOrDefault(e => e.EventDate == currentDay);
-
-            if (eventForDay != null)
+            
+            // Check for both regular and recurring events
+            if (DateTime.TryParse(currentDay, out DateTime parsedDate))
             {
-                pictureBoxScheduleEvent.Visible = true;
+                var allEvents = Services.EventDataService.Instance.LoadAllEvents();
+                var eventsForDate = Services.RecurrenceService.Instance.GetEventsForDate(allEvents, parsedDate);
+                
+                if (eventsForDate.Any())
+                {
+                    pictureBoxScheduleEvent.Visible = true;
+                    
+                    // Show event count indicator if multiple events
+                    if (eventsForDate.Count > 1)
+                    {
+                        lblEventCount.Text = $"+{eventsForDate.Count}";
+                        lblEventCount.Visible = true;
+                    }
+                    else
+                    {
+                        lblEventCount.Visible = false;
+                    }
+                }
+                else
+                {
+                    pictureBoxScheduleEvent.Visible = false;
+                    lblEventCount.Visible = false;
+                }
             }
             else
             {
                 pictureBoxScheduleEvent.Visible = false;
+                lblEventCount.Visible = false;
             }
         }
 

@@ -29,6 +29,10 @@ namespace NotiHub
         {
             InitializeComponent();
             InitializeControls();
+            
+            // Initialize notification service to enable event reminders
+            var notificationService = Services.NotificationService.Instance;
+            
             this.Load += (s, e) =>
             {
                 this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
@@ -198,6 +202,9 @@ namespace NotiHub
 
             try
             {
+                // Dispose notification service on exit
+                Services.NotificationService.Instance.Dispose();
+                
                 // Unsubscribe from system events to prevent memory leaks
                 Microsoft.Win32.SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
                 Microsoft.Win32.SystemEvents.UserPreferenceChanged -= SystemEvents_UserPreferenceChanged;
@@ -242,27 +249,29 @@ namespace NotiHub
         }
 
 
-        public void UpdateUI(Point panelLocation, Color notesColor, Color calendarColor, Color auditColor)
+        public void UpdateUI(Point panelLocation, Color notesColor, Color calendarColor, Color globalSearch, Color auditColor)
         {
             panelIndicator.Location = panelLocation;        
             btnNotes.ForeColor = notesColor;
             btnCalendar.ForeColor = calendarColor;
+            btnGlobalSearch.ForeColor = globalSearch;
             btnAudit.ForeColor = auditColor;
         }
-        private enum ActiveView
+        public enum ActiveView
         {
             Notes,
             Calendar,
+            GlobalSearch,
             Settings,
             Audit
         }
 
-        private void SetActiveView(ActiveView view)
+        public void SetActiveView(ActiveView view)
         {
             switch (view)
             {
                 case ActiveView.Notes:
-                    UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray, Color.DarkGray);
+                    UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray, Color.DarkGray, Color.DarkGray);
                     eventNotes1.LoadEvents();
                     eventNotes1.Visible = true;
                     calendarSchedule1.Visible = false;
@@ -272,7 +281,7 @@ namespace NotiHub
                     break;
 
                 case ActiveView.Calendar:
-                    UpdateUI(new Point(-1, 187), Color.DarkGray, Color.White, Color.DarkGray);
+                    UpdateUI(new Point(-1, 187), Color.DarkGray, Color.White, Color.DarkGray, Color.DarkGray);
                     calendarSchedule1.Visible = true;
                     eventNotes1.Visible = false;
                     auditTrail1.Visible = false;
@@ -280,8 +289,25 @@ namespace NotiHub
                     labelCDate.Visible = true;
                     break;
 
+                case ActiveView.GlobalSearch:
+                    UpdateUI(new Point(-1, 245), Color.White, Color.DarkGray, Color.DarkGray, Color.DarkGray);
+                    calendarSchedule1.Visible = false;
+                    eventNotes1.Visible = true;
+                    auditTrail1.Visible = false;
+                    btnCDate.Visible = false;
+                    labelCDate.Visible = false;
+
+                    //Show global search modal
+                    using (var searchForm = new SearchManager())
+                    {
+                        searchForm.ShowDialog();
+                    }
+                  
+                    UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray, Color.DarkGray, Color.DarkGray);
+                    break;
+
                 case ActiveView.Audit:
-                    UpdateUI(new Point(-1, 242), Color.DarkGray, Color.DarkGray, Color.White);
+                    UpdateUI(new Point(-1, 300), Color.DarkGray, Color.DarkGray, Color.DarkGray, Color.White);
                     calendarSchedule1.Visible = false;
                     eventNotes1.Visible = false;
                     auditTrail1.Visible = true;
@@ -290,7 +316,7 @@ namespace NotiHub
                     break;
 
                 case ActiveView.Settings:
-                    UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray, Color.DarkGray);
+                    UpdateUI(new Point(-1, 354), Color.White, Color.DarkGray, Color.DarkGray, Color.DarkGray);
                     calendarSchedule1.Visible = false;
                     eventNotes1.Visible = true;
                     auditTrail1.Visible = false;
@@ -299,7 +325,10 @@ namespace NotiHub
 
                     // Show settings modal
                     using (var settings = new Settings(this))
+                    {
                         settings.ShowDialog();
+                    }
+                    UpdateUI(new Point(-1, 132), Color.White, Color.DarkGray, Color.DarkGray, Color.DarkGray);
                     break;
             }
         }
@@ -322,6 +351,11 @@ namespace NotiHub
         private void btnAudit_Click(object sender, EventArgs e)
         {
             SetActiveView(ActiveView.Audit);
+        }
+
+        private void btnGlobalSearch_Click(object sender, EventArgs e)
+        {
+            SetActiveView(ActiveView.GlobalSearch);       
         }
 
         public void LoadEvents()
@@ -374,6 +408,27 @@ namespace NotiHub
             LoadEvents();
         }
 
+        public void ShowEventOnCalendar(string eventDate)
+        {
+            try
+            {
+                // Parse the date string (expected format: MM/DD/YYYY or similar)
+                if (DateTime.TryParse(eventDate, out DateTime parsedDate))
+                {
+                    // If calendar control exists, navigate to the event's date
+                    if (calendarControl != null)
+                    {
+                        // Call the calendar's showDays method to display the correct month/year
+                        calendarControl.showDays(parsedDate.Month, parsedDate.Year);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error showing event on calendar: {ex.Message}");
+            }
+        }
+
         private void btnGithub_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo
@@ -381,8 +436,7 @@ namespace NotiHub
                 FileName = "https://github.com/seizue/NotiHub/issues",
                 UseShellExecute = true
             });
-        }
-
-      
+        }    
+       
     }
 }

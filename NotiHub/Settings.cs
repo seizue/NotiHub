@@ -559,6 +559,13 @@ namespace NotiHub
             }
         }
 
+        private void btnGoogleCalendarSync_Click(object sender, EventArgs e)
+        {
+            using (var importForm = new CalendarImportExport())
+            {
+                importForm.ShowDialog();
+            }
+        }
 
         public class UserRegistration
         {
@@ -567,5 +574,6 @@ namespace NotiHub
             public string FullName { get; set; }
             public DateTime RegistrationDate { get; set; }
         }
+     
     }
 }

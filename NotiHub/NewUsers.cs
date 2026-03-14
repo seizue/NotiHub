@@ -42,7 +42,7 @@ namespace NotiHub
                 {
                     e.SuppressKeyPress = true;
                     e.Handled = true;
-                    SendKeys.Send("{TAB}");
+                    txtboxPass.Focus(); // Direct focus instead of SendKeys
                 }
             };
 
@@ -51,7 +51,7 @@ namespace NotiHub
                 {
                     e.SuppressKeyPress = true;
                     e.Handled = true;
-                    SendKeys.Send("{TAB}");
+                    comboBoxAccessRole.Focus(); // Direct focus instead of SendKeys
                 }
             };
 
@@ -137,8 +137,9 @@ namespace NotiHub
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
-                    DirectoryInfo credentialFolder = new DirectoryInfo(folderPath);
-                    credentialFolder.Attributes |= FileAttributes.Hidden;
+                    // REMOVED: Hidden folder attribute (triggers antivirus)
+                    // DirectoryInfo credentialFolder = new DirectoryInfo(folderPath);
+                    // credentialFolder.Attributes |= FileAttributes.Hidden;
                 }
 
                 List<dynamic> registrations;

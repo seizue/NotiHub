@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
-            this.auditTrail1 = new NotiHub.AuditTrail();
-            this.eventNotes1 = new NotiHub.EventNotes();
-            this.calendarSchedule1 = new NotiHub.CalendarSchedule();
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelCDate = new System.Windows.Forms.Label();
             this.btnCDate = new System.Windows.Forms.Button();
@@ -40,27 +37,31 @@
             this.panel7 = new ReaLTaiizor.Controls.Panel();
             this.panel3 = new ReaLTaiizor.Controls.Panel();
             this.panel2 = new ReaLTaiizor.Controls.Panel();
-            this.btnAudit = new System.Windows.Forms.Button();
-            this.btnGithub = new System.Windows.Forms.Button();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.panel5 = new ReaLTaiizor.Controls.Panel();
+            this.panelIndicator = new ReaLTaiizor.Controls.Panel();
+            this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.btnGlobalSearch = new System.Windows.Forms.Button();
+            this.btnAudit = new System.Windows.Forms.Button();
+            this.btnGithub = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNotification = new System.Windows.Forms.Button();
             this.btnCalendar = new System.Windows.Forms.Button();
             this.btnNotes = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.panel5 = new ReaLTaiizor.Controls.Panel();
-            this.panelIndicator = new ReaLTaiizor.Controls.Panel();
-            this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.auditTrail1 = new NotiHub.AuditTrail();
+            this.eventNotes1 = new NotiHub.EventNotes();
+            this.calendarSchedule1 = new NotiHub.CalendarSchedule();
             this.nightForm1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // nightForm1
@@ -89,42 +90,6 @@
             this.nightForm1.TabIndex = 1;
             this.nightForm1.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.nightForm1.TitleBarTextColor = System.Drawing.Color.Gainsboro;
-            // 
-            // auditTrail1
-            // 
-            this.auditTrail1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.auditTrail1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.auditTrail1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.auditTrail1.Location = new System.Drawing.Point(248, 35);
-            this.auditTrail1.Name = "auditTrail1";
-            this.auditTrail1.Size = new System.Drawing.Size(816, 594);
-            this.auditTrail1.TabIndex = 376;
-            this.auditTrail1.Visible = false;
-            // 
-            // eventNotes1
-            // 
-            this.eventNotes1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.eventNotes1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.eventNotes1.Location = new System.Drawing.Point(248, 35);
-            this.eventNotes1.Name = "eventNotes1";
-            this.eventNotes1.Size = new System.Drawing.Size(814, 548);
-            this.eventNotes1.TabIndex = 375;
-            // 
-            // calendarSchedule1
-            // 
-            this.calendarSchedule1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.calendarSchedule1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.calendarSchedule1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.calendarSchedule1.Location = new System.Drawing.Point(248, 35);
-            this.calendarSchedule1.Name = "calendarSchedule1";
-            this.calendarSchedule1.Size = new System.Drawing.Size(814, 548);
-            this.calendarSchedule1.TabIndex = 373;
             // 
             // panel4
             // 
@@ -216,6 +181,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.panel2.Controls.Add(this.btnGlobalSearch);
             this.panel2.Controls.Add(this.btnAudit);
             this.panel2.Controls.Add(this.btnGithub);
             this.panel2.Controls.Add(this.panel1);
@@ -236,48 +202,6 @@
             this.panel2.TabIndex = 207;
             this.panel2.Text = "panel2";
             // 
-            // btnAudit
-            // 
-            this.btnAudit.BackColor = System.Drawing.Color.Transparent;
-            this.btnAudit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAudit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnAudit.FlatAppearance.BorderSize = 0;
-            this.btnAudit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnAudit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnAudit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAudit.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAudit.ForeColor = System.Drawing.Color.DarkGray;
-            this.btnAudit.Image = global::NotiHub.Properties.Resources.analyze_24px;
-            this.btnAudit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAudit.Location = new System.Drawing.Point(12, 235);
-            this.btnAudit.Name = "btnAudit";
-            this.btnAudit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnAudit.Size = new System.Drawing.Size(209, 38);
-            this.btnAudit.TabIndex = 289;
-            this.btnAudit.Text = "     Audit Trail";
-            this.btnAudit.UseVisualStyleBackColor = false;
-            this.btnAudit.Click += new System.EventHandler(this.btnAudit_Click);
-            // 
-            // btnGithub
-            // 
-            this.btnGithub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGithub.BackColor = System.Drawing.Color.Transparent;
-            this.btnGithub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGithub.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGithub.FlatAppearance.BorderSize = 0;
-            this.btnGithub.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGithub.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGithub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
-            this.btnGithub.Image = global::NotiHub.Properties.Resources.github_24px;
-            this.btnGithub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGithub.Location = new System.Drawing.Point(94, 551);
-            this.btnGithub.Name = "btnGithub";
-            this.btnGithub.Size = new System.Drawing.Size(31, 31);
-            this.btnGithub.TabIndex = 288;
-            this.btnGithub.UseVisualStyleBackColor = false;
-            this.btnGithub.Click += new System.EventHandler(this.btnGithub_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
@@ -289,28 +213,6 @@
             this.panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel1.TabIndex = 287;
             this.panel1.Text = "panel1";
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
-            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSettings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.ForeColor = System.Drawing.Color.DarkGray;
-            this.btnSettings.Image = global::NotiHub.Properties.Resources.settings_24px;
-            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSettings.Location = new System.Drawing.Point(12, 289);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSettings.Size = new System.Drawing.Size(209, 38);
-            this.btnSettings.TabIndex = 286;
-            this.btnSettings.Text = "       Settings";
-            this.btnSettings.UseVisualStyleBackColor = false;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // label25
             // 
@@ -335,115 +237,6 @@
             this.label26.TabIndex = 284;
             this.label26.Text = "NotiHub";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::NotiHub.Properties.Resources.planner_48px;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 48);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 283;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnNotification
-            // 
-            this.btnNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNotification.BackColor = System.Drawing.Color.Transparent;
-            this.btnNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNotification.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnNotification.FlatAppearance.BorderSize = 0;
-            this.btnNotification.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnNotification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNotification.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotification.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnNotification.Image = global::NotiHub.Properties.Resources.alarm_24px;
-            this.btnNotification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotification.Location = new System.Drawing.Point(163, 4);
-            this.btnNotification.Name = "btnNotification";
-            this.btnNotification.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnNotification.Size = new System.Drawing.Size(62, 38);
-            this.btnNotification.TabIndex = 238;
-            this.btnNotification.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnNotification.UseVisualStyleBackColor = false;
-            this.btnNotification.Click += new System.EventHandler(this.btnNotification_Click);
-            // 
-            // btnCalendar
-            // 
-            this.btnCalendar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCalendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCalendar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnCalendar.FlatAppearance.BorderSize = 0;
-            this.btnCalendar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnCalendar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnCalendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalendar.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalendar.ForeColor = System.Drawing.Color.DarkGray;
-            this.btnCalendar.Image = global::NotiHub.Properties.Resources.schedule_24px;
-            this.btnCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCalendar.Location = new System.Drawing.Point(12, 180);
-            this.btnCalendar.Name = "btnCalendar";
-            this.btnCalendar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnCalendar.Size = new System.Drawing.Size(208, 38);
-            this.btnCalendar.TabIndex = 204;
-            this.btnCalendar.Text = "    Calendar";
-            this.btnCalendar.UseVisualStyleBackColor = false;
-            this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
-            // 
-            // btnNotes
-            // 
-            this.btnNotes.BackColor = System.Drawing.Color.Transparent;
-            this.btnNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNotes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnNotes.FlatAppearance.BorderSize = 0;
-            this.btnNotes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnNotes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnNotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNotes.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotes.ForeColor = System.Drawing.Color.White;
-            this.btnNotes.Image = global::NotiHub.Properties.Resources.to_do_24px;
-            this.btnNotes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNotes.Location = new System.Drawing.Point(12, 125);
-            this.btnNotes.Name = "btnNotes";
-            this.btnNotes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnNotes.Size = new System.Drawing.Size(208, 38);
-            this.btnNotes.TabIndex = 202;
-            this.btnNotes.Text = "          Notes";
-            this.btnNotes.UseVisualStyleBackColor = false;
-            this.btnNotes.Click += new System.EventHandler(this.btnNotes_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnMinimize.BackgroundImage = global::NotiHub.Properties.Resources.minus_20px;
-            this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMinimize.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Location = new System.Drawing.Point(956, 5);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(21, 19);
-            this.btnMinimize.TabIndex = 9;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnMaximize.BackgroundImage = global::NotiHub.Properties.Resources.maximize_button_20px;
-            this.btnMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMaximize.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Location = new System.Drawing.Point(999, 5);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(21, 19);
-            this.btnMaximize.TabIndex = 8;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // btnClose
             // 
@@ -510,6 +303,236 @@
             this.parrotGradientPanel1.TopLeft = System.Drawing.Color.Lime;
             this.parrotGradientPanel1.TopRight = System.Drawing.Color.Red;
             // 
+            // btnGlobalSearch
+            // 
+            this.btnGlobalSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnGlobalSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnGlobalSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnGlobalSearch.FlatAppearance.BorderSize = 0;
+            this.btnGlobalSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnGlobalSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnGlobalSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGlobalSearch.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGlobalSearch.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnGlobalSearch.Image = global::NotiHub.Properties.Resources.search_database_24px;
+            this.btnGlobalSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGlobalSearch.Location = new System.Drawing.Point(12, 238);
+            this.btnGlobalSearch.Name = "btnGlobalSearch";
+            this.btnGlobalSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnGlobalSearch.Size = new System.Drawing.Size(209, 38);
+            this.btnGlobalSearch.TabIndex = 291;
+            this.btnGlobalSearch.Text = "Global Search";
+            this.btnGlobalSearch.UseVisualStyleBackColor = false;
+            this.btnGlobalSearch.Click += new System.EventHandler(this.btnGlobalSearch_Click);
+            // 
+            // btnAudit
+            // 
+            this.btnAudit.BackColor = System.Drawing.Color.Transparent;
+            this.btnAudit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAudit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnAudit.FlatAppearance.BorderSize = 0;
+            this.btnAudit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnAudit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnAudit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAudit.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAudit.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnAudit.Image = global::NotiHub.Properties.Resources.analyze_24px;
+            this.btnAudit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAudit.Location = new System.Drawing.Point(12, 292);
+            this.btnAudit.Name = "btnAudit";
+            this.btnAudit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnAudit.Size = new System.Drawing.Size(209, 38);
+            this.btnAudit.TabIndex = 289;
+            this.btnAudit.Text = "        Audit Trail";
+            this.btnAudit.UseVisualStyleBackColor = false;
+            this.btnAudit.Click += new System.EventHandler(this.btnAudit_Click);
+            // 
+            // btnGithub
+            // 
+            this.btnGithub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGithub.BackColor = System.Drawing.Color.Transparent;
+            this.btnGithub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGithub.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnGithub.FlatAppearance.BorderSize = 0;
+            this.btnGithub.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(34)))));
+            this.btnGithub.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(34)))));
+            this.btnGithub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.btnGithub.Image = global::NotiHub.Properties.Resources.github_24px;
+            this.btnGithub.Location = new System.Drawing.Point(94, 551);
+            this.btnGithub.Name = "btnGithub";
+            this.btnGithub.Size = new System.Drawing.Size(31, 31);
+            this.btnGithub.TabIndex = 288;
+            this.btnGithub.UseVisualStyleBackColor = false;
+            this.btnGithub.Click += new System.EventHandler(this.btnGithub_Click);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSettings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnSettings.Image = global::NotiHub.Properties.Resources.settings_24px;
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSettings.Location = new System.Drawing.Point(12, 346);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSettings.Size = new System.Drawing.Size(209, 38);
+            this.btnSettings.TabIndex = 286;
+            this.btnSettings.Text = "            Settings";
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::NotiHub.Properties.Resources.planner_48px;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 48);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 283;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnNotification
+            // 
+            this.btnNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNotification.BackColor = System.Drawing.Color.Transparent;
+            this.btnNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNotification.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnNotification.FlatAppearance.BorderSize = 0;
+            this.btnNotification.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnNotification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotification.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotification.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnNotification.Image = global::NotiHub.Properties.Resources.alarm_24px;
+            this.btnNotification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotification.Location = new System.Drawing.Point(163, 4);
+            this.btnNotification.Name = "btnNotification";
+            this.btnNotification.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnNotification.Size = new System.Drawing.Size(62, 38);
+            this.btnNotification.TabIndex = 238;
+            this.btnNotification.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnNotification.UseVisualStyleBackColor = false;
+            this.btnNotification.Click += new System.EventHandler(this.btnNotification_Click);
+            // 
+            // btnCalendar
+            // 
+            this.btnCalendar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCalendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCalendar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnCalendar.FlatAppearance.BorderSize = 0;
+            this.btnCalendar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnCalendar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnCalendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalendar.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalendar.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnCalendar.Image = global::NotiHub.Properties.Resources.schedule_24px;
+            this.btnCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCalendar.Location = new System.Drawing.Point(12, 180);
+            this.btnCalendar.Name = "btnCalendar";
+            this.btnCalendar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnCalendar.Size = new System.Drawing.Size(208, 38);
+            this.btnCalendar.TabIndex = 204;
+            this.btnCalendar.Text = "         Calendar";
+            this.btnCalendar.UseVisualStyleBackColor = false;
+            this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
+            // 
+            // btnNotes
+            // 
+            this.btnNotes.BackColor = System.Drawing.Color.Transparent;
+            this.btnNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNotes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnNotes.FlatAppearance.BorderSize = 0;
+            this.btnNotes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnNotes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnNotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotes.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotes.ForeColor = System.Drawing.Color.White;
+            this.btnNotes.Image = global::NotiHub.Properties.Resources.to_do_24px;
+            this.btnNotes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNotes.Location = new System.Drawing.Point(12, 125);
+            this.btnNotes.Name = "btnNotes";
+            this.btnNotes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnNotes.Size = new System.Drawing.Size(208, 38);
+            this.btnNotes.TabIndex = 202;
+            this.btnNotes.Text = "              Notes";
+            this.btnNotes.UseVisualStyleBackColor = false;
+            this.btnNotes.Click += new System.EventHandler(this.btnNotes_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnMinimize.BackgroundImage = global::NotiHub.Properties.Resources.minus_20px;
+            this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMinimize.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Location = new System.Drawing.Point(956, 5);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(21, 19);
+            this.btnMinimize.TabIndex = 9;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnMaximize.BackgroundImage = global::NotiHub.Properties.Resources.maximize_button_20px;
+            this.btnMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMaximize.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.Location = new System.Drawing.Point(999, 5);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(21, 19);
+            this.btnMaximize.TabIndex = 8;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // auditTrail1
+            // 
+            this.auditTrail1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.auditTrail1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.auditTrail1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.auditTrail1.Location = new System.Drawing.Point(248, 35);
+            this.auditTrail1.Name = "auditTrail1";
+            this.auditTrail1.Size = new System.Drawing.Size(816, 594);
+            this.auditTrail1.TabIndex = 376;
+            this.auditTrail1.Visible = false;
+            // 
+            // eventNotes1
+            // 
+            this.eventNotes1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.eventNotes1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.eventNotes1.Location = new System.Drawing.Point(248, 35);
+            this.eventNotes1.Name = "eventNotes1";
+            this.eventNotes1.Size = new System.Drawing.Size(814, 548);
+            this.eventNotes1.TabIndex = 375;
+            // 
+            // calendarSchedule1
+            // 
+            this.calendarSchedule1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.calendarSchedule1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.calendarSchedule1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.calendarSchedule1.Location = new System.Drawing.Point(248, 35);
+            this.calendarSchedule1.Name = "calendarSchedule1";
+            this.calendarSchedule1.Size = new System.Drawing.Size(814, 548);
+            this.calendarSchedule1.TabIndex = 373;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,8 +554,8 @@
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -566,5 +589,6 @@
         private System.Windows.Forms.Button btnGithub;
         private System.Windows.Forms.Button btnAudit;
         private AuditTrail auditTrail1;
+        private System.Windows.Forms.Button btnGlobalSearch;
     }
 }

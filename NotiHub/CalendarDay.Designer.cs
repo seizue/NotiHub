@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.panelDays = new System.Windows.Forms.Panel();
+            this.lblEventCount = new System.Windows.Forms.Label();
+            this.pictureBoxScheduleEvent = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBoxScheduleEvent = new System.Windows.Forms.PictureBox();
             this.panelDays.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScheduleEvent)).BeginInit();
             this.SuspendLayout();
@@ -40,6 +41,7 @@
             // 
             this.panelDays.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelDays.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.panelDays.Controls.Add(this.lblEventCount);
             this.panelDays.Controls.Add(this.pictureBoxScheduleEvent);
             this.panelDays.Controls.Add(this.checkBox1);
             this.panelDays.Controls.Add(this.label1);
@@ -82,6 +84,20 @@
             this.pictureBoxScheduleEvent.Visible = false;
             this.pictureBoxScheduleEvent.Click += new System.EventHandler(this.pictureBoxScheduleEvent_Click);
             // 
+            // lblEventCount
+            // 
+            this.lblEventCount.AutoSize = true;
+            this.lblEventCount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblEventCount.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.lblEventCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(0)))));
+            this.lblEventCount.Location = new System.Drawing.Point(70, 33);
+            this.lblEventCount.Name = "lblEventCount";
+            this.lblEventCount.Size = new System.Drawing.Size(0, 13);
+            this.lblEventCount.TabIndex = 242;
+            this.lblEventCount.Text = "";
+            this.lblEventCount.Visible = false;
+            this.lblEventCount.Click += new System.EventHandler(this.lblEventCount_Click);
+            // 
             // CalendarDay
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -103,5 +119,6 @@
         private System.Windows.Forms.PictureBox pictureBoxScheduleEvent;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEventCount;
     }
 }

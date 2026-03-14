@@ -96,6 +96,12 @@
     <Compile Include="CalendarDay.Designer.cs">
       <DependentUpon>CalendarDay.cs</DependentUpon>
     </Compile>
+    <Compile Include="CalendarImportExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalendarImportExport.Designer.cs">
+      <DependentUpon>CalendarImportExport.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalendarSchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +129,32 @@
     <Compile Include="EventNotes.Designer.cs">
       <DependentUpon>EventNotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\RecurrencePattern.cs" />
+    <Compile Include="Models\EventTag.cs" />
+    <Compile Include="Models\ReminderSettings.cs" />
+    <Compile Include="NotifWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotifWindow.Designer.cs">
+      <DependentUpon>NotifWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchManager.Designer.cs">
+      <DependentUpon>SearchManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectionEvent.Designer.cs">
+      <DependentUpon>SelectionEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\NotificationService.cs" />
+    <Compile Include="Services\RecurrenceService.cs" />
+    <Compile Include="Services\EventDataService.cs" />
+    <Compile Include="Services\GoogleCalendarService.cs" />
+    <Compile Include="Services\ICalendarService.cs" />
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +197,9 @@
     <EmbeddedResource Include="CalendarDay.resx">
       <DependentUpon>CalendarDay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CalendarImportExport.resx">
+      <DependentUpon>CalendarImportExport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CalendarSchedule.resx">
       <DependentUpon>CalendarSchedule.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +221,9 @@
     <EmbeddedResource Include="NewUsers.resx">
       <DependentUpon>NewUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NotifWindow.resx">
+      <DependentUpon>NotifWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -196,6 +234,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SearchManager.resx">
+      <DependentUpon>SearchManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionEvent.resx">
+      <DependentUpon>SelectionEvent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +367,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="NotiHub_Icon_.ico" />
+    <None Include="Resources\search_database_24px.png" />
+    <None Include="Resources\show_sidepanel_24px.png" />
+    <None Include="Resources\clock_alert_48px.png" />
+    <None Include="Resources\maintenance_date_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
