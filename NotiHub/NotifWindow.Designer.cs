@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NotifWindow));
             this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.lblTitle = new ReaLTaiizor.Controls.BigLabel();
             this.btnSnooze = new ReaLTaiizor.Controls.HopeButton();
             this.btnViewEvent = new ReaLTaiizor.Controls.HopeButton();
@@ -46,7 +48,6 @@
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.btnClose = new System.Windows.Forms.Button();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
-            this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.nightForm1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconBox)).BeginInit();
@@ -91,6 +92,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(496, 45);
             this.panel2.TabIndex = 478;
+            // 
+            // parrotGradientPanel2
+            // 
+            this.parrotGradientPanel2.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.parrotGradientPanel2.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotGradientPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.parrotGradientPanel2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotGradientPanel2.Location = new System.Drawing.Point(0, 44);
+            this.parrotGradientPanel2.Name = "parrotGradientPanel2";
+            this.parrotGradientPanel2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotGradientPanel2.PrimerColor = System.Drawing.Color.White;
+            this.parrotGradientPanel2.Size = new System.Drawing.Size(496, 1);
+            this.parrotGradientPanel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            this.parrotGradientPanel2.TabIndex = 449;
+            this.parrotGradientPanel2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotGradientPanel2.TopLeft = System.Drawing.Color.White;
+            this.parrotGradientPanel2.TopRight = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             // 
             // lblTitle
             // 
@@ -296,25 +316,6 @@
             // 
             this.updateTimer.Interval = 1000;
             // 
-            // parrotGradientPanel2
-            // 
-            this.parrotGradientPanel2.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.parrotGradientPanel2.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotGradientPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.parrotGradientPanel2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotGradientPanel2.Location = new System.Drawing.Point(0, 44);
-            this.parrotGradientPanel2.Name = "parrotGradientPanel2";
-            this.parrotGradientPanel2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotGradientPanel2.PrimerColor = System.Drawing.Color.White;
-            this.parrotGradientPanel2.Size = new System.Drawing.Size(496, 1);
-            this.parrotGradientPanel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
-            this.parrotGradientPanel2.TabIndex = 449;
-            this.parrotGradientPanel2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotGradientPanel2.TopLeft = System.Drawing.Color.White;
-            this.parrotGradientPanel2.TopRight = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            // 
             // NotifWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +323,7 @@
             this.ClientSize = new System.Drawing.Size(498, 317);
             this.Controls.Add(this.nightForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1366, 738);
             this.Name = "NotifWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

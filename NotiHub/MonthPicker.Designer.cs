@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonthPicker));
             this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.panel3 = new ReaLTaiizor.Controls.Panel();
@@ -174,7 +175,7 @@
             this.lbMonth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.lbMonth.ForeColor = System.Drawing.Color.White;
-            this.lbMonth.Location = new System.Drawing.Point(159, 39);
+            this.lbMonth.Location = new System.Drawing.Point(163, 39);
             this.lbMonth.Name = "lbMonth";
             this.lbMonth.Size = new System.Drawing.Size(56, 25);
             this.lbMonth.TabIndex = 365;
@@ -195,9 +196,9 @@
             this.flowLayoutPanel1.Controls.Add(this.pOct);
             this.flowLayoutPanel1.Controls.Add(this.pNov);
             this.flowLayoutPanel1.Controls.Add(this.pDec);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(27, 95);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(32, 100);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(318, 153);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(315, 153);
             this.flowLayoutPanel1.TabIndex = 366;
             // 
             // pJan
@@ -243,7 +244,7 @@
             this.btnForward.Font = new System.Drawing.Font("Bahnschrift", 11F);
             this.btnForward.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnForward.Image = global::NotiHub.Properties.Resources.right_24px;
-            this.btnForward.Location = new System.Drawing.Point(313, 38);
+            this.btnForward.Location = new System.Drawing.Point(315, 38);
             this.btnForward.Name = "btnForward";
             this.btnForward.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnForward.Size = new System.Drawing.Size(32, 29);
@@ -264,7 +265,7 @@
             this.btnBack.Font = new System.Drawing.Font("Bahnschrift", 11F);
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnBack.Image = global::NotiHub.Properties.Resources.left_24px;
-            this.btnBack.Location = new System.Drawing.Point(27, 38);
+            this.btnBack.Location = new System.Drawing.Point(32, 38);
             this.btnBack.Name = "btnBack";
             this.btnBack.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnBack.Size = new System.Drawing.Size(32, 29);
@@ -579,6 +580,7 @@
             this.ClientSize = new System.Drawing.Size(375, 284);
             this.Controls.Add(this.nightForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1366, 738);
             this.Name = "MonthPicker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
