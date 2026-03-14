@@ -273,6 +273,16 @@ namespace NotiHub.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap left_24px {
+            get {
+                object obj = ResourceManager.GetObject("left_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maintenance_date_48px {
             get {
                 object obj = ResourceManager.GetObject("maintenance_date_48px", resourceCulture);
@@ -316,6 +326,16 @@ namespace NotiHub.Properties {
         internal static System.Drawing.Bitmap Previous_24px {
             get {
                 object obj = ResourceManager.GetObject("Previous_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap right_24px {
+            get {
+                object obj = ResourceManager.GetObject("right_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

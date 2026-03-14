@@ -211,5 +211,17 @@ namespace NotiHub
             UserAccount userAccount = new UserAccount();
             userAccount.ShowDialog();
         }
+
+        private void lbMonth_Click(object sender, EventArgs e)
+        {
+            using (MonthPicker picker = new MonthPicker(currentMonth.Month, currentMonth.Year))
+            {
+                if (picker.ShowDialog() == DialogResult.OK)
+                {
+                    currentMonth = new DateTime(picker.SelectedYear, picker.SelectedMonth, 1);
+                    LoadEvents();
+                }
+            }
+        }
     }
 }

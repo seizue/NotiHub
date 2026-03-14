@@ -97,6 +97,7 @@
             // lbMonth
             // 
             this.lbMonth.AutoSize = true;
+            this.lbMonth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbMonth.ForeColor = System.Drawing.Color.White;
             this.lbMonth.Location = new System.Drawing.Point(372, 15);
@@ -104,6 +105,7 @@
             this.lbMonth.Size = new System.Drawing.Size(81, 19);
             this.lbMonth.TabIndex = 364;
             this.lbMonth.Text = "Month Year";
+            this.lbMonth.Click += new System.EventHandler(this.lbMonth_Click);
             // 
             // label26
             // 

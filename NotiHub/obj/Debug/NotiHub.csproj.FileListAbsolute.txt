@@ -52,10 +52,10 @@ C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\bin\Debug\ReaLTaiizor.xml
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\bin\Debug\System.Data.SQLite.xml
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.csproj.AssemblyReference.cache
-C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.exe.config
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.AuditTrail.resources
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.CalendarAddSchedule.resources
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.CalendarDay.resources
+C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.CalendarImportExport.resources
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.CalendarSchedule.resources
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.EventNoteAction.resources
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.EventNoteCards.resources
@@ -66,6 +66,7 @@ C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.NewUsers.re
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.NotifWindow.resources
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.Properties.Resources.resources
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.SearchManager.resources
+C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.SelectionEvent.resources
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.Settings.resources
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.UserAccount.resources
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.csproj.GenerateResource.cache
@@ -73,5 +74,5 @@ C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.csproj.Core
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.csproj.Up2Date
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.exe
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.pdb
-C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.CalendarImportExport.resources
-C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.SelectionEvent.resources
+C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.exe.config
+C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.MonthPicker.resources

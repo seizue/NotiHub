@@ -55,6 +55,17 @@ namespace NotiHub
             MessageBox.Show($"There are {btnEventCount.Text} events for the month of {_month}/{_year}");
         }
 
+        private void lbMonth_Click(object sender, EventArgs e)
+        {
+            using (MonthPicker picker = new MonthPicker(_month, _year))
+            {
+                if (picker.ShowDialog() == DialogResult.OK)
+                {
+                    showDays(picker.SelectedMonth, picker.SelectedYear);
+                }
+            }
+        }
+
         public void showDays(int month, int year)
         {
             flowLayoutPanel1.Controls.Clear();

@@ -30,26 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblTitle = new ReaLTaiizor.Controls.BigLabel();
             this.btnSnooze = new ReaLTaiizor.Controls.HopeButton();
             this.btnViewEvent = new ReaLTaiizor.Controls.HopeButton();
             this.btnGotIt = new ReaLTaiizor.Controls.HopeButton();
             this.iconBox = new System.Windows.Forms.PictureBox();
-            this.lblTitle = new ReaLTaiizor.Controls.BigLabel();
             this.lblMessage = new ReaLTaiizor.Controls.BigLabel();
             this.lblTime = new ReaLTaiizor.Controls.BigLabel();
             this.separator = new System.Windows.Forms.Panel();
+            this.headerPanel = new System.Windows.Forms.Panel();
+            this.headerLabel = new ReaLTaiizor.Controls.BigLabel();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.panel3 = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.btnClose = new System.Windows.Forms.Button();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel6 = new ReaLTaiizor.Controls.Panel();
-            this.headerLabel = new ReaLTaiizor.Controls.BigLabel();
-            this.headerPanel = new System.Windows.Forms.Panel();
+            this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.nightForm1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconBox)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconBox)).BeginInit();
             this.headerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +81,27 @@
             this.nightForm1.TabIndex = 3;
             this.nightForm1.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.nightForm1.TitleBarTextColor = System.Drawing.Color.Gainsboro;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.parrotGradientPanel2);
+            this.panel2.Controls.Add(this.lblTitle);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(1, 71);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(496, 45);
+            this.panel2.TabIndex = 478;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblTitle.Location = new System.Drawing.Point(38, 11);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(430, 19);
+            this.lblTitle.TabIndex = 263;
+            this.lblTitle.Text = "EVENT TITLE";
             // 
             // btnSnooze
             // 
@@ -155,17 +176,6 @@
             this.iconBox.TabIndex = 262;
             this.iconBox.TabStop = false;
             // 
-            // lblTitle
-            // 
-            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lblTitle.Location = new System.Drawing.Point(38, 11);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(430, 19);
-            this.lblTitle.TabIndex = 263;
-            this.lblTitle.Text = "EVENT TITLE";
-            // 
             // lblMessage
             // 
             this.lblMessage.BackColor = System.Drawing.Color.Transparent;
@@ -195,6 +205,28 @@
             this.separator.Name = "separator";
             this.separator.Size = new System.Drawing.Size(499, 1);
             this.separator.TabIndex = 266;
+            // 
+            // headerPanel
+            // 
+            this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(34)))));
+            this.headerPanel.Controls.Add(this.headerLabel);
+            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPanel.Location = new System.Drawing.Point(1, 31);
+            this.headerPanel.Name = "headerPanel";
+            this.headerPanel.Size = new System.Drawing.Size(496, 40);
+            this.headerPanel.TabIndex = 261;
+            // 
+            // headerLabel
+            // 
+            this.headerLabel.BackColor = System.Drawing.Color.Transparent;
+            this.headerLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.headerLabel.ForeColor = System.Drawing.Color.White;
+            this.headerLabel.Location = new System.Drawing.Point(25, 7);
+            this.headerLabel.Name = "headerLabel";
+            this.headerLabel.Size = new System.Drawing.Size(157, 25);
+            this.headerLabel.TabIndex = 1;
+            this.headerLabel.Text = "🔔 Event Reminder";
+            this.headerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
@@ -264,50 +296,24 @@
             // 
             this.updateTimer.Interval = 1000;
             // 
-            // panel2
+            // parrotGradientPanel2
             // 
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.lblTitle);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(1, 71);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(496, 45);
-            this.panel2.TabIndex = 478;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel6.Location = new System.Drawing.Point(0, 44);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(5);
-            this.panel6.Size = new System.Drawing.Size(496, 1);
-            this.panel6.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel6.TabIndex = 11;
-            this.panel6.Text = "panel6";
-            // 
-            // headerLabel
-            // 
-            this.headerLabel.BackColor = System.Drawing.Color.Transparent;
-            this.headerLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headerLabel.ForeColor = System.Drawing.Color.White;
-            this.headerLabel.Location = new System.Drawing.Point(25, 7);
-            this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(157, 25);
-            this.headerLabel.TabIndex = 1;
-            this.headerLabel.Text = "🔔 Event Reminder";
-            this.headerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // headerPanel
-            // 
-            this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(34)))));
-            this.headerPanel.Controls.Add(this.headerLabel);
-            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.headerPanel.Location = new System.Drawing.Point(1, 31);
-            this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(496, 40);
-            this.headerPanel.TabIndex = 261;
+            this.parrotGradientPanel2.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.parrotGradientPanel2.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotGradientPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.parrotGradientPanel2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotGradientPanel2.Location = new System.Drawing.Point(0, 44);
+            this.parrotGradientPanel2.Name = "parrotGradientPanel2";
+            this.parrotGradientPanel2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotGradientPanel2.PrimerColor = System.Drawing.Color.White;
+            this.parrotGradientPanel2.Size = new System.Drawing.Size(496, 1);
+            this.parrotGradientPanel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            this.parrotGradientPanel2.TabIndex = 449;
+            this.parrotGradientPanel2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotGradientPanel2.TopLeft = System.Drawing.Color.White;
+            this.parrotGradientPanel2.TopRight = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             // 
             // NotifWindow
             // 
@@ -322,8 +328,8 @@
             this.Text = "NotifWindow";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.nightForm1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconBox)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconBox)).EndInit();
             this.headerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -346,8 +352,8 @@
         private ReaLTaiizor.Controls.HopeButton btnGotIt;
         private System.Windows.Forms.Timer updateTimer;
         private System.Windows.Forms.Panel panel2;
-        private ReaLTaiizor.Controls.Panel panel6;
         private System.Windows.Forms.Panel headerPanel;
         private ReaLTaiizor.Controls.BigLabel headerLabel;
+        private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel2;
     }
 }
