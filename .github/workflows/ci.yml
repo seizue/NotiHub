@@ -1,0 +1,47 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v2
+
+      - name: Restore NuGet packages
+        run: nuget restore NotiHub.sln
+
+      - name: Build (Release)
+        run: msbuild NotiHub.sln /p:Configuration=Release /p:Platform="Any CPU"
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: NotiHub-build
+          path: NotiHub/bin/Release/
+          retention-days: 14
+
+      - name: Zip release output
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: Compress-Archive -Path NotiHub/bin/Release/* -DestinationPath NotiHub-${{ github.ref_name }}.zip
+
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: NotiHub-${{ github.ref_name }}.zip
+          generate_release_notes: true

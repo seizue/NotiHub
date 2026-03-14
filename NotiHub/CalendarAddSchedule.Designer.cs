@@ -59,6 +59,7 @@
             this.cbTimeFromHour = new ReaLTaiizor.Controls.DungeonComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.datePickerEnd = new NotiHub.CustomDatePicker();
             this.chkUseMaxOccurrences = new ReaLTaiizor.Controls.CheckBox();
             this.chkUseEndDate = new ReaLTaiizor.Controls.CheckBox();
             this.nudMaxOccurrences = new ReaLTaiizor.Controls.HopeNumeric();
@@ -98,7 +99,6 @@
             this.panel2 = new ReaLTaiizor.Controls.Panel();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.btnSave = new ReaLTaiizor.Controls.HopeButton();
-            this.datePickerEnd = new NotiHub.CustomDatePicker();
             this.nightForm1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -715,6 +715,20 @@
             this.tabPage3.Size = new System.Drawing.Size(606, 476);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "Recurrence";
+            // 
+            // datePickerEnd
+            // 
+            this.datePickerEnd.BorderColor = System.Drawing.Color.Gray;
+            this.datePickerEnd.BorderSize = 0;
+            this.datePickerEnd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.datePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerEnd.Location = new System.Drawing.Point(65, 198);
+            this.datePickerEnd.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerEnd.Name = "datePickerEnd";
+            this.datePickerEnd.ShowIconOnly = false;
+            this.datePickerEnd.Size = new System.Drawing.Size(272, 35);
+            this.datePickerEnd.TabIndex = 487;
+            this.datePickerEnd.TextColor = System.Drawing.Color.White;
             // 
             // chkUseMaxOccurrences
             // 
@@ -1363,20 +1377,6 @@
             this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnSave.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // datePickerEnd
-            // 
-            this.datePickerEnd.BorderColor = System.Drawing.Color.Gray;
-            this.datePickerEnd.BorderSize = 0;
-            this.datePickerEnd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.datePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePickerEnd.Location = new System.Drawing.Point(65, 198);
-            this.datePickerEnd.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerEnd.Name = "datePickerEnd";
-            this.datePickerEnd.ShowIconOnly = false;
-            this.datePickerEnd.Size = new System.Drawing.Size(272, 35);
-            this.datePickerEnd.TabIndex = 487;
-            this.datePickerEnd.TextColor = System.Drawing.Color.White;
             // 
             // CalendarAddSchedule
             // 
