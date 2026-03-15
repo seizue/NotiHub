@@ -18,6 +18,31 @@ namespace NotiHub
         {
             InitializeComponent();
             LoadStatusOptions();
+            UpdateSelectedEventLabel();
+        }
+
+        /// <summary>
+        /// Updates the lbSelectedEvent label with the names of selected events
+        /// </summary>
+        private void UpdateSelectedEventLabel()
+        {
+            List<EventNoteCards> selectedCards = EventNoteCards.GetSelectedCards();
+
+            if (selectedCards.Count == 0)
+            {
+                lbSelectedEvent.Text = "No event selected";
+            }
+            else if (selectedCards.Count == 1)
+            {
+                // Show single event name
+                EventData eventData = selectedCards[0].GetEventData();
+                lbSelectedEvent.Text = eventData?.EventName ?? "Unknown Event";
+            }
+            else
+            {
+                // Show multiple event names or count
+                lbSelectedEvent.Text = $"{selectedCards.Count} events selected";
+            }
         }
 
         /// <summary>

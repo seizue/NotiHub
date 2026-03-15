@@ -33,22 +33,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxSelection = new ReaLTaiizor.Controls.DungeonComboBox();
             this.btnSaveChanges = new ReaLTaiizor.Controls.HopeButton();
-            this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.panel3 = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lbSelectedEvent = new System.Windows.Forms.TextBox();
             this.nightForm1.SuspendLayout();
             this.SuspendLayout();
             // 
             // nightForm1
             // 
             this.nightForm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.nightForm1.Controls.Add(this.lbSelectedEvent);
             this.nightForm1.Controls.Add(this.label2);
             this.nightForm1.Controls.Add(this.comboBoxSelection);
             this.nightForm1.Controls.Add(this.btnSaveChanges);
-            this.nightForm1.Controls.Add(this.label11);
             this.nightForm1.Controls.Add(this.label1);
             this.nightForm1.Controls.Add(this.panel1);
             this.nightForm1.Controls.Add(this.panel3);
@@ -100,7 +100,7 @@
             this.comboBoxSelection.HoverSelectionColor = System.Drawing.Color.Transparent;
             this.comboBoxSelection.IntegralHeight = false;
             this.comboBoxSelection.ItemHeight = 23;
-            this.comboBoxSelection.Location = new System.Drawing.Point(61, 142);
+            this.comboBoxSelection.Location = new System.Drawing.Point(61, 151);
             this.comboBoxSelection.Name = "comboBoxSelection";
             this.comboBoxSelection.Size = new System.Drawing.Size(278, 29);
             this.comboBoxSelection.StartIndex = 0;
@@ -116,7 +116,7 @@
             this.btnSaveChanges.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSaveChanges.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             this.btnSaveChanges.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.btnSaveChanges.Location = new System.Drawing.Point(61, 225);
+            this.btnSaveChanges.Location = new System.Drawing.Point(61, 205);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.PrimaryColor = System.Drawing.Color.Olive;
             this.btnSaveChanges.Size = new System.Drawing.Size(278, 40);
@@ -127,25 +127,13 @@
             this.btnSaveChanges.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
             this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.label11.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label11.Location = new System.Drawing.Point(58, 179);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(175, 14);
-            this.label11.TabIndex = 451;
-            this.label11.Text = "Change status of scheduled notes!";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(58, 113);
+            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Location = new System.Drawing.Point(58, 122);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 17);
             this.label1.TabIndex = 449;
@@ -216,6 +204,18 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lbSelectedEvent
+            // 
+            this.lbSelectedEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.lbSelectedEvent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbSelectedEvent.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Italic);
+            this.lbSelectedEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lbSelectedEvent.Location = new System.Drawing.Point(160, 125);
+            this.lbSelectedEvent.Name = "lbSelectedEvent";
+            this.lbSelectedEvent.Size = new System.Drawing.Size(179, 15);
+            this.lbSelectedEvent.TabIndex = 459;
+            this.lbSelectedEvent.Text = "Event Name";
+            // 
             // EventNoteAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,11 +241,11 @@
         private System.Windows.Forms.Label label2;
         private ReaLTaiizor.Controls.DungeonComboBox comboBoxSelection;
         private ReaLTaiizor.Controls.HopeButton btnSaveChanges;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
         private ReaLTaiizor.Controls.Panel panel1;
         private ReaLTaiizor.Controls.Panel panel3;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.TextBox lbSelectedEvent;
     }
 }
