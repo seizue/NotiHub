@@ -326,8 +326,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1366, 738);
             this.Name = "NotifWindow";
+            this.Opacity = 0.97D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NotifWindow";
+            this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.nightForm1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -45,24 +45,38 @@ namespace NotiHub.Services
             // Try to load custom icon from Resources folder
             try
             {
-                string iconPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "NotiHub_Icon_Reminder.ico");
-                if (System.IO.File.Exists(iconPath))
+                // Get the base directory
+                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                
+                // Try multiple paths
+                string[] possiblePaths = new[]
                 {
-                    _notifyIcon.Icon = new Icon(iconPath);
+                    System.IO.Path.Combine(baseDir, "Resources", "NotiHub_Reminder.ico"),
+                    System.IO.Path.Combine(baseDir, "NotiHub_Reminder.ico"),
+                    System.IO.Path.Combine(baseDir, "..", "..", "Resources", "NotiHub_Reminder.ico"),
+                    System.IO.Path.Combine(baseDir, "..", "..", "NotiHub", "Resources", "NotiHub_Reminder.ico"),
+                };
+
+                bool iconLoaded = false;
+                foreach (var path in possiblePaths)
+                {
+                    string fullPath = System.IO.Path.GetFullPath(path);
+                    System.Diagnostics.Debug.WriteLine($"[NotificationService] Trying icon path: {fullPath}");
+                    
+                    if (System.IO.File.Exists(fullPath))
+                    {
+                        _notifyIcon.Icon = new Icon(fullPath);
+                        iconLoaded = true;
+                        System.Diagnostics.Debug.WriteLine($"[NotificationService] Successfully loaded icon from: {fullPath}");
+                        break;
+                    }
                 }
-                else
+
+                if (!iconLoaded)
                 {
-                    // Try alternative path (in case Resources is at project root)
-                    iconPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "Resources", "NotiHub_Icon_Reminder.ico");
-                    if (System.IO.File.Exists(iconPath))
-                    {
-                        _notifyIcon.Icon = new Icon(iconPath);
-                    }
-                    else
-                    {
-                        // Fallback to application icon or system icon
-                        _notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath) ?? SystemIcons.Information;
-                    }
+                    System.Diagnostics.Debug.WriteLine("[NotificationService] Icon not found in any path, using fallback");
+                    // Fallback to application icon or system icon
+                    _notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath) ?? SystemIcons.Information;
                 }
             }
             catch (Exception ex)
