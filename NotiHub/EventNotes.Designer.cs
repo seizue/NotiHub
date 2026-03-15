@@ -40,18 +40,19 @@
             this.btnEventCount = new System.Windows.Forms.Button();
             this.btnPreviousMonth = new System.Windows.Forms.Button();
             this.btnNextMonth = new System.Windows.Forms.Button();
-            this.lbMonth = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.panel13 = new ReaLTaiizor.Controls.Panel();
             this.labelProductPromo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbMonth = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.lbMonth);
             this.panel1.Controls.Add(this.btnAccount);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btnLabelAction);
@@ -62,7 +63,6 @@
             this.panel1.Controls.Add(this.btnEventCount);
             this.panel1.Controls.Add(this.btnPreviousMonth);
             this.panel1.Controls.Add(this.btnNextMonth);
-            this.panel1.Controls.Add(this.lbMonth);
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.panel13);
             this.panel1.Controls.Add(this.labelProductPromo);
@@ -181,7 +181,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel2.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel2.Location = new System.Drawing.Point(255, 14);
+            this.panel2.Location = new System.Drawing.Point(254, 15);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
             this.panel2.Size = new System.Drawing.Size(1, 20);
@@ -267,20 +267,6 @@
             this.btnNextMonth.UseVisualStyleBackColor = false;
             this.btnNextMonth.Click += new System.EventHandler(this.btnNextMonth_Click);
             // 
-            // lbMonth
-            // 
-            this.lbMonth.AutoSize = true;
-            this.lbMonth.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbMonth.ForeColor = System.Drawing.Color.White;
-            this.lbMonth.Location = new System.Drawing.Point(284, 15);
-            this.lbMonth.Name = "lbMonth";
-            this.lbMonth.Size = new System.Drawing.Size(81, 19);
-            this.lbMonth.TabIndex = 364;
-            this.lbMonth.Text = "Month Year";
-            this.lbMonth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbMonth.Click += new System.EventHandler(this.lbMonth_Click);
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -341,6 +327,27 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(778, 427);
             this.flowLayoutPanel1.TabIndex = 335;
             // 
+            // lbMonth
+            // 
+            this.lbMonth.BackColor = System.Drawing.Color.Transparent;
+            this.lbMonth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.lbMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.lbMonth.FlatAppearance.BorderSize = 0;
+            this.lbMonth.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.lbMonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.lbMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lbMonth.ForeColor = System.Drawing.Color.White;
+            this.lbMonth.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbMonth.Location = new System.Drawing.Point(262, 9);
+            this.lbMonth.Name = "lbMonth";
+            this.lbMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbMonth.Size = new System.Drawing.Size(155, 30);
+            this.lbMonth.TabIndex = 467;
+            this.lbMonth.Text = "Month Year";
+            this.lbMonth.UseVisualStyleBackColor = false;
+            this.lbMonth.Click += new System.EventHandler(this.lbMonth_Click);
+            // 
             // EventNotes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -365,7 +372,6 @@
         private ReaLTaiizor.Controls.Panel panel8;
         private System.Windows.Forms.Button btnPreviousMonth;
         private System.Windows.Forms.Button btnNextMonth;
-        private System.Windows.Forms.Label lbMonth;
         private System.Windows.Forms.Button btnEventCount;
         private System.Windows.Forms.Label label26;
         private ReaLTaiizor.Controls.Panel panel13;
@@ -377,5 +383,6 @@
         private ReaLTaiizor.Controls.Panel panel4;
         private ReaLTaiizor.Controls.Panel panel5;
         private System.Windows.Forms.Button btnAccount;
+        private System.Windows.Forms.Button lbMonth;
     }
 }

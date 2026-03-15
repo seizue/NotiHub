@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new ReaLTaiizor.Controls.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2 = new ReaLTaiizor.Controls.Panel();
             this.panel8 = new ReaLTaiizor.Controls.Panel();
-            this.lbMonth = new System.Windows.Forms.Label();
+            this.btnPreviousMonth = new System.Windows.Forms.Button();
+            this.btnNextMonth = new System.Windows.Forms.Button();
+            this.btnEventCount = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.panel13 = new ReaLTaiizor.Controls.Panel();
             this.labelProductPromo = new System.Windows.Forms.Label();
@@ -43,23 +47,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnPreviousMonth = new System.Windows.Forms.Button();
-            this.btnNextMonth = new System.Windows.Forms.Button();
-            this.btnEventCount = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.panel3 = new ReaLTaiizor.Controls.Panel();
+            this.lbMonth = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbMonth);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.btnPreviousMonth);
             this.panel1.Controls.Add(this.btnNextMonth);
-            this.panel1.Controls.Add(this.lbMonth);
             this.panel1.Controls.Add(this.btnEventCount);
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.panel13);
@@ -70,11 +70,47 @@
             this.panel1.Size = new System.Drawing.Size(814, 49);
             this.panel1.TabIndex = 2;
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.panel3.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.panel3.Location = new System.Drawing.Point(728, 14);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(5);
+            this.panel3.Size = new System.Drawing.Size(1, 20);
+            this.panel3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel3.TabIndex = 370;
+            this.panel3.Text = "panel3";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.LightGray;
+            this.btnRefresh.Image = global::NotiHub.Properties.Resources.database_backup_24px;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(683, 4);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnRefresh.Size = new System.Drawing.Size(33, 38);
+            this.btnRefresh.TabIndex = 369;
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel2.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel2.Location = new System.Drawing.Point(338, 14);
+            this.panel2.Location = new System.Drawing.Point(337, 15);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
             this.panel2.Size = new System.Drawing.Size(1, 20);
@@ -94,18 +130,71 @@
             this.panel8.TabIndex = 367;
             this.panel8.Text = "panel8";
             // 
-            // lbMonth
+            // btnPreviousMonth
             // 
-            this.lbMonth.AutoSize = true;
-            this.lbMonth.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbMonth.ForeColor = System.Drawing.Color.White;
-            this.lbMonth.Location = new System.Drawing.Point(372, 15);
-            this.lbMonth.Name = "lbMonth";
-            this.lbMonth.Size = new System.Drawing.Size(81, 19);
-            this.lbMonth.TabIndex = 364;
-            this.lbMonth.Text = "Month Year";
-            this.lbMonth.Click += new System.EventHandler(this.lbMonth_Click);
+            this.btnPreviousMonth.BackColor = System.Drawing.Color.Transparent;
+            this.btnPreviousMonth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPreviousMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnPreviousMonth.FlatAppearance.BorderSize = 0;
+            this.btnPreviousMonth.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnPreviousMonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnPreviousMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreviousMonth.Font = new System.Drawing.Font("Bahnschrift", 11F);
+            this.btnPreviousMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnPreviousMonth.Image = global::NotiHub.Properties.Resources.arrow_pointing_left_24px;
+            this.btnPreviousMonth.Location = new System.Drawing.Point(535, 10);
+            this.btnPreviousMonth.Name = "btnPreviousMonth";
+            this.btnPreviousMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnPreviousMonth.Size = new System.Drawing.Size(32, 29);
+            this.btnPreviousMonth.TabIndex = 366;
+            this.btnPreviousMonth.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnPreviousMonth.UseVisualStyleBackColor = false;
+            this.btnPreviousMonth.Click += new System.EventHandler(this.btnPreviousMonth_Click);
+            // 
+            // btnNextMonth
+            // 
+            this.btnNextMonth.BackColor = System.Drawing.Color.Transparent;
+            this.btnNextMonth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNextMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnNextMonth.FlatAppearance.BorderSize = 0;
+            this.btnNextMonth.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnNextMonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnNextMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextMonth.Font = new System.Drawing.Font("Bahnschrift", 11F);
+            this.btnNextMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnNextMonth.Image = global::NotiHub.Properties.Resources.arrow_24px;
+            this.btnNextMonth.Location = new System.Drawing.Point(575, 10);
+            this.btnNextMonth.Name = "btnNextMonth";
+            this.btnNextMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnNextMonth.Size = new System.Drawing.Size(32, 29);
+            this.btnNextMonth.TabIndex = 365;
+            this.btnNextMonth.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnNextMonth.UseVisualStyleBackColor = false;
+            this.btnNextMonth.Click += new System.EventHandler(this.btnNextMonth_Click);
+            // 
+            // btnEventCount
+            // 
+            this.btnEventCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEventCount.BackColor = System.Drawing.Color.Transparent;
+            this.btnEventCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEventCount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnEventCount.FlatAppearance.BorderSize = 0;
+            this.btnEventCount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnEventCount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnEventCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEventCount.Font = new System.Drawing.Font("Bahnschrift", 11F);
+            this.btnEventCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEventCount.Image = global::NotiHub.Properties.Resources.important_month_24px;
+            this.btnEventCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEventCount.Location = new System.Drawing.Point(740, 5);
+            this.btnEventCount.Name = "btnEventCount";
+            this.btnEventCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnEventCount.Size = new System.Drawing.Size(55, 38);
+            this.btnEventCount.TabIndex = 363;
+            this.btnEventCount.Text = "0";
+            this.btnEventCount.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnEventCount.UseVisualStyleBackColor = false;
+            this.btnEventCount.Click += new System.EventHandler(this.btnEventCount_Click);
             // 
             // label26
             // 
@@ -232,107 +321,26 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(781, 432);
             this.flowLayoutPanel1.TabIndex = 374;
             // 
-            // btnPreviousMonth
+            // lbMonth
             // 
-            this.btnPreviousMonth.BackColor = System.Drawing.Color.Transparent;
-            this.btnPreviousMonth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPreviousMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnPreviousMonth.FlatAppearance.BorderSize = 0;
-            this.btnPreviousMonth.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnPreviousMonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnPreviousMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreviousMonth.Font = new System.Drawing.Font("Bahnschrift", 11F);
-            this.btnPreviousMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnPreviousMonth.Image = global::NotiHub.Properties.Resources.arrow_pointing_left_24px;
-            this.btnPreviousMonth.Location = new System.Drawing.Point(535, 10);
-            this.btnPreviousMonth.Name = "btnPreviousMonth";
-            this.btnPreviousMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnPreviousMonth.Size = new System.Drawing.Size(32, 29);
-            this.btnPreviousMonth.TabIndex = 366;
-            this.btnPreviousMonth.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnPreviousMonth.UseVisualStyleBackColor = false;
-            this.btnPreviousMonth.Click += new System.EventHandler(this.btnPreviousMonth_Click);
-            // 
-            // btnNextMonth
-            // 
-            this.btnNextMonth.BackColor = System.Drawing.Color.Transparent;
-            this.btnNextMonth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNextMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnNextMonth.FlatAppearance.BorderSize = 0;
-            this.btnNextMonth.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnNextMonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnNextMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextMonth.Font = new System.Drawing.Font("Bahnschrift", 11F);
-            this.btnNextMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnNextMonth.Image = global::NotiHub.Properties.Resources.arrow_24px;
-            this.btnNextMonth.Location = new System.Drawing.Point(575, 10);
-            this.btnNextMonth.Name = "btnNextMonth";
-            this.btnNextMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnNextMonth.Size = new System.Drawing.Size(32, 29);
-            this.btnNextMonth.TabIndex = 365;
-            this.btnNextMonth.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnNextMonth.UseVisualStyleBackColor = false;
-            this.btnNextMonth.Click += new System.EventHandler(this.btnNextMonth_Click);
-            // 
-            // btnEventCount
-            // 
-            this.btnEventCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEventCount.BackColor = System.Drawing.Color.Transparent;
-            this.btnEventCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEventCount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnEventCount.FlatAppearance.BorderSize = 0;
-            this.btnEventCount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnEventCount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnEventCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEventCount.Font = new System.Drawing.Font("Bahnschrift", 11F);
-            this.btnEventCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEventCount.Image = global::NotiHub.Properties.Resources.important_month_24px;
-            this.btnEventCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEventCount.Location = new System.Drawing.Point(740, 5);
-            this.btnEventCount.Name = "btnEventCount";
-            this.btnEventCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnEventCount.Size = new System.Drawing.Size(55, 38);
-            this.btnEventCount.TabIndex = 363;
-            this.btnEventCount.Text = "0";
-            this.btnEventCount.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnEventCount.UseVisualStyleBackColor = false;
-            this.btnEventCount.Click += new System.EventHandler(this.btnEventCount_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.LightGray;
-            this.btnRefresh.Image = global::NotiHub.Properties.Resources.database_backup_24px;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.Location = new System.Drawing.Point(683, 4);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnRefresh.Size = new System.Drawing.Size(33, 38);
-            this.btnRefresh.TabIndex = 369;
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel3.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel3.Location = new System.Drawing.Point(728, 14);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(5);
-            this.panel3.Size = new System.Drawing.Size(1, 20);
-            this.panel3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.panel3.TabIndex = 370;
-            this.panel3.Text = "panel3";
+            this.lbMonth.BackColor = System.Drawing.Color.Transparent;
+            this.lbMonth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.lbMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.lbMonth.FlatAppearance.BorderSize = 0;
+            this.lbMonth.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.lbMonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.lbMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lbMonth.ForeColor = System.Drawing.Color.White;
+            this.lbMonth.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbMonth.Location = new System.Drawing.Point(346, 9);
+            this.lbMonth.Name = "lbMonth";
+            this.lbMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbMonth.Size = new System.Drawing.Size(155, 30);
+            this.lbMonth.TabIndex = 468;
+            this.lbMonth.Text = "Month Year";
+            this.lbMonth.UseVisualStyleBackColor = false;
+            this.lbMonth.Click += new System.EventHandler(this.lbMonth_Click);
             // 
             // CalendarSchedule
             // 
@@ -365,7 +373,6 @@
         private ReaLTaiizor.Controls.Panel panel8;
         private System.Windows.Forms.Button btnPreviousMonth;
         private System.Windows.Forms.Button btnNextMonth;
-        private System.Windows.Forms.Label lbMonth;
         private System.Windows.Forms.Button btnEventCount;
         private System.Windows.Forms.Label label26;
         private ReaLTaiizor.Controls.Panel panel13;
@@ -380,5 +387,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private ReaLTaiizor.Controls.Panel panel3;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button lbMonth;
     }
 }
