@@ -17,6 +17,7 @@ namespace NotiHub
         private const string FolderName = "NotiHub";
         private const string SubFolderName = "Credential";
         private const string FileName = "userRegistrations.json";
+        private NotifyIcon notifyIcon;
 
         public LogIn()
         {
@@ -30,11 +31,87 @@ namespace NotiHub
             //KeyDown event to handle Enter key press
             txtboxUsername.KeyDown += Txtbox_KeyDown;
             txtboxPass.KeyDown += Txtbox_KeyDown;
+
+            // Initialize system tray icon
+            InitializeNotifyIcon();
+        }
+
+        private void InitializeNotifyIcon()
+        {
+            notifyIcon = new NotifyIcon();
+            
+            // Use the default app icon (not the reminder icon)
+            try
+            {
+                string iconPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "NotiHub_Icon_.ico");
+                if (System.IO.File.Exists(iconPath))
+                {
+                    notifyIcon.Icon = new Icon(iconPath);
+                }
+                else
+                {
+                    notifyIcon.Icon = this.Icon ?? SystemIcons.Application;
+                }
+            }
+            catch
+            {
+                notifyIcon.Icon = this.Icon ?? SystemIcons.Application;
+            }
+            
+            notifyIcon.Text = "NotiHub";
+            notifyIcon.Visible = false;
+
+            // Double-click to restore
+            notifyIcon.DoubleClick += (s, e) =>
+            {
+                this.Show();
+                this.WindowState = FormWindowState.Normal;
+                notifyIcon.Visible = false;
+            };
+
+            // Context menu for system tray
+            ContextMenuStrip contextMenu = new ContextMenuStrip();
+            
+            ToolStripMenuItem showItem = new ToolStripMenuItem("Show");
+            showItem.Click += (s, e) =>
+            {
+                this.Show();
+                this.WindowState = FormWindowState.Normal;
+                notifyIcon.Visible = false;
+            };
+            
+            ToolStripMenuItem exitItem = new ToolStripMenuItem("Exit");
+            exitItem.Click += (s, e) =>
+            {
+                notifyIcon.Visible = false;
+                notifyIcon.Dispose();
+                Application.Exit();
+            };
+
+            contextMenu.Items.Add(showItem);
+            contextMenu.Items.Add(new ToolStripSeparator());
+            contextMenu.Items.Add(exitItem);
+
+            notifyIcon.ContextMenuStrip = contextMenu;
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                this.Hide();
+                notifyIcon.Visible = true;
+                notifyIcon.ShowBalloonTip(1000, "NotiHub", "Application minimized to system tray", ToolTipIcon.Info);
+            }
+            base.OnFormClosing(e);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            notifyIcon.Visible = true;
+            notifyIcon.ShowBalloonTip(1000, "NotiHub", "Application minimized to system tray", ToolTipIcon.Info);
         }
         private void btnMinimize_Click(object sender, EventArgs e)
         {

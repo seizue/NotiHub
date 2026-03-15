@@ -28,19 +28,20 @@ namespace NotiHub
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NotificationWindow));
             this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
+            this.lblPageInfo = new System.Windows.Forms.TextBox();
+            this.separator = new System.Windows.Forms.Panel();
             this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pCard = new ReaLTaiizor.Controls.Panel();
+            this.lblMessage = new ReaLTaiizor.Controls.BigLabel();
+            this.lblTitle = new ReaLTaiizor.Controls.BigLabel();
             this.lbMonth = new System.Windows.Forms.Label();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.panel3 = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblTitle = new ReaLTaiizor.Controls.BigLabel();
-            this.lblMessage = new ReaLTaiizor.Controls.BigLabel();
-            this.pCard = new ReaLTaiizor.Controls.Panel();
-            this.separator = new System.Windows.Forms.Panel();
-            this.lblPageInfo = new System.Windows.Forms.TextBox();
             this.nightForm1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.pCard.SuspendLayout();
@@ -71,6 +72,29 @@ namespace NotiHub
             this.nightForm1.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.nightForm1.TitleBarTextColor = System.Drawing.Color.Gainsboro;
             // 
+            // lblPageInfo
+            // 
+            this.lblPageInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPageInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.lblPageInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblPageInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPageInfo.ForeColor = System.Drawing.Color.PeachPuff;
+            this.lblPageInfo.Location = new System.Drawing.Point(107, 471);
+            this.lblPageInfo.Name = "lblPageInfo";
+            this.lblPageInfo.ReadOnly = true;
+            this.lblPageInfo.Size = new System.Drawing.Size(285, 18);
+            this.lblPageInfo.TabIndex = 452;
+            this.lblPageInfo.Text = "Page Info";
+            this.lblPageInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // separator
+            // 
+            this.separator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
+            this.separator.Location = new System.Drawing.Point(-3, 449);
+            this.separator.Name = "separator";
+            this.separator.Size = new System.Drawing.Size(424, 1);
+            this.separator.TabIndex = 451;
+            // 
             // parrotGradientPanel2
             // 
             this.parrotGradientPanel2.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
@@ -97,6 +121,44 @@ namespace NotiHub
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(394, 353);
             this.flowLayoutPanel1.TabIndex = 366;
+            // 
+            // pCard
+            // 
+            this.pCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
+            this.pCard.Controls.Add(this.lblMessage);
+            this.pCard.Controls.Add(this.lblTitle);
+            this.pCard.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.pCard.Location = new System.Drawing.Point(3, 3);
+            this.pCard.Name = "pCard";
+            this.pCard.Padding = new System.Windows.Forms.Padding(10);
+            this.pCard.Size = new System.Drawing.Size(370, 80);
+            this.pCard.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.pCard.TabIndex = 16;
+            this.pCard.Text = "panel13";
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lblMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lblMessage.Location = new System.Drawing.Point(10, 29);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(350, 41);
+            this.lblMessage.TabIndex = 368;
+            this.lblMessage.Text = "EVENT MESSAGE";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblTitle.Location = new System.Drawing.Point(10, 10);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(350, 19);
+            this.lblTitle.TabIndex = 367;
+            this.lblTitle.Text = "EVENT TITLE";
             // 
             // lbMonth
             // 
@@ -176,67 +238,6 @@ namespace NotiHub
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblTitle
-            // 
-            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lblTitle.Location = new System.Drawing.Point(10, 10);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(350, 19);
-            this.lblTitle.TabIndex = 367;
-            this.lblTitle.Text = "EVENT TITLE";
-            // 
-            // lblMessage
-            // 
-            this.lblMessage.BackColor = System.Drawing.Color.Transparent;
-            this.lblMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lblMessage.Location = new System.Drawing.Point(10, 29);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(350, 41);
-            this.lblMessage.TabIndex = 368;
-            this.lblMessage.Text = "EVENT MESSAGE";
-            // 
-            // pCard
-            // 
-            this.pCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
-            this.pCard.Controls.Add(this.lblMessage);
-            this.pCard.Controls.Add(this.lblTitle);
-            this.pCard.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.pCard.Location = new System.Drawing.Point(3, 3);
-            this.pCard.Name = "pCard";
-            this.pCard.Padding = new System.Windows.Forms.Padding(10);
-            this.pCard.Size = new System.Drawing.Size(370, 80);
-            this.pCard.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.pCard.TabIndex = 16;
-            this.pCard.Text = "panel13";
-            // 
-            // separator
-            // 
-            this.separator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
-            this.separator.Location = new System.Drawing.Point(-3, 449);
-            this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(424, 1);
-            this.separator.TabIndex = 451;
-            // 
-            // lblPageInfo
-            // 
-            this.lblPageInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPageInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.lblPageInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lblPageInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageInfo.ForeColor = System.Drawing.Color.PeachPuff;
-            this.lblPageInfo.Location = new System.Drawing.Point(107, 471);
-            this.lblPageInfo.Name = "lblPageInfo";
-            this.lblPageInfo.ReadOnly = true;
-            this.lblPageInfo.Size = new System.Drawing.Size(285, 18);
-            this.lblPageInfo.TabIndex = 452;
-            this.lblPageInfo.Text = "Page Info";
-            this.lblPageInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // NotificationWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +245,7 @@ namespace NotiHub
             this.ClientSize = new System.Drawing.Size(416, 519);
             this.Controls.Add(this.nightForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1366, 738);
             this.Name = "NotificationWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

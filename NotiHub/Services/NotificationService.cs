@@ -13,6 +13,7 @@ namespace NotiHub.Services
         private NotifyIcon _notifyIcon;
         private Timer _checkTimer;
         private HashSet<string> _notifiedEvents;
+        private Dictionary<string, DateTime> _snoozedEvents; // Track snoozed events
 
         public static NotificationService Instance
         {
@@ -29,6 +30,7 @@ namespace NotiHub.Services
         private NotificationService()
         {
             _notifiedEvents = new HashSet<string>();
+            _snoozedEvents = new Dictionary<string, DateTime>();
             InitializeNotifyIcon();
             InitializeTimer();
         }
@@ -37,10 +39,39 @@ namespace NotiHub.Services
         {
             _notifyIcon = new NotifyIcon
             {
-                Icon = SystemIcons.Information,
-                Visible = true,
                 Text = "NotiHub - Event Reminders"
             };
+
+            // Try to load custom icon from Resources folder
+            try
+            {
+                string iconPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "NotiHub_Icon_Reminder.ico");
+                if (System.IO.File.Exists(iconPath))
+                {
+                    _notifyIcon.Icon = new Icon(iconPath);
+                }
+                else
+                {
+                    // Try alternative path (in case Resources is at project root)
+                    iconPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "Resources", "NotiHub_Icon_Reminder.ico");
+                    if (System.IO.File.Exists(iconPath))
+                    {
+                        _notifyIcon.Icon = new Icon(iconPath);
+                    }
+                    else
+                    {
+                        // Fallback to application icon or system icon
+                        _notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath) ?? SystemIcons.Information;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"[NotificationService] Failed to load icon: {ex.Message}");
+                _notifyIcon.Icon = SystemIcons.Information;
+            }
+
+            _notifyIcon.Visible = true;
 
             _notifyIcon.BalloonTipClicked += (s, e) =>
             {
@@ -65,73 +96,96 @@ namespace NotiHub.Services
                 var now = DateTime.Now;
                 var allEvents = EventDataService.Instance.LoadAllEvents();
 
+                System.Diagnostics.Debug.WriteLine($"[NotificationService] Checking events at {now:yyyy-MM-dd HH:mm:ss}. Total events: {allEvents.Count}");
+
                 // Clean up old notifications (older than 1 hour)
                 CleanupOldNotifications(now);
 
+                // Check snoozed events
+                CheckSnoozedEvents(now);
+
                 foreach (var eventData in allEvents)
                 {
-                    // Get next occurrence of this event
-                    var occurrences = RecurrenceService.Instance.GenerateOccurrences(
-                        eventData, 
-                        now.Date, 
-                        now.Date.AddDays(1));
-
-                    foreach (var occurrence in occurrences)
+                    // Skip expired events
+                    if (eventData.Status == "Expired" || eventData.Status == "Completed" || eventData.Status == "Cancel")
                     {
-                        // Parse event time
-                        if (!TryParseEventTime(eventData, occurrence, out DateTime eventDateTime))
+                        continue;
+                    }
+
+                    // Parse event date and time
+                    if (!TryParseEventDate(eventData.EventDate, out DateTime eventDate))
+                    {
+                        System.Diagnostics.Debug.WriteLine($"[NotificationService] Failed to parse date: {eventData.EventDate}");
+                        continue;
+                    }
+
+                    // Parse event time
+                    if (!TryParseEventTime(eventData, eventDate, out DateTime eventDateTime))
+                    {
+                        System.Diagnostics.Debug.WriteLine($"[NotificationService] Failed to parse time for: {eventData.EventName}");
+                        continue;
+                    }
+
+                    // Skip past events
+                    if (eventDateTime < now)
+                    {
+                        continue;
+                    }
+
+                    var minutesUntil = (eventDateTime - now).TotalMinutes;
+
+                    System.Diagnostics.Debug.WriteLine($"[NotificationService] Event: {eventData.EventName}, Time: {eventDateTime:yyyy-MM-dd HH:mm}, Minutes until: {minutesUntil:F2}");
+
+                    // Check for 15-minute warning
+                    if (minutesUntil <= 15 && minutesUntil > 14)
+                    {
+                        string notificationKey = $"{eventData.Id}_15min_{eventDateTime:yyyyMMddHHmm}";
+                        if (!_notifiedEvents.Contains(notificationKey))
                         {
-                            continue;
+                            ShowEventNotification(eventData, 15, "15 Minutes Warning");
+                            _notifiedEvents.Add(notificationKey);
                         }
+                    }
 
-                        // Skip past events
-                        if (eventDateTime < now)
+                    // Check for 5-minute warning
+                    if (minutesUntil <= 5 && minutesUntil > 4)
+                    {
+                        string notificationKey = $"{eventData.Id}_5min_{eventDateTime:yyyyMMddHHmm}";
+                        if (!_notifiedEvents.Contains(notificationKey))
                         {
-                            continue;
+                            ShowEventNotification(eventData, 5, "5 Minutes Warning");
+                            _notifiedEvents.Add(notificationKey);
                         }
+                    }
 
-                        var minutesUntil = (eventDateTime - now).TotalMinutes;
-
-                        // Check for 5-minute warning
-                        if (minutesUntil <= 5 && minutesUntil > 4)
+                    // Check for event start time (within 1 minute)
+                    if (minutesUntil <= 1 && minutesUntil >= 0)
+                    {
+                        string notificationKey = $"{eventData.Id}_start_{eventDateTime:yyyyMMddHHmm}";
+                        if (!_notifiedEvents.Contains(notificationKey))
                         {
-                            string notificationKey = $"{eventData.Id}_5min_{eventDateTime:yyyyMMddHHmm}";
-                            if (!_notifiedEvents.Contains(notificationKey))
+                            ShowEventNotification(eventData, 0, "Event Starting Now!");
+                            _notifiedEvents.Add(notificationKey);
+                        }
+                    }
+
+                    // Check custom reminders
+                    if (eventData.Reminders != null && eventData.Reminders.IsEnabled)
+                    {
+                        foreach (var reminder in eventData.Reminders.Reminders)
+                        {
+                            var reminderTime = eventDateTime.AddMinutes(-(int)reminder);
+                            var minutesUntilReminder = (reminderTime - now).TotalMinutes;
+
+                            // Trigger if reminder is within the next 30 seconds
+                            if (minutesUntilReminder >= 0 && minutesUntilReminder < 0.5)
                             {
-                                ShowEventNotification(eventData, 5, "5 Minutes Warning");
-                                _notifiedEvents.Add(notificationKey);
-                            }
-                        }
-
-                        // Check for event start time (within 1 minute)
-                        if (minutesUntil <= 1 && minutesUntil >= 0)
-                        {
-                            string notificationKey = $"{eventData.Id}_start_{eventDateTime:yyyyMMddHHmm}";
-                            if (!_notifiedEvents.Contains(notificationKey))
-                            {
-                                ShowEventNotification(eventData, 0, "Event Starting Now!");
-                                _notifiedEvents.Add(notificationKey);
-                            }
-                        }
-
-                        // Check custom reminders
-                        if (eventData.Reminders != null && eventData.Reminders.IsEnabled)
-                        {
-                            foreach (var reminder in eventData.Reminders.Reminders)
-                            {
-                                var reminderTime = eventDateTime.AddMinutes(-(int)reminder);
-                                var minutesUntilReminder = (reminderTime - now).TotalMinutes;
-
-                                // Trigger if reminder is within the next 30 seconds
-                                if (minutesUntilReminder >= 0 && minutesUntilReminder < 0.5)
+                                string notificationKey = $"{eventData.Id}_{reminder}_{eventDateTime:yyyyMMddHHmm}";
+                                if (!_notifiedEvents.Contains(notificationKey))
                                 {
-                                    string notificationKey = $"{eventData.Id}_{reminder}_{eventDateTime:yyyyMMddHHmm}";
-                                    if (!_notifiedEvents.Contains(notificationKey))
-                                    {
-                                        int minutesUntilEvent = (int)(eventDateTime - now).TotalMinutes;
-                                        ShowEventNotification(eventData, minutesUntilEvent, GetReminderTitle(reminder));
-                                        _notifiedEvents.Add(notificationKey);
-                                    }
+                                    int minutesUntilEvent = (int)(eventDateTime - now).TotalMinutes;
+                                    ShowEventNotification(eventData, minutesUntilEvent, GetReminderTitle(reminder));
+                                    _notifiedEvents.Add(notificationKey);
                                 }
                             }
                         }
@@ -140,8 +194,66 @@ namespace NotiHub.Services
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"Error checking upcoming events: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"[NotificationService] Error checking upcoming events: {ex.Message}\n{ex.StackTrace}");
             }
+        }
+
+        private void CheckSnoozedEvents(DateTime now)
+        {
+            var eventsToShow = new List<string>();
+
+            // Find snoozed events that are ready to show
+            foreach (var kvp in _snoozedEvents)
+            {
+                if (now >= kvp.Value)
+                {
+                    eventsToShow.Add(kvp.Key);
+                }
+            }
+
+            // Show snoozed events and remove from snooze list
+            foreach (var eventId in eventsToShow)
+            {
+                // Find the event data
+                var allEvents = EventDataService.Instance.LoadAllEvents();
+                var eventData = allEvents.FirstOrDefault(e => e.Id == eventId);
+
+                if (eventData != null)
+                {
+                    System.Diagnostics.Debug.WriteLine($"[NotificationService] Showing snoozed event: {eventData.EventName}");
+                    ShowEventNotification(eventData, 0, "⏰ Snoozed Reminder");
+                }
+
+                _snoozedEvents.Remove(eventId);
+            }
+        }
+
+        public void SnoozeEvent(EventData eventData, DateTime snoozeUntil)
+        {
+            if (eventData != null && !string.IsNullOrEmpty(eventData.Id))
+            {
+                _snoozedEvents[eventData.Id] = snoozeUntil;
+                System.Diagnostics.Debug.WriteLine($"[NotificationService] Event snoozed: {eventData.EventName} until {snoozeUntil:yyyy-MM-dd HH:mm:ss}");
+            }
+        }
+
+        private bool TryParseEventDate(string dateString, out DateTime result)
+        {
+            string[] formats = {
+                "M/d/yyyy",
+                "d/M/yyyy",
+                "yyyy-MM-dd",
+                "yyyy/MM/dd",
+                "dd-MM-yyyy",
+                "MM-dd-yyyy"
+            };
+
+            return DateTime.TryParseExact(
+                dateString,
+                formats,
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None,
+                out result);
         }
 
         private void CleanupOldNotifications(DateTime now)
@@ -249,10 +361,55 @@ namespace NotiHub.Services
 
         private void ShowCustomNotification(string title, string message, bool isUrgent, EventData eventData = null)
         {
-            // Show notification as a modal dialog
-            // This will block until user closes it
+            try
+            {
+                // Ensure we're on the UI thread
+                if (Application.OpenForms.Count > 0 && Application.OpenForms[0].InvokeRequired)
+                {
+                    Application.OpenForms[0].Invoke(new Action(() =>
+                    {
+                        ShowNotificationWindow(title, message, isUrgent, eventData);
+                    }));
+                }
+                else
+                {
+                    ShowNotificationWindow(title, message, isUrgent, eventData);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"[NotificationService] Error showing notification: {ex.Message}\n{ex.StackTrace}");
+                
+                // Fallback to system tray balloon notification
+                try
+                {
+                    _notifyIcon.BalloonTipTitle = title;
+                    _notifyIcon.BalloonTipText = message;
+                    _notifyIcon.BalloonTipIcon = isUrgent ? ToolTipIcon.Warning : ToolTipIcon.Info;
+                    _notifyIcon.ShowBalloonTip(5000);
+                }
+                catch
+                {
+                    // Ignore if even balloon tip fails
+                }
+            }
+        }
+
+        private void ShowNotificationWindow(string title, string message, bool isUrgent, EventData eventData)
+        {
+            // Create notification window
             var notification = new NotifWindow(title, message, isUrgent, eventData);
-            notification.ShowDialog(); // Modal - requires user interaction to close
+            
+            // Show as non-modal so it works even when main form is hidden
+            notification.Show();
+            
+            // Bring to front and activate
+            notification.BringToFront();
+            notification.Activate();
+            notification.TopMost = true;
+            
+            // Log notification
+            System.Diagnostics.Debug.WriteLine($"[NotificationService] Showing notification: {title}");
         }
 
         public void ShowNotification(EventData eventData, int minutesUntil)

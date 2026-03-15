@@ -27,6 +27,8 @@ namespace NotiHub
         private void SetupWindow(string title, string message, bool isUrgent)
         {
             this.Text = "NotiHub - Event Reminder";
+            this.TopMost = true; // Always on top
+            this.ShowInTaskbar = true; // Show in taskbar
 
             // Position notification in bottom-right corner
             Rectangle workingArea = Screen.PrimaryScreen.WorkingArea;
@@ -89,11 +91,8 @@ namespace NotiHub
                 System.Media.SystemSounds.Asterisk.Play();
             }
 
-            // Flash taskbar if not focused
-            if (!this.Focused)
-            {
-                FlashWindow();
-            }
+            // Flash taskbar to get attention
+            FlashWindow();
 
             // Add fade-in animation
             this.Opacity = 0;
@@ -115,6 +114,9 @@ namespace NotiHub
             
             if (eventData != null)
             {
+                // Register snooze with NotificationService
+                Services.NotificationService.Instance.SnoozeEvent(eventData, snoozeUntilTime);
+                
                 MessageBox.Show($"SNOOZED: {eventData.EventName}\nYou will be reminded again in 5 minutes.",
                     "Snoozed", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

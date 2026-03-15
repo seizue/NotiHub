@@ -25,6 +25,7 @@ namespace NotiHub
         private List<EventData> eventsList = new List<EventData>();
         private CalendarSchedule calendarControl;
         private NotificationWindow notificationWindow;
+        private NotifyIcon notifyIcon;
 
         public Main()
         {
@@ -34,6 +35,9 @@ namespace NotiHub
             // Initialize notification service to enable event reminders
             var notificationService = Services.NotificationService.Instance;
             
+            // Initialize system tray icon
+            InitializeNotifyIcon();
+            
             this.Load += (s, e) =>
             {
                 this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
@@ -41,9 +45,52 @@ namespace NotiHub
             };
         }
 
+        private void InitializeNotifyIcon()
+        {
+            notifyIcon = new NotifyIcon();
+            notifyIcon.Icon = this.Icon ?? SystemIcons.Application;
+            notifyIcon.Text = "NotiHub";
+            notifyIcon.Visible = false;
+
+            // Double-click to restore
+            notifyIcon.DoubleClick += (s, e) =>
+            {
+                this.Show();
+                this.WindowState = FormWindowState.Normal;
+                notifyIcon.Visible = false;
+            };
+
+            // Context menu for system tray
+            ContextMenuStrip contextMenu = new ContextMenuStrip();
+            
+            ToolStripMenuItem showItem = new ToolStripMenuItem("Show");
+            showItem.Click += (s, e) =>
+            {
+                this.Show();
+                this.WindowState = FormWindowState.Normal;
+                notifyIcon.Visible = false;
+            };
+            
+            ToolStripMenuItem exitItem = new ToolStripMenuItem("Exit");
+            exitItem.Click += (s, e) =>
+            {
+                notifyIcon.Visible = false;
+                notifyIcon.Dispose();
+                Application.Exit();
+            };
+
+            contextMenu.Items.Add(showItem);
+            contextMenu.Items.Add(new ToolStripSeparator());
+            contextMenu.Items.Add(exitItem);
+
+            notifyIcon.ContextMenuStrip = contextMenu;
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            notifyIcon.Visible = true;
+            notifyIcon.ShowBalloonTip(1000, "NotiHub", "Application minimized to system tray", ToolTipIcon.Info);
         }
 
         public void InitializeControls()
@@ -198,6 +245,14 @@ namespace NotiHub
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                this.Hide();
+                notifyIcon.Visible = true;
+                notifyIcon.ShowBalloonTip(1000, "NotiHub", "Application minimized to system tray", ToolTipIcon.Info);
+                return;
+            }
 
             base.OnFormClosing(e);
 
@@ -209,6 +264,13 @@ namespace NotiHub
                 // Unsubscribe from system events to prevent memory leaks
                 Microsoft.Win32.SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
                 Microsoft.Win32.SystemEvents.UserPreferenceChanged -= SystemEvents_UserPreferenceChanged;
+                
+                // Dispose notify icon
+                if (notifyIcon != null)
+                {
+                    notifyIcon.Visible = false;
+                    notifyIcon.Dispose();
+                }
             }
             catch (Exception ex)
             {
