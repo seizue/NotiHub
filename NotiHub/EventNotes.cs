@@ -43,6 +43,9 @@ namespace NotiHub
                     // Deserialize JSON content to a list of EventData
                     eventsList = JsonConvert.DeserializeObject<List<EventData>>(jsonContent);
 
+                    // Auto-update expired events
+                    UpdateExpiredEvents();
+
                     // For debugging - log all events with their dates
                     Console.WriteLine("All loaded events:");
                     foreach (var evt in eventsList)
@@ -90,6 +93,51 @@ namespace NotiHub
             {
                 Console.WriteLine("Event calendar file not found.");
                 return;
+            }
+        }
+
+        private void UpdateExpiredEvents()
+        {
+            bool hasChanges = false;
+            DateTime today = DateTime.Now.Date;
+
+            foreach (var evt in eventsList)
+            {
+                if (TryParseEventDate(evt.EventDate, out DateTime eventDate))
+                {
+                    // If event date is in the past and status is not already "Expired"
+                    if (eventDate.Date < today && evt.Status != "Expired")
+                    {
+                        evt.Status = "Expired";
+                        hasChanges = true;
+                    }
+                }
+            }
+
+            // Save changes if any events were updated
+            if (hasChanges)
+            {
+                SaveEventsToFile();
+            }
+        }
+
+        private void SaveEventsToFile()
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string folderPath = Path.Combine(appDataPath, FolderName, SubFolderName);
+            string filePath = Path.Combine(folderPath, FileName);
+
+            try
+            {
+                // Serialize the events list to JSON
+                string jsonContent = JsonConvert.SerializeObject(eventsList, Formatting.Indented);
+
+                // Write to file
+                File.WriteAllText(filePath, jsonContent);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving events: {ex.Message}");
             }
         }
 

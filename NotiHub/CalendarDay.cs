@@ -198,10 +198,47 @@ namespace NotiHub
                             return true;
                         })
                         .ToList() ?? new List<EventData>();
+
+                    // Auto-update expired events
+                    UpdateExpiredEvents(filePath);
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine($"Error deserializing event data: {ex.Message}");
+                }
+            }
+        }
+
+        private static void UpdateExpiredEvents(string filePath)
+        {
+            bool hasChanges = false;
+            DateTime today = DateTime.Now.Date;
+
+            foreach (var evt in eventsList)
+            {
+                if (DateTime.TryParse(evt.EventDate, out DateTime eventDate))
+                {
+                    // If event date is in the past and status is not already "Expired"
+                    if (eventDate.Date < today && evt.Status != "Expired")
+                    {
+                        evt.Status = "Expired";
+                        hasChanges = true;
+                    }
+                }
+            }
+
+            // Save changes if any events were updated
+            if (hasChanges)
+            {
+                try
+                {
+                    string jsonContent = JsonConvert.SerializeObject(eventsList, Formatting.Indented);
+                    File.WriteAllText(filePath, jsonContent);
+                    Debug.WriteLine("Expired events updated successfully.");
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error saving expired events: {ex.Message}");
                 }
             }
         }
