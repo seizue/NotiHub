@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +24,7 @@ namespace NotiHub
         private const string FileName = "eventcalendar.json";
         private List<EventData> eventsList = new List<EventData>();
         private CalendarSchedule calendarControl;
+        private NotificationWindow notificationWindow;
 
         public Main()
         {
@@ -381,25 +382,95 @@ namespace NotiHub
                         Console.WriteLine($"Event: {evt.EventName}, Date: {evt.EventDate}");
                     }
 
-                    // Update button text with total event count
-                    btnNotification.Text = $"{eventsList.Count} Events";
+                    // Get upcoming events (within next 7 days)
+                    var upcomingEvents = GetUpcomingEvents();
+
+                    // Update button to show indicator if there are upcoming events
+                    if (upcomingEvents.Count > 0)
+                    {
+                        btnNotification.Text = $"{upcomingEvents.Count}";
+                        btnNotification.ForeColor = Color.FromArgb(255, 128, 128); // Red indicator
+                    }
+                    else
+                    {
+                        btnNotification.Text = "";
+                        btnNotification.ForeColor = Color.Gray;
+                    }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error loading events: {ex.Message}");
-                    btnNotification.Text = "0 Events";
+                    btnNotification.Text = "";
                 }
             }
             else
             {
                 Console.WriteLine("Event calendar file not found.");
-                btnNotification.Text = "0 Events";
+                btnNotification.Text = "";
             }
+        }
+
+        private List<EventData> GetUpcomingEvents()
+        {
+            var upcomingEvents = new List<EventData>();
+            DateTime now = DateTime.Now;
+            DateTime sevenDaysFromNow = now.AddDays(7);
+
+            foreach (var evt in eventsList)
+            {
+                if (TryParseEventDate(evt.EventDate, out DateTime eventDate))
+                {
+                    // Check if event is within the next 7 days
+                    if (eventDate >= now && eventDate <= sevenDaysFromNow)
+                    {
+                        upcomingEvents.Add(evt);
+                    }
+                }
+            }
+
+            // Sort by date (earliest first)
+            upcomingEvents = upcomingEvents.OrderBy(e =>
+            {
+                TryParseEventDate(e.EventDate, out DateTime date);
+                return date;
+            }).ToList();
+
+            return upcomingEvents;
+        }
+
+        private bool TryParseEventDate(string dateString, out DateTime result)
+        {
+            string[] formats = {
+                "M/d/yyyy",
+                "d/M/yyyy",
+                "yyyy-MM-dd",
+                "yyyy/MM/dd",
+                "dd-MM-yyyy",
+                "MM-dd-yyyy"
+            };
+
+            return DateTime.TryParseExact(
+                dateString,
+                formats,
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out result);
         }
 
         private void btnNotification_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"There are {eventsList.Count} total events.");
+            if (notificationWindow == null || notificationWindow.IsDisposed)
+            {
+                notificationWindow = new NotificationWindow(this);
+                var upcomingEvents = GetUpcomingEvents();
+                notificationWindow.LoadUpcomingEvents(upcomingEvents);
+                notificationWindow.Show();
+            }
+            else
+            {
+                notificationWindow.Close();
+                notificationWindow = null;
+            }
         }
 
         private void CalendarControl_EventsUpdated()

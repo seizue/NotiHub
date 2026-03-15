@@ -51,8 +51,15 @@ namespace NotiHub
 
         private void btnEventCount_Click(object sender, EventArgs e)
         {
-            // Handle button click to show detailed events or other behavior
-            MessageBox.Show($"There are {btnEventCount.Text} events for the month of {_month}/{_year}");
+            // Get events for the current month
+            var eventsForMonth = CalendarDay.GetEventsForMonth(_month, _year);
+
+            // Show NotificationWindow with events for this month
+            using (NotificationWindow notifWindow = new NotificationWindow(null))
+            {
+                notifWindow.LoadMonthEvents(eventsForMonth, _month, _year);
+                notifWindow.ShowDialog();
+            }
         }
 
         private void lbMonth_Click(object sender, EventArgs e)

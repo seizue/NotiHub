@@ -74,5 +74,6 @@ C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.csproj.Core
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.csproj.Up2Date
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.exe
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.pdb
-C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.exe.config
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.MonthPicker.resources
+C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.NotificationWindow.resources
+C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.exe.config

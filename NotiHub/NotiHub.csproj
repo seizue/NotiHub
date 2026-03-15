@@ -139,6 +139,12 @@
     <Compile Include="MonthPicker.Designer.cs">
       <DependentUpon>MonthPicker.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotificationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotificationWindow.Designer.cs">
+      <DependentUpon>NotificationWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="NotifWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewUsers.resx">
       <DependentUpon>NewUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotificationWindow.resx">
+      <DependentUpon>NotificationWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NotifWindow.resx">
       <DependentUpon>NotifWindow.cs</DependentUpon>

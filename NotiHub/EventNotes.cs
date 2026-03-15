@@ -197,7 +197,25 @@ namespace NotiHub
 
         private void btnEventCount_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"There are {btnEventCount.Text} events for the month of {currentMonth}");
+            // Filter events for the current month
+            var filteredEvents = new List<EventData>();
+            foreach (var evt in eventsList)
+            {
+                if (TryParseEventDate(evt.EventDate, out DateTime parsedDate))
+                {
+                    if (parsedDate.Month == currentMonth.Month && parsedDate.Year == currentMonth.Year)
+                    {
+                        filteredEvents.Add(evt);
+                    }
+                }
+            }
+
+            // Show NotificationWindow with events for this month
+            using (NotificationWindow notifWindow = new NotificationWindow(null))
+            {
+                notifWindow.LoadMonthEvents(filteredEvents, currentMonth.Month, currentMonth.Year);
+                notifWindow.ShowDialog();
+            }
         }
 
         private void btnLabelAction_Click(object sender, EventArgs e)
