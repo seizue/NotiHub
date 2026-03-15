@@ -41,3 +41,4 @@ C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Release\NotiHub.csproj.Co
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Release\NotiHub.csproj.Up2Date
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Release\NotiHub.exe
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Release\NotiHub.pdb
+C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Release\NotiHub.exe.config

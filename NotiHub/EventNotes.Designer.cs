@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new ReaLTaiizor.Controls.Panel();
+            this.lbMonth = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.panel4 = new ReaLTaiizor.Controls.Panel();
             this.btnLabelAction = new System.Windows.Forms.Button();
@@ -45,22 +46,16 @@
             this.labelProductPromo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbMonth = new System.Windows.Forms.Button();
+            this.comboBoxSelection = new ReaLTaiizor.Controls.DungeonComboBox();
+            this.panel6 = new ReaLTaiizor.Controls.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.lbMonth);
-            this.panel1.Controls.Add(this.btnAccount);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.btnLabelAction);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.btnCSV);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.btnEventCount);
             this.panel1.Controls.Add(this.btnPreviousMonth);
             this.panel1.Controls.Add(this.btnNextMonth);
             this.panel1.Controls.Add(this.label26);
@@ -77,13 +72,34 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel5.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel5.Location = new System.Drawing.Point(613, 15);
+            this.panel5.Location = new System.Drawing.Point(613, 59);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(5);
             this.panel5.Size = new System.Drawing.Size(1, 20);
             this.panel5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel5.TabIndex = 373;
             this.panel5.Text = "panel5";
+            // 
+            // lbMonth
+            // 
+            this.lbMonth.BackColor = System.Drawing.Color.Transparent;
+            this.lbMonth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.lbMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.lbMonth.FlatAppearance.BorderSize = 0;
+            this.lbMonth.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.lbMonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.lbMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lbMonth.ForeColor = System.Drawing.Color.White;
+            this.lbMonth.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbMonth.Location = new System.Drawing.Point(593, 10);
+            this.lbMonth.Name = "lbMonth";
+            this.lbMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbMonth.Size = new System.Drawing.Size(155, 30);
+            this.lbMonth.TabIndex = 467;
+            this.lbMonth.Text = "Month Year";
+            this.lbMonth.UseVisualStyleBackColor = false;
+            this.lbMonth.Click += new System.EventHandler(this.lbMonth_Click);
             // 
             // btnAccount
             // 
@@ -99,7 +115,7 @@
             this.btnAccount.ForeColor = System.Drawing.Color.DarkGray;
             this.btnAccount.Image = global::NotiHub.Properties.Resources.account_24px;
             this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAccount.Location = new System.Drawing.Point(627, 8);
+            this.btnAccount.Location = new System.Drawing.Point(627, 52);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAccount.Size = new System.Drawing.Size(34, 30);
@@ -112,7 +128,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel4.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel4.Location = new System.Drawing.Point(674, 15);
+            this.panel4.Location = new System.Drawing.Point(674, 59);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5);
             this.panel4.Size = new System.Drawing.Size(1, 20);
@@ -134,7 +150,7 @@
             this.btnLabelAction.ForeColor = System.Drawing.Color.DarkGray;
             this.btnLabelAction.Image = global::NotiHub.Properties.Resources.labels_24vpx;
             this.btnLabelAction.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLabelAction.Location = new System.Drawing.Point(564, 8);
+            this.btnLabelAction.Location = new System.Drawing.Point(564, 52);
             this.btnLabelAction.Name = "btnLabelAction";
             this.btnLabelAction.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnLabelAction.Size = new System.Drawing.Size(34, 30);
@@ -147,7 +163,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel3.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel3.Location = new System.Drawing.Point(730, 14);
+            this.panel3.Location = new System.Drawing.Point(730, 58);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
             this.panel3.Size = new System.Drawing.Size(1, 20);
@@ -169,7 +185,7 @@
             this.btnCSV.ForeColor = System.Drawing.Color.DarkGray;
             this.btnCSV.Image = global::NotiHub.Properties.Resources.export_csv_24px;
             this.btnCSV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCSV.Location = new System.Drawing.Point(685, 8);
+            this.btnCSV.Location = new System.Drawing.Point(685, 52);
             this.btnCSV.Name = "btnCSV";
             this.btnCSV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnCSV.Size = new System.Drawing.Size(34, 30);
@@ -215,7 +231,7 @@
             this.btnEventCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnEventCount.Image = global::NotiHub.Properties.Resources.commercial_24px;
             this.btnEventCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEventCount.Location = new System.Drawing.Point(743, 4);
+            this.btnEventCount.Location = new System.Drawing.Point(743, 48);
             this.btnEventCount.Name = "btnEventCount";
             this.btnEventCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEventCount.Size = new System.Drawing.Size(55, 38);
@@ -237,7 +253,7 @@
             this.btnPreviousMonth.Font = new System.Drawing.Font("Bahnschrift", 11F);
             this.btnPreviousMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnPreviousMonth.Image = global::NotiHub.Properties.Resources.arrow_pointing_left_24px;
-            this.btnPreviousMonth.Location = new System.Drawing.Point(445, 10);
+            this.btnPreviousMonth.Location = new System.Drawing.Point(555, 12);
             this.btnPreviousMonth.Name = "btnPreviousMonth";
             this.btnPreviousMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnPreviousMonth.Size = new System.Drawing.Size(32, 29);
@@ -258,7 +274,7 @@
             this.btnNextMonth.Font = new System.Drawing.Font("Bahnschrift", 11F);
             this.btnNextMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnNextMonth.Image = global::NotiHub.Properties.Resources.arrow_24px;
-            this.btnNextMonth.Location = new System.Drawing.Point(485, 10);
+            this.btnNextMonth.Location = new System.Drawing.Point(754, 12);
             this.btnNextMonth.Name = "btnNextMonth";
             this.btnNextMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnNextMonth.Size = new System.Drawing.Size(32, 29);
@@ -308,7 +324,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(24, 64);
+            this.label3.Location = new System.Drawing.Point(24, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(297, 15);
             this.label3.TabIndex = 336;
@@ -327,34 +343,63 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(778, 427);
             this.flowLayoutPanel1.TabIndex = 335;
             // 
-            // lbMonth
+            // comboBoxSelection
             // 
-            this.lbMonth.BackColor = System.Drawing.Color.Transparent;
-            this.lbMonth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.lbMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.lbMonth.FlatAppearance.BorderSize = 0;
-            this.lbMonth.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.lbMonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.lbMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbMonth.ForeColor = System.Drawing.Color.White;
-            this.lbMonth.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbMonth.Location = new System.Drawing.Point(262, 9);
-            this.lbMonth.Name = "lbMonth";
-            this.lbMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbMonth.Size = new System.Drawing.Size(155, 30);
-            this.lbMonth.TabIndex = 467;
-            this.lbMonth.Text = "Month Year";
-            this.lbMonth.UseVisualStyleBackColor = false;
-            this.lbMonth.Click += new System.EventHandler(this.lbMonth_Click);
+            this.comboBoxSelection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxSelection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxSelection.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(132)))), ((int)(((byte)(85)))));
+            this.comboBoxSelection.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(108)))), ((int)(((byte)(57)))));
+            this.comboBoxSelection.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxSelection.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxSelection.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxSelection.ColorF = System.Drawing.Color.White;
+            this.comboBoxSelection.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
+            this.comboBoxSelection.ColorH = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxSelection.ColorI = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.comboBoxSelection.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxSelection.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxSelection.DropDownHeight = 150;
+            this.comboBoxSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSelection.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.comboBoxSelection.ForeColor = System.Drawing.Color.White;
+            this.comboBoxSelection.FormattingEnabled = true;
+            this.comboBoxSelection.HoverSelectionColor = System.Drawing.Color.Transparent;
+            this.comboBoxSelection.IntegralHeight = false;
+            this.comboBoxSelection.ItemHeight = 20;
+            this.comboBoxSelection.Location = new System.Drawing.Point(387, 57);
+            this.comboBoxSelection.Name = "comboBoxSelection";
+            this.comboBoxSelection.Size = new System.Drawing.Size(171, 26);
+            this.comboBoxSelection.StartIndex = 0;
+            this.comboBoxSelection.TabIndex = 458;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.panel6.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.panel6.Location = new System.Drawing.Point(3, 88);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(5);
+            this.panel6.Size = new System.Drawing.Size(814, 1);
+            this.panel6.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel6.TabIndex = 459;
+            this.panel6.Text = "panel6";
             // 
             // EventNotes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.comboBoxSelection);
+            this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnLabelAction);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.btnEventCount);
+            this.Controls.Add(this.btnCSV);
             this.Name = "EventNotes";
             this.Size = new System.Drawing.Size(814, 548);
             this.panel1.ResumeLayout(false);
@@ -384,5 +429,7 @@
         private ReaLTaiizor.Controls.Panel panel5;
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button lbMonth;
+        private ReaLTaiizor.Controls.DungeonComboBox comboBoxSelection;
+        private ReaLTaiizor.Controls.Panel panel6;
     }
 }

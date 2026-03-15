@@ -52,12 +52,19 @@ namespace NotiHub
                 return;
             }
 
+            // Sort events by date (earliest first)
+            var sortedEvents = events.OrderBy(e =>
+            {
+                TryParseEventDate(e.EventDate, out DateTime date);
+                return date;
+            }).ToList();
+
             // Calculate event status counts
             int currentCount = 0;
             int pastCount = 0;
             DateTime today = DateTime.Now.Date;
 
-            foreach (var evt in events)
+            foreach (var evt in sortedEvents)
             {
                 if (TryParseEventDate(evt.EventDate, out DateTime eventDate))
                 {
@@ -69,17 +76,17 @@ namespace NotiHub
             }
 
             // Calculate if scrollbar will be needed
-            int totalHeight = CalculateTotalHeight(events);
+            int totalHeight = CalculateTotalHeight(sortedEvents);
             bool needsScrollbar = totalHeight > flowLayoutPanel1.Height;
 
-            foreach (var evt in events)
+            foreach (var evt in sortedEvents)
             {
                 ReaLTaiizor.Controls.Panel eventCard = CreateEventCard(evt, needsScrollbar);
                 flowLayoutPanel1.Controls.Add(eventCard);
             }
 
             // Update page info with counts
-            lblPageInfo.Text = $"Current: {currentCount} | Past: {pastCount} | Total: {events.Count}";
+            lblPageInfo.Text = $"Current: {currentCount} | Past: {pastCount} | Total: {sortedEvents.Count}";
         }
 
         public void LoadMonthEvents(List<EventData> events, int month, int year)
@@ -104,12 +111,19 @@ namespace NotiHub
                 return;
             }
 
+            // Sort events by date (earliest first)
+            var sortedEvents = events.OrderBy(e =>
+            {
+                TryParseEventDate(e.EventDate, out DateTime date);
+                return date;
+            }).ToList();
+
             // Calculate event status counts
             int currentCount = 0;
             int pastCount = 0;
             DateTime today = DateTime.Now.Date;
 
-            foreach (var evt in events)
+            foreach (var evt in sortedEvents)
             {
                 if (TryParseEventDate(evt.EventDate, out DateTime eventDate))
                 {
@@ -121,17 +135,17 @@ namespace NotiHub
             }
 
             // Calculate if scrollbar will be needed
-            int totalHeight = CalculateTotalHeight(events);
+            int totalHeight = CalculateTotalHeight(sortedEvents);
             bool needsScrollbar = totalHeight > flowLayoutPanel1.Height;
 
-            foreach (var evt in events)
+            foreach (var evt in sortedEvents)
             {
                 ReaLTaiizor.Controls.Panel eventCard = CreateEventCard(evt, needsScrollbar);
                 flowLayoutPanel1.Controls.Add(eventCard);
             }
 
             // Update page info with counts
-            lblPageInfo.Text = $"Current: {currentCount} | Past: {pastCount} | Total: {events.Count}";
+            lblPageInfo.Text = $"Current: {currentCount} | Past: {pastCount} | Total: {sortedEvents.Count}";
         }
 
         private int CalculateTotalHeight(List<EventData> events)
