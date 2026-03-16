@@ -8,6 +8,10 @@ on:
   pull_request:
     branches: [ main, master ]
 
+permissions:
+  contents: write
+  pull-requests: read
+
 jobs:
   build:
     runs-on: windows-latest
@@ -45,3 +49,5 @@ jobs:
         with:
           files: NotiHub-${{ github.ref_name }}.zip
           generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
