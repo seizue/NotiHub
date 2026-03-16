@@ -39,15 +39,28 @@ jobs:
           path: NotiHub/bin/Release/
           retention-days: 14
 
+      - name: Upload installer artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: NotiHub-installer
+          path: Setup/Release/
+          retention-days: 14
+
       - name: Zip release output
         if: startsWith(github.ref, 'refs/tags/v')
         run: Compress-Archive -Path NotiHub/bin/Release/* -DestinationPath NotiHub-${{ github.ref_name }}.zip
+
+      - name: Rename installer for release
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: Copy-Item Setup/Release/Setup.msi NotiHub-Setup-${{ github.ref_name }}.msi
 
       - name: Publish GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: NotiHub-${{ github.ref_name }}.zip
+          files: |
+            NotiHub-${{ github.ref_name }}.zip
+            NotiHub-Setup-${{ github.ref_name }}.msi
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
