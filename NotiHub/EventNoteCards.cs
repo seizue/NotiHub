@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NotiHub.Services;
 
 namespace NotiHub
 {
@@ -14,10 +15,61 @@ namespace NotiHub
     {
         private static List<EventNoteCards> _selectedCards = new List<EventNoteCards>();
         private EventData _eventData;
+        private ContextMenuStrip contextMenu;
 
         public EventNoteCards()
         {
             InitializeComponent();
+            InitializeContextMenu();
+        }
+
+        private void InitializeContextMenu()
+        {
+            contextMenu = new ContextMenuStrip();
+            
+            var shareMenuItem = new ToolStripMenuItem("Share Note");
+            shareMenuItem.Click += ShareMenuItem_Click;
+            
+            contextMenu.Items.Add(shareMenuItem);
+            
+            // Attach context menu to the card
+            this.ContextMenuStrip = contextMenu;
+            panelCards.ContextMenuStrip = contextMenu;
+        }
+
+        private async void ShareMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_eventData == null)
+            {
+                MessageBox.Show("No event data to share.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                // Show loading message
+                Cursor = Cursors.WaitCursor;
+
+                // Create share service
+                var shareService = new DPasteShareService();
+
+                // Share the note
+                string shareUrl = await shareService.ShareNoteAsync(_eventData);
+
+                Cursor = Cursors.Default;
+
+                // Show share dialog with QR code
+                using (var shareForm = new ShareNote(shareUrl))
+                {
+                    shareForm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                Cursor = Cursors.Default;
+                MessageBox.Show($"Failed to share note: {ex.Message}", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public EventData GetEventData()
