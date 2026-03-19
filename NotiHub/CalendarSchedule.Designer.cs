@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbMonth = new System.Windows.Forms.Button();
             this.panel3 = new ReaLTaiizor.Controls.Panel();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2 = new ReaLTaiizor.Controls.Panel();
@@ -47,7 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbMonth = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(814, 49);
             this.panel1.TabIndex = 2;
+            // 
+            // lbMonth
+            // 
+            this.lbMonth.BackColor = System.Drawing.Color.Transparent;
+            this.lbMonth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.lbMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.lbMonth.FlatAppearance.BorderSize = 0;
+            this.lbMonth.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.lbMonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.lbMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lbMonth.ForeColor = System.Drawing.Color.White;
+            this.lbMonth.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbMonth.Location = new System.Drawing.Point(346, 9);
+            this.lbMonth.Name = "lbMonth";
+            this.lbMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbMonth.Size = new System.Drawing.Size(155, 30);
+            this.lbMonth.TabIndex = 468;
+            this.lbMonth.Text = "Month Year";
+            this.lbMonth.UseVisualStyleBackColor = false;
+            this.lbMonth.Click += new System.EventHandler(this.lbMonth_Click);
             // 
             // panel3
             // 
@@ -122,7 +143,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel8.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel8.Location = new System.Drawing.Point(510, 15);
+            this.panel8.Location = new System.Drawing.Point(509, 15);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(5);
             this.panel8.Size = new System.Drawing.Size(1, 20);
@@ -142,7 +163,7 @@
             this.btnPreviousMonth.Font = new System.Drawing.Font("Bahnschrift", 11F);
             this.btnPreviousMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnPreviousMonth.Image = global::NotiHub.Properties.Resources.arrow_pointing_left_24px;
-            this.btnPreviousMonth.Location = new System.Drawing.Point(535, 10);
+            this.btnPreviousMonth.Location = new System.Drawing.Point(299, 10);
             this.btnPreviousMonth.Name = "btnPreviousMonth";
             this.btnPreviousMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnPreviousMonth.Size = new System.Drawing.Size(32, 29);
@@ -163,7 +184,7 @@
             this.btnNextMonth.Font = new System.Drawing.Font("Bahnschrift", 11F);
             this.btnNextMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnNextMonth.Image = global::NotiHub.Properties.Resources.arrow_24px;
-            this.btnNextMonth.Location = new System.Drawing.Point(575, 10);
+            this.btnNextMonth.Location = new System.Drawing.Point(516, 10);
             this.btnNextMonth.Name = "btnNextMonth";
             this.btnNextMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnNextMonth.Size = new System.Drawing.Size(32, 29);
@@ -320,27 +341,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(781, 432);
             this.flowLayoutPanel1.TabIndex = 374;
-            // 
-            // lbMonth
-            // 
-            this.lbMonth.BackColor = System.Drawing.Color.Transparent;
-            this.lbMonth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.lbMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.lbMonth.FlatAppearance.BorderSize = 0;
-            this.lbMonth.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.lbMonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.lbMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbMonth.ForeColor = System.Drawing.Color.White;
-            this.lbMonth.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbMonth.Location = new System.Drawing.Point(346, 9);
-            this.lbMonth.Name = "lbMonth";
-            this.lbMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbMonth.Size = new System.Drawing.Size(155, 30);
-            this.lbMonth.TabIndex = 468;
-            this.lbMonth.Text = "Month Year";
-            this.lbMonth.UseVisualStyleBackColor = false;
-            this.lbMonth.Click += new System.EventHandler(this.lbMonth_Click);
             // 
             // CalendarSchedule
             // 

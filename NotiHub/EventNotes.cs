@@ -24,7 +24,54 @@ namespace NotiHub
         {
             InitializeComponent();
             currentMonth = DateTime.Now;
+            InitializeStatusComboBox();
             LoadEvents();
+        }
+
+        private void InitializeStatusComboBox()
+        {
+            comboBoxStatus.Items.Clear();
+            comboBoxStatus.Items.Add("All");
+            comboBoxStatus.Items.Add("Pending");
+            comboBoxStatus.Items.Add("Completed");
+            comboBoxStatus.Items.Add("Reschedule");
+            comboBoxStatus.Items.Add("Cancel");
+            comboBoxStatus.Items.Add("Expired");
+            comboBoxStatus.SelectedIndex = 0;
+            comboBoxStatus.SelectedIndexChanged += ComboBoxStatus_SelectedIndexChanged;
+        }
+
+        private void ComboBoxStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterEventsByStatus();
+        }
+
+        private void FilterEventsByStatus()
+        {
+            string selectedStatus = comboBoxStatus.SelectedItem?.ToString() ?? "All";
+
+            // Filter events based on the current month
+            var filteredEvents = new List<EventData>();
+            foreach (var evt in eventsList)
+            {
+                if (TryParseEventDate(evt.EventDate, out DateTime parsedDate))
+                {
+                    if (parsedDate.Month == currentMonth.Month && parsedDate.Year == currentMonth.Year)
+                    {
+                        // Apply status filter
+                        if (selectedStatus == "All" || evt.Status == selectedStatus)
+                        {
+                            filteredEvents.Add(evt);
+                        }
+                    }
+                }
+            }
+
+            // Load the filtered events into the schedule cards
+            LoadScheduleCards(filteredEvents);
+
+            // Update the event count display
+            btnEventCount.Text = $"{filteredEvents.Count} Events";
         }
 
         public void LoadEvents()
@@ -52,6 +99,9 @@ namespace NotiHub
                     {
                         Console.WriteLine($"Event: {evt.EventName}, Date: {evt.EventDate}");
                     }
+
+                    // Reset combobox to "All" when loading new events
+                    comboBoxStatus.SelectedIndex = 0;
 
                     // Filter events based on the current month with proper date parsing
                     var filteredEvents = new List<EventData>();

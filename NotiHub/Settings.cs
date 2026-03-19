@@ -464,6 +464,13 @@ namespace NotiHub
                 return;
             }
 
+            // Prevent deletion of Admin account
+            if (selectedUsername.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Cannot delete the Admin account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), FolderName, SubFolderName);
             string filePath = Path.Combine(appDataPath, FileName);
 
@@ -573,6 +580,7 @@ namespace NotiHub
             public string Password { get; set; }
             public string FullName { get; set; }
             public DateTime RegistrationDate { get; set; }
+            public bool IsAdmin { get; set; } = false; // Default to non-admin
         }
      
     }
