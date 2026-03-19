@@ -1,5 +1,20 @@
 # NotiHub
-Event Management Application
+Is a Event & Schedule Manager Desktop Application that enables users to schedule, track, and share events through a calendar-driven interface, supporting notifications, audit logging, multi-user access, and external integrations like iCalendar and dpaste.
+
+## Default Credentials
+
+A default administrator account is automatically created on first launch if no existing admin is found:
+
+* **Username:** Admin
+* **Password:** 1727
+
+> ⚠️ For security reasons, it is highly recommended to change the default password after your first login.
+
+Once successfully logged in, users can update their password anytime via the **Settings** menu inside the application.
+
+You can also modify the default admin credentials directly in the source code:
+`LogIn.cs → EnsureDefaultAdmin()`
+
 ## Download
 [Download](https://github.com/seizue/NotiHub/releases)
 
@@ -16,9 +31,6 @@ Event Management Application
 - **Search** — Filter events by keyword, date range, tags, and priority
 - **Audit Trail** — Full history of event actions with filtering and pagination
 - **User Accounts** — Multi-user login, credential management, and configurable window settings
-
-## Nugget Packages
-* [ReaLTaiizor](https://www.nuget.org/packages/ReaLTaiizor/3.8.1.2?_src=template)
-* [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/13.0.3?_src=template)
+- **Share Notes (URL / QR Code)** — Generate secure, shareable links and QR codes via dpaste for quick cross-device access and seamless information sharing.
 
 # Icon by <a target="_blank" href="https://icons8.com">Icons8</a>
