@@ -10,7 +10,8 @@ A default administrator account is automatically created on first launch if no e
 
 > ⚠️ For security reasons, it is highly recommended to change the default password after your first login.
 
-Once successfully logged in, users can update their password anytime via the **Settings** menu inside the application.
+Once logged in, users can change their password in **Settings**.  
+Admins can also manage user accounts, including adding and updating multiple system users.
 
 You can also modify the default admin credentials directly in the source code:
 `LogIn.cs → EnsureDefaultAdmin()`
