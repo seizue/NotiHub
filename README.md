@@ -20,11 +20,11 @@ You can also modify the default admin credentials directly in the source code:
 [Download](https://github.com/seizue/NotiHub/releases)
 
 ## Screenshot
-<img width="1366" height="735" alt="explorer_ZrOT5TqAxr" src="https://github.com/user-attachments/assets/925b4cc4-a2b1-40fb-acd3-e8099b9fdd28" />
+<img width="1366" height="735" alt="explorer_ZrOT5TqAxr" src="https://github.com/user-attachments/assets/bbc3235f-6397-49bd-9c65-a0d1c30daa5e" />
 
 ## Features
 
-- **Calendar** — Monthly view with event indicators, today highlight, and recurring event support
+- **Calendar** — Monthly, Weekly, List, Day view with event indicators, today highlight, and recurring event support
 - **Event Scheduling** — Create events with time, location, status, priority, tags, and reminders
 - **Notifications** — Desktop popups with snooze support; urgent events trigger a distinct alert
 - **Import / Export `.ics`** — Import from and export to iCalendar files compatible with Google Calendar, Outlook, and Apple Calendar
@@ -34,4 +34,5 @@ You can also modify the default admin credentials directly in the source code:
 - **User Accounts** — Multi-user login, credential management, and configurable window settings
 - **Share Notes (URL / QR Code)** — Generate secure, shareable links and QR codes via dpaste for quick cross-device access and seamless information sharing.
 
-# Icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+## Icons
+Icons by <a target="_blank" href="https://icons8.com">Icons8</a>
