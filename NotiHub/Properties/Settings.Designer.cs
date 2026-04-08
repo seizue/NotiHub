@@ -82,5 +82,17 @@ namespace NotiHub.Properties {
                 this["NormalWindowBounds"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EnableSignIn {
+            get {
+                return ((bool)(this["EnableSignIn"]));
+            }
+            set {
+                this["EnableSignIn"] = value;
+            }
+        }
     }
 }

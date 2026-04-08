@@ -41,6 +41,11 @@ namespace NotiHub
 
             SettingsCheck();
 
+            // Wire up sign-in checkbox
+            checkBoxEnableSignIn.CheckedChanged += CheckBoxEnableSignIn_CheckedChanged;
+            // Restore saved state
+            checkBoxEnableSignIn.Checked = Properties.Settings.Default.EnableSignIn;
+
             // Ensure proper form positioning
             this.StartPosition = FormStartPosition.Manual;
             this.Load += (s, e) => AdjustFormPosition();
@@ -574,6 +579,12 @@ namespace NotiHub
             }
         }
 
+        private void CheckBoxEnableSignIn_CheckedChanged(object sender)
+        {
+            Properties.Settings.Default.EnableSignIn = checkBoxEnableSignIn.Checked;
+            Properties.Settings.Default.Save();
+        }
+
         public class UserRegistration
         {
             public string Username { get; set; }
@@ -582,6 +593,5 @@ namespace NotiHub
             public DateTime RegistrationDate { get; set; }
             public bool IsAdmin { get; set; } = false; // Default to non-admin
         }
-     
     }
 }

@@ -160,7 +160,7 @@ namespace NotiHub
             }
         }
 
-        private async void btnSignIn_Click(object sender, EventArgs e)
+        private void btnSignIn_Click(object sender, EventArgs e)
         {
             string username = txtboxUsername.Text;
             string password = txtboxPass.Text;
@@ -190,19 +190,19 @@ namespace NotiHub
                 // Hide the current form
                 this.Hide();
 
-                // Instantiate the MainForm but keep it hidden
                 Main mainForm = new Main();
-                mainForm.InitializeControls();
-
-                // Hide the MainForm
                 mainForm.Opacity = 0;
-                mainForm.Visible = false;
-
-                // Show the MainForm 
+                mainForm.InitializeControls();
+                mainForm.Shown += async (s, ev) =>
+                {
+                    for (double op = 0; op <= 1.0; op += 0.05)
+                    {
+                        mainForm.Opacity = op;
+                        await Task.Delay(15);
+                    }
+                    mainForm.Opacity = 1.0;
+                };
                 mainForm.Show();
-                await Task.Delay(1000);
-                mainForm.Opacity = 100;
-                mainForm.Visible = true;
             }
             else
             {

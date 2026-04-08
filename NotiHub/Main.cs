@@ -185,15 +185,6 @@ namespace NotiHub
 
             BeginInvoke(new Action(() =>
             {
-                try
-                {
-                   
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine("Error during deferred load: " + ex.Message);
-                }
-
                 // Apply saved window state after we've done the initial load/layout work
                 string savedWindowState = Properties.Settings.Default.MainFormWindowState;
                 if (!string.IsNullOrEmpty(savedWindowState) &&

@@ -30,11 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.checkBoxEnableSignIn = new ReaLTaiizor.Controls.CheckBox();
+            this.btnGoogleCalendarSync = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnNewUser = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel5 = new ReaLTaiizor.Controls.Panel();
             this.panel8 = new ReaLTaiizor.Controls.Panel();
+            this.btnExportData = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnDeleteAcc = new System.Windows.Forms.Button();
             this.comboBoxUsers = new ReaLTaiizor.Controls.DungeonComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,32 +68,27 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new ReaLTaiizor.Controls.Panel();
             this.comBox_WindowState = new ReaLTaiizor.Controls.DungeonComboBox();
             this.panel2 = new ReaLTaiizor.Controls.Panel();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.btnGoogleCalendarSync = new System.Windows.Forms.Button();
-            this.btnNewUser = new System.Windows.Forms.Button();
-            this.btnExportData = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnDeleteAcc = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.nightForm1.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // nightForm1
             // 
             this.nightForm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.nightForm1.Controls.Add(this.label20);
+            this.nightForm1.Controls.Add(this.label18);
+            this.nightForm1.Controls.Add(this.label19);
+            this.nightForm1.Controls.Add(this.checkBoxEnableSignIn);
             this.nightForm1.Controls.Add(this.btnGoogleCalendarSync);
             this.nightForm1.Controls.Add(this.label17);
             this.nightForm1.Controls.Add(this.label16);
@@ -133,11 +141,130 @@
             this.nightForm1.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.nightForm1.TitleBarTextColor = System.Drawing.Color.Gainsboro;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label18.ForeColor = System.Drawing.Color.Silver;
+            this.label18.Location = new System.Drawing.Point(51, 332);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(245, 34);
+            this.label18.TabIndex = 429;
+            this.label18.Text = "Allow or prevent users from signing in \r\nwhen the app launches.";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label19.Location = new System.Drawing.Point(330, 284);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(209, 17);
+            this.label19.TabIndex = 428;
+            this.label19.Text = "User Credentials and Information";
+            // 
+            // checkBoxEnableSignIn
+            // 
+            this.checkBoxEnableSignIn.Checked = false;
+            this.checkBoxEnableSignIn.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(76)))), ((int)(((byte)(85)))));
+            this.checkBoxEnableSignIn.CheckedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(76)))), ((int)(((byte)(85)))));
+            this.checkBoxEnableSignIn.CheckedDisabledColor = System.Drawing.Color.Gray;
+            this.checkBoxEnableSignIn.CheckedEnabledColor = System.Drawing.Color.DarkGoldenrod;
+            this.checkBoxEnableSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxEnableSignIn.Enable = true;
+            this.checkBoxEnableSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxEnableSignIn.ForeColor = System.Drawing.Color.Silver;
+            this.checkBoxEnableSignIn.Location = new System.Drawing.Point(54, 379);
+            this.checkBoxEnableSignIn.Name = "checkBoxEnableSignIn";
+            this.checkBoxEnableSignIn.Size = new System.Drawing.Size(113, 16);
+            this.checkBoxEnableSignIn.TabIndex = 426;
+            this.checkBoxEnableSignIn.Text = "Enable Sign-In";
+            // 
+            // btnGoogleCalendarSync
+            // 
+            this.btnGoogleCalendarSync.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGoogleCalendarSync.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnGoogleCalendarSync.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGoogleCalendarSync.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnGoogleCalendarSync.FlatAppearance.BorderSize = 0;
+            this.btnGoogleCalendarSync.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnGoogleCalendarSync.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnGoogleCalendarSync.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoogleCalendarSync.Image = global::NotiHub.Properties.Resources.maintenance_date_48px;
+            this.btnGoogleCalendarSync.Location = new System.Drawing.Point(614, 147);
+            this.btnGoogleCalendarSync.Name = "btnGoogleCalendarSync";
+            this.btnGoogleCalendarSync.Size = new System.Drawing.Size(70, 72);
+            this.btnGoogleCalendarSync.TabIndex = 425;
+            this.btnGoogleCalendarSync.UseVisualStyleBackColor = false;
+            this.btnGoogleCalendarSync.Click += new System.EventHandler(this.btnGoogleCalendarSync_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Calibri", 9F);
+            this.label17.ForeColor = System.Drawing.Color.DarkGray;
+            this.label17.Location = new System.Drawing.Point(611, 130);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(210, 14);
+            this.label17.TabIndex = 424;
+            this.label17.Text = "Import and Export your Calendar (.ics)";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.Silver;
+            this.label16.Location = new System.Drawing.Point(611, 101);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(121, 17);
+            this.label16.TabIndex = 423;
+            this.label16.Text = "Import and Export";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label15.Location = new System.Drawing.Point(611, 74);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(186, 17);
+            this.label15.TabIndex = 422;
+            this.label15.Text = "Calendar Backup and Restore";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.Color.Silver;
+            this.label14.Location = new System.Drawing.Point(384, 101);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(132, 17);
+            this.label14.TabIndex = 421;
+            this.label14.Text = "Create System Users";
+            // 
+            // btnNewUser
+            // 
+            this.btnNewUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnNewUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNewUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnNewUser.FlatAppearance.BorderSize = 0;
+            this.btnNewUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnNewUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewUser.Image = global::NotiHub.Properties.Resources.add_user_48px;
+            this.btnNewUser.Location = new System.Drawing.Point(387, 147);
+            this.btnNewUser.Name = "btnNewUser";
+            this.btnNewUser.Size = new System.Drawing.Size(70, 72);
+            this.btnNewUser.TabIndex = 420;
+            this.btnNewUser.UseVisualStyleBackColor = false;
+            this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 9F);
-            this.label4.ForeColor = System.Drawing.Color.Silver;
+            this.label4.ForeColor = System.Drawing.Color.DarkGray;
             this.label4.Location = new System.Drawing.Point(384, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 14);
@@ -151,15 +278,15 @@
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label13.Location = new System.Drawing.Point(384, 74);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(174, 17);
+            this.label13.Size = new System.Drawing.Size(120, 17);
             this.label13.TabIndex = 418;
-            this.label13.Text = "User Account Management";
+            this.label13.Text = "User Management";
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel5.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel5.Location = new System.Drawing.Point(614, 287);
+            this.panel5.Location = new System.Drawing.Point(614, 281);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(5);
             this.panel5.Size = new System.Drawing.Size(1, 20);
@@ -171,7 +298,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel8.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel8.Location = new System.Drawing.Point(683, 287);
+            this.panel8.Location = new System.Drawing.Point(683, 281);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(5);
             this.panel8.Size = new System.Drawing.Size(1, 20);
@@ -179,16 +306,94 @@
             this.panel8.TabIndex = 383;
             this.panel8.Text = "panel8";
             // 
+            // btnExportData
+            // 
+            this.btnExportData.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExportData.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnExportData.FlatAppearance.BorderSize = 0;
+            this.btnExportData.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnExportData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnExportData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportData.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportData.ForeColor = System.Drawing.Color.LightGray;
+            this.btnExportData.Image = global::NotiHub.Properties.Resources.export_csv_24px;
+            this.btnExportData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportData.Location = new System.Drawing.Point(634, 273);
+            this.btnExportData.Name = "btnExportData";
+            this.btnExportData.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnExportData.Size = new System.Drawing.Size(33, 38);
+            this.btnExportData.TabIndex = 9;
+            this.btnExportData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportData.UseVisualStyleBackColor = false;
+            this.btnExportData.Click += new System.EventHandler(this.btnExportData_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.LightGray;
+            this.btnRefresh.Image = global::NotiHub.Properties.Resources.database_backup_24px;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(562, 273);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnRefresh.Size = new System.Drawing.Size(33, 38);
+            this.btnRefresh.TabIndex = 8;
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::NotiHub.Properties.Resources.feather_384px1;
+            this.pictureBox3.InitialImage = null;
+            this.pictureBox3.Location = new System.Drawing.Point(491, 331);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 380;
+            this.pictureBox3.TabStop = false;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.Silver;
-            this.label12.Location = new System.Drawing.Point(51, 317);
+            this.label12.Location = new System.Drawing.Point(327, 332);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(158, 17);
+            this.label12.Size = new System.Drawing.Size(163, 17);
             this.label12.TabIndex = 379;
-            this.label12.Text = "Selec Account To Update";
+            this.label12.Text = "Select Account To Update";
+            // 
+            // btnDeleteAcc
+            // 
+            this.btnDeleteAcc.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteAcc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDeleteAcc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnDeleteAcc.FlatAppearance.BorderSize = 0;
+            this.btnDeleteAcc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnDeleteAcc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnDeleteAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteAcc.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAcc.ForeColor = System.Drawing.Color.LightGray;
+            this.btnDeleteAcc.Image = global::NotiHub.Properties.Resources.trash_24px;
+            this.btnDeleteAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteAcc.Location = new System.Drawing.Point(703, 273);
+            this.btnDeleteAcc.Name = "btnDeleteAcc";
+            this.btnDeleteAcc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnDeleteAcc.Size = new System.Drawing.Size(140, 38);
+            this.btnDeleteAcc.TabIndex = 10;
+            this.btnDeleteAcc.Text = "Delete Account";
+            this.btnDeleteAcc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteAcc.UseVisualStyleBackColor = false;
+            this.btnDeleteAcc.Click += new System.EventHandler(this.btnDeleteAcc_Click);
             // 
             // comboBoxUsers
             // 
@@ -212,9 +417,9 @@
             this.comboBoxUsers.HoverSelectionColor = System.Drawing.Color.Transparent;
             this.comboBoxUsers.IntegralHeight = false;
             this.comboBoxUsers.ItemHeight = 23;
-            this.comboBoxUsers.Location = new System.Drawing.Point(258, 312);
+            this.comboBoxUsers.Location = new System.Drawing.Point(534, 327);
             this.comboBoxUsers.Name = "comboBoxUsers";
-            this.comboBoxUsers.Size = new System.Drawing.Size(198, 29);
+            this.comboBoxUsers.Size = new System.Drawing.Size(179, 29);
             this.comboBoxUsers.StartIndex = 0;
             this.comboBoxUsers.TabIndex = 3;
             this.comboBoxUsers.SelectedIndexChanged += new System.EventHandler(this.comboBoxUsers_SelectedIndexChanged);
@@ -224,7 +429,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 9F);
             this.label10.ForeColor = System.Drawing.Color.DarkGray;
-            this.label10.Location = new System.Drawing.Point(661, 366);
+            this.label10.Location = new System.Drawing.Point(745, 377);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(28, 14);
             this.label10.TabIndex = 376;
@@ -235,7 +440,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label9.Location = new System.Drawing.Point(603, 365);
+            this.label9.Location = new System.Drawing.Point(687, 376);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 15);
             this.label9.TabIndex = 375;
@@ -246,7 +451,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label8.Location = new System.Drawing.Point(686, 365);
+            this.label8.Location = new System.Drawing.Point(770, 376);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 15);
             this.label8.TabIndex = 374;
@@ -257,11 +462,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 9F);
             this.label7.ForeColor = System.Drawing.Color.DarkGray;
-            this.label7.Location = new System.Drawing.Point(461, 366);
+            this.label7.Location = new System.Drawing.Point(596, 377);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 14);
+            this.label7.Size = new System.Drawing.Size(92, 14);
             this.label7.TabIndex = 373;
-            this.label7.Text = "Option to change account";
+            this.label7.Text = "Change account";
             // 
             // txtboxNewPassword
             // 
@@ -272,7 +477,7 @@
             this.txtboxNewPassword.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtboxNewPassword.Hint = "Password";
-            this.txtboxNewPassword.Location = new System.Drawing.Point(464, 456);
+            this.txtboxNewPassword.Location = new System.Drawing.Point(600, 467);
             this.txtboxNewPassword.MaxLength = 32767;
             this.txtboxNewPassword.Multiline = false;
             this.txtboxNewPassword.Name = "txtboxNewPassword";
@@ -281,7 +486,7 @@
             this.txtboxNewPassword.SelectedText = "";
             this.txtboxNewPassword.SelectionLength = 0;
             this.txtboxNewPassword.SelectionStart = 0;
-            this.txtboxNewPassword.Size = new System.Drawing.Size(265, 35);
+            this.txtboxNewPassword.Size = new System.Drawing.Size(226, 35);
             this.txtboxNewPassword.TabIndex = 6;
             this.txtboxNewPassword.TabStop = false;
             this.txtboxNewPassword.UseSystemPasswordChar = false;
@@ -296,10 +501,10 @@
             this.btnSaveUsernamePassword.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSaveUsernamePassword.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             this.btnSaveUsernamePassword.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.btnSaveUsernamePassword.Location = new System.Drawing.Point(464, 518);
+            this.btnSaveUsernamePassword.Location = new System.Drawing.Point(600, 529);
             this.btnSaveUsernamePassword.Name = "btnSaveUsernamePassword";
             this.btnSaveUsernamePassword.PrimaryColor = System.Drawing.Color.Salmon;
-            this.btnSaveUsernamePassword.Size = new System.Drawing.Size(265, 34);
+            this.btnSaveUsernamePassword.Size = new System.Drawing.Size(226, 34);
             this.btnSaveUsernamePassword.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
             this.btnSaveUsernamePassword.TabIndex = 7;
             this.btnSaveUsernamePassword.Text = "Save New Username And Password";
@@ -316,7 +521,7 @@
             this.txtboxNewUsername.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxNewUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtboxNewUsername.Hint = "Username";
-            this.txtboxNewUsername.Location = new System.Drawing.Point(464, 400);
+            this.txtboxNewUsername.Location = new System.Drawing.Point(600, 411);
             this.txtboxNewUsername.MaxLength = 32767;
             this.txtboxNewUsername.Multiline = false;
             this.txtboxNewUsername.Name = "txtboxNewUsername";
@@ -325,7 +530,7 @@
             this.txtboxNewUsername.SelectedText = "";
             this.txtboxNewUsername.SelectionLength = 0;
             this.txtboxNewUsername.SelectionStart = 0;
-            this.txtboxNewUsername.Size = new System.Drawing.Size(265, 35);
+            this.txtboxNewUsername.Size = new System.Drawing.Size(226, 35);
             this.txtboxNewUsername.TabIndex = 5;
             this.txtboxNewUsername.TabStop = false;
             this.txtboxNewUsername.UseSystemPasswordChar = false;
@@ -340,10 +545,10 @@
             this.btnSaveInformation.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSaveInformation.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             this.btnSaveInformation.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.btnSaveInformation.Location = new System.Drawing.Point(54, 517);
+            this.btnSaveInformation.Location = new System.Drawing.Point(329, 528);
             this.btnSaveInformation.Name = "btnSaveInformation";
             this.btnSaveInformation.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.btnSaveInformation.Size = new System.Drawing.Size(265, 34);
+            this.btnSaveInformation.Size = new System.Drawing.Size(226, 34);
             this.btnSaveInformation.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
             this.btnSaveInformation.TabIndex = 369;
             this.btnSaveInformation.Text = "Save Information";
@@ -356,11 +561,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 9F);
             this.label6.ForeColor = System.Drawing.Color.DarkGray;
-            this.label6.Location = new System.Drawing.Point(51, 365);
+            this.label6.Location = new System.Drawing.Point(326, 376);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(242, 14);
+            this.label6.Size = new System.Drawing.Size(190, 14);
             this.label6.TabIndex = 366;
-            this.label6.Text = "Option to change user account information!";
+            this.label6.Text = "Change user account information!";
             // 
             // txtboxRegistration
             // 
@@ -372,7 +577,7 @@
             this.txtboxRegistration.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxRegistration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtboxRegistration.Hint = "Registration Date";
-            this.txtboxRegistration.Location = new System.Drawing.Point(54, 455);
+            this.txtboxRegistration.Location = new System.Drawing.Point(329, 466);
             this.txtboxRegistration.MaxLength = 32767;
             this.txtboxRegistration.Multiline = false;
             this.txtboxRegistration.Name = "txtboxRegistration";
@@ -381,7 +586,7 @@
             this.txtboxRegistration.SelectedText = "";
             this.txtboxRegistration.SelectionLength = 0;
             this.txtboxRegistration.SelectionStart = 0;
-            this.txtboxRegistration.Size = new System.Drawing.Size(265, 35);
+            this.txtboxRegistration.Size = new System.Drawing.Size(226, 35);
             this.txtboxRegistration.TabIndex = 364;
             this.txtboxRegistration.TabStop = false;
             this.txtboxRegistration.UseSystemPasswordChar = false;
@@ -395,7 +600,7 @@
             this.txtboxFullName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtboxFullName.Hint = "Full Name";
-            this.txtboxFullName.Location = new System.Drawing.Point(54, 399);
+            this.txtboxFullName.Location = new System.Drawing.Point(329, 410);
             this.txtboxFullName.MaxLength = 32767;
             this.txtboxFullName.Multiline = false;
             this.txtboxFullName.Name = "txtboxFullName";
@@ -404,7 +609,7 @@
             this.txtboxFullName.SelectedText = "";
             this.txtboxFullName.SelectionLength = 0;
             this.txtboxFullName.SelectionStart = 0;
-            this.txtboxFullName.Size = new System.Drawing.Size(265, 35);
+            this.txtboxFullName.Size = new System.Drawing.Size(226, 35);
             this.txtboxFullName.TabIndex = 4;
             this.txtboxFullName.TabStop = false;
             this.txtboxFullName.UseSystemPasswordChar = false;
@@ -413,7 +618,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.panel4.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.panel4.Location = new System.Drawing.Point(12, 265);
+            this.panel4.Location = new System.Drawing.Point(-1, 265);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5);
             this.panel4.Size = new System.Drawing.Size(892, 1);
@@ -426,11 +631,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(51, 279);
+            this.label3.Location = new System.Drawing.Point(51, 284);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 17);
+            this.label3.Size = new System.Drawing.Size(164, 17);
             this.label3.TabIndex = 360;
-            this.label3.Text = "User Settings";
+            this.label3.Text = "User Default Sign-In State";
             // 
             // label2
             // 
@@ -456,7 +661,7 @@
             this.btnSave.Location = new System.Drawing.Point(54, 211);
             this.btnSave.Name = "btnSave";
             this.btnSave.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
-            this.btnSave.Size = new System.Drawing.Size(265, 34);
+            this.btnSave.Size = new System.Drawing.Size(214, 34);
             this.btnSave.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save Setting";
@@ -471,9 +676,9 @@
             this.label5.ForeColor = System.Drawing.Color.DarkGray;
             this.label5.Location = new System.Drawing.Point(51, 130);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(268, 14);
+            this.label5.Size = new System.Drawing.Size(147, 14);
             this.label5.TabIndex = 356;
-            this.label5.Text = "Option to change the app window default state!";
+            this.label5.Text = "Set Default Window State";
             // 
             // label11
             // 
@@ -507,6 +712,16 @@
             this.label1.Size = new System.Drawing.Size(57, 17);
             this.label1.TabIndex = 359;
             this.label1.Text = "Settings";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::NotiHub.Properties.Resources.settings_24px;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 358;
+            this.pictureBox1.TabStop = false;
             // 
             // panel6
             // 
@@ -545,7 +760,7 @@
             this.comBox_WindowState.ItemHeight = 23;
             this.comBox_WindowState.Location = new System.Drawing.Point(54, 161);
             this.comBox_WindowState.Name = "comBox_WindowState";
-            this.comBox_WindowState.Size = new System.Drawing.Size(265, 29);
+            this.comBox_WindowState.Size = new System.Drawing.Size(214, 29);
             this.comBox_WindowState.StartIndex = 0;
             this.comBox_WindowState.TabIndex = 1;
             // 
@@ -614,173 +829,16 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label14
+            // label20
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label14.ForeColor = System.Drawing.Color.Silver;
-            this.label14.Location = new System.Drawing.Point(384, 101);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(132, 17);
-            this.label14.TabIndex = 421;
-            this.label14.Text = "Create System Users";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label15.Location = new System.Drawing.Point(611, 74);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(186, 17);
-            this.label15.TabIndex = 422;
-            this.label15.Text = "Calendar Backup and Restore";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label16.ForeColor = System.Drawing.Color.Silver;
-            this.label16.Location = new System.Drawing.Point(611, 101);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(121, 17);
-            this.label16.TabIndex = 423;
-            this.label16.Text = "Import and Export";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Calibri", 9F);
-            this.label17.ForeColor = System.Drawing.Color.Silver;
-            this.label17.Location = new System.Drawing.Point(611, 130);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(210, 14);
-            this.label17.TabIndex = 424;
-            this.label17.Text = "Import and Export your Calendar (.ics)";
-            // 
-            // btnGoogleCalendarSync
-            // 
-            this.btnGoogleCalendarSync.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGoogleCalendarSync.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnGoogleCalendarSync.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGoogleCalendarSync.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnGoogleCalendarSync.FlatAppearance.BorderSize = 0;
-            this.btnGoogleCalendarSync.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnGoogleCalendarSync.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnGoogleCalendarSync.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGoogleCalendarSync.Image = global::NotiHub.Properties.Resources.maintenance_date_48px;
-            this.btnGoogleCalendarSync.Location = new System.Drawing.Point(614, 147);
-            this.btnGoogleCalendarSync.Name = "btnGoogleCalendarSync";
-            this.btnGoogleCalendarSync.Size = new System.Drawing.Size(70, 72);
-            this.btnGoogleCalendarSync.TabIndex = 425;
-            this.btnGoogleCalendarSync.UseVisualStyleBackColor = false;
-            this.btnGoogleCalendarSync.Click += new System.EventHandler(this.btnGoogleCalendarSync_Click);
-            // 
-            // btnNewUser
-            // 
-            this.btnNewUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnNewUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNewUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnNewUser.FlatAppearance.BorderSize = 0;
-            this.btnNewUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnNewUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewUser.Image = global::NotiHub.Properties.Resources.add_user_48px;
-            this.btnNewUser.Location = new System.Drawing.Point(387, 147);
-            this.btnNewUser.Name = "btnNewUser";
-            this.btnNewUser.Size = new System.Drawing.Size(70, 72);
-            this.btnNewUser.TabIndex = 420;
-            this.btnNewUser.UseVisualStyleBackColor = false;
-            this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
-            // 
-            // btnExportData
-            // 
-            this.btnExportData.BackColor = System.Drawing.Color.Transparent;
-            this.btnExportData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExportData.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnExportData.FlatAppearance.BorderSize = 0;
-            this.btnExportData.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnExportData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnExportData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportData.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportData.ForeColor = System.Drawing.Color.LightGray;
-            this.btnExportData.Image = global::NotiHub.Properties.Resources.export_csv_24px;
-            this.btnExportData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportData.Location = new System.Drawing.Point(634, 279);
-            this.btnExportData.Name = "btnExportData";
-            this.btnExportData.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnExportData.Size = new System.Drawing.Size(33, 38);
-            this.btnExportData.TabIndex = 9;
-            this.btnExportData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExportData.UseVisualStyleBackColor = false;
-            this.btnExportData.Click += new System.EventHandler(this.btnExportData_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.LightGray;
-            this.btnRefresh.Image = global::NotiHub.Properties.Resources.database_backup_24px;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.Location = new System.Drawing.Point(562, 279);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnRefresh.Size = new System.Drawing.Size(33, 38);
-            this.btnRefresh.TabIndex = 8;
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::NotiHub.Properties.Resources.feather_384px1;
-            this.pictureBox3.InitialImage = null;
-            this.pictureBox3.Location = new System.Drawing.Point(215, 316);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 380;
-            this.pictureBox3.TabStop = false;
-            // 
-            // btnDeleteAcc
-            // 
-            this.btnDeleteAcc.BackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteAcc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDeleteAcc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnDeleteAcc.FlatAppearance.BorderSize = 0;
-            this.btnDeleteAcc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnDeleteAcc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.btnDeleteAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteAcc.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAcc.ForeColor = System.Drawing.Color.LightGray;
-            this.btnDeleteAcc.Image = global::NotiHub.Properties.Resources.trash_24px;
-            this.btnDeleteAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteAcc.Location = new System.Drawing.Point(703, 279);
-            this.btnDeleteAcc.Name = "btnDeleteAcc";
-            this.btnDeleteAcc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDeleteAcc.Size = new System.Drawing.Size(140, 38);
-            this.btnDeleteAcc.TabIndex = 10;
-            this.btnDeleteAcc.Text = "Delete Account";
-            this.btnDeleteAcc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteAcc.UseVisualStyleBackColor = false;
-            this.btnDeleteAcc.Click += new System.EventHandler(this.btnDeleteAcc_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::NotiHub.Properties.Resources.settings_24px;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 358;
-            this.pictureBox1.TabStop = false;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.DarkGray;
+            this.label20.Location = new System.Drawing.Point(51, 418);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(182, 28);
+            this.label20.TabIndex = 430;
+            this.label20.Text = "You can add your account in the \r\nUser Management section above.";
             // 
             // Settings
             // 
@@ -797,9 +855,9 @@
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.nightForm1.ResumeLayout(false);
             this.nightForm1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -850,5 +908,9 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnGoogleCalendarSync;
+        private ReaLTaiizor.Controls.CheckBox checkBoxEnableSignIn;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label20;
     }
 }
