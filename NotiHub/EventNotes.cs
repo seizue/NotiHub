@@ -24,21 +24,64 @@ namespace NotiHub
         {
             InitializeComponent();
             currentMonth = DateTime.Now;
-            InitializeStatusComboBox();
             LoadEvents();
+            PopulateTags();
         }
 
-        private void InitializeStatusComboBox()
+        private void PopulateTags()
         {
-            comboBoxStatus.Items.Clear();
-            comboBoxStatus.Items.Add("All");
-            comboBoxStatus.Items.Add("Pending");
-            comboBoxStatus.Items.Add("Completed");
-            comboBoxStatus.Items.Add("Reschedule");
-            comboBoxStatus.Items.Add("Cancel");
-            comboBoxStatus.Items.Add("Expired");
-            comboBoxStatus.SelectedIndex = 0;
-            comboBoxStatus.SelectedIndexChanged += ComboBoxStatus_SelectedIndexChanged;
+            string[] tags = { "All", "Pending", "Completed", "Reschedule", "Cancel", "Expired" };
+            foreach (var tag in tags)
+            {
+                var chkTag = new ReaLTaiizor.Controls.CheckBox
+                {
+                    Text = tag,
+                    Size = new Size(120, 20),
+                    ForeColor = Color.Silver,
+                    Enable = true,
+                    CheckedBackColor = Color.FromArgb(66, 76, 85),
+                    CheckedEnabledColor = Color.DarkGoldenrod,
+                    Cursor = Cursors.Hand
+                };
+                chkTag.CheckedChanged += TagCheckBox_CheckedChanged;
+                flpStatus.Controls.Add(chkTag);
+            }
+
+            // Default: select "All"
+            if (flpStatus.Controls.Count > 0)
+                ((ReaLTaiizor.Controls.CheckBox)flpStatus.Controls[0]).Checked = true;
+        }
+
+        private bool _updatingTags = false;
+
+        private void TagCheckBox_CheckedChanged(object sender)
+        {
+            if (_updatingTags) return;
+            _updatingTags = true;
+
+            var clicked = (ReaLTaiizor.Controls.CheckBox)sender;
+
+            if (clicked.Text == "All")
+            {
+                if (clicked.Checked)
+                {
+                    foreach (ReaLTaiizor.Controls.CheckBox chk in flpStatus.Controls)
+                        if (chk.Text != "All") chk.Checked = false;
+                }
+            }
+            else
+            {
+                var allChk = flpStatus.Controls.OfType<ReaLTaiizor.Controls.CheckBox>()
+                    .FirstOrDefault(c => c.Text == "All");
+                if (allChk != null) allChk.Checked = false;
+
+                bool anyChecked = flpStatus.Controls.OfType<ReaLTaiizor.Controls.CheckBox>()
+                    .Any(c => c.Text != "All" && c.Checked);
+                if (!anyChecked && allChk != null) allChk.Checked = true;
+            }
+
+            _updatingTags = false;
+            FilterEventsByStatus();
         }
 
         private void ComboBoxStatus_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,9 +91,15 @@ namespace NotiHub
 
         private void FilterEventsByStatus()
         {
-            string selectedStatus = comboBoxStatus.SelectedItem?.ToString() ?? "All";
+            // Collect checked tags
+            var checkedTags = flpStatus.Controls.OfType<ReaLTaiizor.Controls.CheckBox>()
+                .Where(c => c.Checked && c.Text != "All")
+                .Select(c => c.Text)
+                .ToHashSet();
 
-            // Filter events based on the current month
+            bool allSelected = flpStatus.Controls.OfType<ReaLTaiizor.Controls.CheckBox>()
+                .FirstOrDefault(c => c.Text == "All")?.Checked ?? true;
+
             var filteredEvents = new List<EventData>();
             foreach (var evt in eventsList)
             {
@@ -58,19 +107,13 @@ namespace NotiHub
                 {
                     if (parsedDate.Month == currentMonth.Month && parsedDate.Year == currentMonth.Year)
                     {
-                        // Apply status filter
-                        if (selectedStatus == "All" || evt.Status == selectedStatus)
-                        {
+                        if (allSelected || checkedTags.Contains(evt.Status))
                             filteredEvents.Add(evt);
-                        }
                     }
                 }
             }
 
-            // Load the filtered events into the schedule cards
             LoadScheduleCards(filteredEvents);
-
-            // Update the event count display
             btnEventCount.Text = $"{filteredEvents.Count} Events";
         }
 
@@ -98,10 +141,7 @@ namespace NotiHub
                     foreach (var evt in eventsList)
                     {
                         Console.WriteLine($"Event: {evt.EventName}, Date: {evt.EventDate}");
-                    }
-
-                    // Reset combobox to "All" when loading new events
-                    comboBoxStatus.SelectedIndex = 0;
+                    } 
 
                     // Filter events based on the current month with proper date parsing
                     var filteredEvents = new List<EventData>();
@@ -338,6 +378,12 @@ namespace NotiHub
                     LoadEvents();
                 }
             }
+        }
+
+        private void btnShowTagPanel_Click(object sender, EventArgs e)
+        {
+            // Toggle the visibility of flpTags panel
+            flpStatus.Visible = !flpStatus.Visible;
         }
     }
 }

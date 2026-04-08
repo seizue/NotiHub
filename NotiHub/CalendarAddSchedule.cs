@@ -349,7 +349,6 @@ namespace NotiHub
             // Refresh calendar
             _calendarControl?.RefreshEventData();
 
-            MessageBox.Show("Event saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
@@ -434,7 +433,7 @@ namespace NotiHub
 
         private void TxtEventName_TextChanged(object sender, EventArgs e)
         {
-            if (_isFormattingLocation) return;
+            if (_isFormattingEventName) return;
 
             try
             {
@@ -446,11 +445,11 @@ namespace NotiHub
 
                     if (txtEventName.Text != formattedText)
                     {
-                        _isFormattingLocation = true;
+                        _isFormattingEventName = true;
                         int cursorPos = txtEventName.SelectionStart;
                         txtEventName.Text = formattedText;
                         txtEventName.SelectionStart = Math.Min(cursorPos, txtEventName.Text.Length);
-                        _isFormattingLocation = false;
+                        _isFormattingEventName = false;
                     }
                 }
             }

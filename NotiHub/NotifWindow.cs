@@ -27,12 +27,8 @@ namespace NotiHub
         private void SetupWindow(string title, string message, bool isUrgent)
         {
             this.Text = "NotiHub - Event Reminder";
-            this.TopMost = true; // Always on top
-            this.ShowInTaskbar = true; // Show in taskbar
-
-            // Position notification in bottom-right corner
-            Rectangle workingArea = Screen.PrimaryScreen.WorkingArea;
-            this.Location = new Point(workingArea.Right - this.Width - 20, workingArea.Bottom - this.Height - 20);
+            this.TopMost = true;
+            this.ShowInTaskbar = true;
 
             // Update header color based on urgency
             headerPanel.BackColor = isUrgent ? Color.FromArgb(231, 76, 60) : Color.FromArgb(52, 152, 219);
@@ -70,13 +66,7 @@ namespace NotiHub
             updateTimer.Tick += (s, e) => lblTime.Text = $"{DateTime.Now:hh:mm:ss tt}";
             updateTimer.Start();
 
-            // Update button text based on urgency
-            btnGotIt.Text = isUrgent ? "DISMISS" : "GOT IT";
-            btnGotIt.DefaultColor = isUrgent ? Color.FromArgb(231, 76, 60) : Color.FromArgb(52, 152, 219);
-            btnGotIt.DangerColor = isUrgent ? Color.FromArgb(231, 76, 60) : Color.FromArgb(52, 152, 219);
-
             // Setup button click events
-            btnGotIt.Click += (s, e) => this.Close();
             btnSnooze.Click += btnSnooze_Click;
             btnViewEvent.Click += btnViewEvent_Click;
             btnClose.Click += (s, e) => this.Close();
@@ -94,15 +84,18 @@ namespace NotiHub
             // Flash taskbar to get attention
             FlashWindow();
 
-            // Add fade-in animation
+            // Add fade-in animation (cap at 0.95 to respect designer opacity setting)
             this.Opacity = 0;
             Timer fadeTimer = new Timer { Interval = 20 };
             fadeTimer.Tick += (s, e) =>
             {
-                if (this.Opacity < 1)
+                if (this.Opacity < 0.90)
                     this.Opacity += 0.05;
                 else
+                {
+                    this.Opacity = 0.90;
                     fadeTimer.Stop();
+                }
             };
             fadeTimer.Start();
         }
@@ -157,8 +150,6 @@ namespace NotiHub
                         mainWindow.ShowEventOnCalendar(eventData.EventDate);
                     }
                     
-                    MessageBox.Show($"Opened: {eventData.EventName}",
-                        "Event Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -234,6 +225,9 @@ namespace NotiHub
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
+            // Position in bottom-right after form is fully sized
+            Rectangle workingArea = Screen.PrimaryScreen.WorkingArea;
+            this.Location = new Point(workingArea.Right - this.Width - 20, workingArea.Bottom - this.Height - 20);
             this.Activate();
             this.BringToFront();
             this.Focus();

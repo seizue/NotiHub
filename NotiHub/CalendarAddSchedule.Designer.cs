@@ -1452,7 +1452,6 @@
         private ReaLTaiizor.Controls.DungeonComboBox cbRecurrenceInterval;
         private System.Windows.Forms.Label label14;
         private ReaLTaiizor.Controls.DungeonComboBox cbRecurrenceType;
-        private CustomDatePicker dtpRecurrenceEnd;
         private ReaLTaiizor.Controls.HopeNumeric nudMaxOccurrences;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private ReaLTaiizor.Controls.CheckBox ckTagWork;

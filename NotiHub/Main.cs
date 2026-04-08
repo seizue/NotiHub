@@ -482,8 +482,9 @@ namespace NotiHub
             {
                 if (TryParseEventDate(evt.EventDate, out DateTime eventDate))
                 {
-                    // Check if event is within the next 7 days
-                    if (eventDate >= now && eventDate <= sevenDaysFromNow)
+                    // Check if event is today or within the next 7 days, and not expired/completed
+                    if (eventDate.Date >= now.Date && eventDate.Date <= sevenDaysFromNow.Date
+                        && evt.Status != "Expired" && evt.Status != "Completed" && evt.Status != "Cancel")
                     {
                         upcomingEvents.Add(evt);
                     }
