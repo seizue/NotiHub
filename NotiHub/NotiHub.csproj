@@ -53,8 +53,8 @@
       <HintPath>..\packages\QRCoder.1.8.0\lib\net40\QRCoder.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ReaLTaiizor, Version=3.8.1.5, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\ReaLTaiizor.3.8.1.5\lib\net48\ReaLTaiizor.dll</HintPath>
+    <Reference Include="ReaLTaiizor, Version=3.8.1.6, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\ReaLTaiizor.3.8.1.6\lib\net48\ReaLTaiizor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
