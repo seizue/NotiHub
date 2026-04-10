@@ -128,3 +128,5 @@ C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\bin\Debug\NotificationWindow.
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\bin\Debug\QRCoder.dll
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\bin\Debug\QRCoder.xml
 C:\Users\Ven\Documents\DEVS\Github\NotiHub\NotiHub\obj\Debug\NotiHub.ShareNote.resources
+C:\Users\ADMIN\Desktop\Ven\Projects\NotiHub\NotiHub\bin\Debug\QRCoder.xml
+C:\Users\ADMIN\Desktop\Ven\Projects\NotiHub\NotiHub\obj\Debug\NotiHub.exe.config

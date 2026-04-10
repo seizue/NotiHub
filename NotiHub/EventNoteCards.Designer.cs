@@ -35,6 +35,7 @@
             this.richTextBoxTitle = new System.Windows.Forms.RichTextBox();
             this.labelDate = new System.Windows.Forms.Label();
             this.richTextBoxLocation = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxNoteLink = new System.Windows.Forms.RichTextBox();
             this.panelCards.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +45,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCards.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.panelCards.Controls.Add(this.richTextBoxNoteLink);
             this.panelCards.Controls.Add(this.labelStatus);
             this.panelCards.Controls.Add(this.panelNav);
             this.panelCards.Controls.Add(this.labelTime);
@@ -53,8 +55,8 @@
             this.panelCards.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
             this.panelCards.Location = new System.Drawing.Point(1, 2);
             this.panelCards.Name = "panelCards";
-            this.panelCards.Padding = new System.Windows.Forms.Padding(2);
-            this.panelCards.Size = new System.Drawing.Size(289, 83);
+            this.panelCards.Padding = new System.Windows.Forms.Padding(3);
+            this.panelCards.Size = new System.Drawing.Size(289, 97);
             this.panelCards.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panelCards.TabIndex = 7;
             this.panelCards.Text = "panel5";
@@ -66,7 +68,7 @@
             this.labelStatus.AutoSize = true;
             this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
             this.labelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.labelStatus.Location = new System.Drawing.Point(135, 59);
+            this.labelStatus.Location = new System.Drawing.Point(136, 72);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(34, 12);
             this.labelStatus.TabIndex = 250;
@@ -76,9 +78,9 @@
             // 
             this.panelNav.BackColor = System.Drawing.Color.Silver;
             this.panelNav.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelNav.Location = new System.Drawing.Point(2, 2);
+            this.panelNav.Location = new System.Drawing.Point(3, 3);
             this.panelNav.Name = "panelNav";
-            this.panelNav.Size = new System.Drawing.Size(285, 5);
+            this.panelNav.Size = new System.Drawing.Size(283, 5);
             this.panelNav.TabIndex = 249;
             this.panelNav.Click += new System.EventHandler(this.panelNav_Click);
             // 
@@ -88,7 +90,7 @@
             this.labelTime.AutoSize = true;
             this.labelTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.labelTime.Location = new System.Drawing.Point(10, 58);
+            this.labelTime.Location = new System.Drawing.Point(10, 71);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(123, 15);
             this.labelTime.TabIndex = 248;
@@ -103,12 +105,12 @@
             this.richTextBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
             this.richTextBoxTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.richTextBoxTitle.Location = new System.Drawing.Point(14, 15);
+            this.richTextBoxTitle.Location = new System.Drawing.Point(14, 16);
             this.richTextBoxTitle.Multiline = false;
             this.richTextBoxTitle.Name = "richTextBoxTitle";
             this.richTextBoxTitle.ReadOnly = true;
             this.richTextBoxTitle.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBoxTitle.Size = new System.Drawing.Size(263, 16);
+            this.richTextBoxTitle.Size = new System.Drawing.Size(261, 15);
             this.richTextBoxTitle.TabIndex = 247;
             this.richTextBoxTitle.Text = "Test";
             this.richTextBoxTitle.Click += new System.EventHandler(this.richTextBoxTitle_Click);
@@ -119,7 +121,7 @@
             this.labelDate.AutoSize = true;
             this.labelDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.labelDate.Location = new System.Drawing.Point(199, 58);
+            this.labelDate.Location = new System.Drawing.Point(198, 71);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(85, 15);
             this.labelDate.TabIndex = 245;
@@ -132,16 +134,35 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
             this.richTextBoxLocation.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxLocation.Font = new System.Drawing.Font("Segoe UI Semibold", 7.75F, System.Drawing.FontStyle.Bold);
+            this.richTextBoxLocation.Font = new System.Drawing.Font("Segoe UI Semibold", 7F, System.Drawing.FontStyle.Bold);
             this.richTextBoxLocation.ForeColor = System.Drawing.Color.Gainsboro;
-            this.richTextBoxLocation.Location = new System.Drawing.Point(14, 38);
+            this.richTextBoxLocation.Location = new System.Drawing.Point(15, 35);
             this.richTextBoxLocation.Multiline = false;
             this.richTextBoxLocation.Name = "richTextBoxLocation";
             this.richTextBoxLocation.ReadOnly = true;
-            this.richTextBoxLocation.Size = new System.Drawing.Size(263, 17);
+            this.richTextBoxLocation.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBoxLocation.Size = new System.Drawing.Size(259, 10);
             this.richTextBoxLocation.TabIndex = 244;
             this.richTextBoxLocation.Text = "Location";
             this.richTextBoxLocation.Click += new System.EventHandler(this.richTextBoxLocation_Click);
+            // 
+            // richTextBoxNoteLink
+            // 
+            this.richTextBoxNoteLink.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBoxNoteLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.richTextBoxNoteLink.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxNoteLink.Font = new System.Drawing.Font("Segoe UI Semibold", 7.75F, System.Drawing.FontStyle.Bold);
+            this.richTextBoxNoteLink.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.richTextBoxNoteLink.Location = new System.Drawing.Point(15, 52);
+            this.richTextBoxNoteLink.Multiline = false;
+            this.richTextBoxNoteLink.Name = "richTextBoxNoteLink";
+            this.richTextBoxNoteLink.ReadOnly = true;
+            this.richTextBoxNoteLink.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBoxNoteLink.Size = new System.Drawing.Size(259, 10);
+            this.richTextBoxNoteLink.TabIndex = 251;
+            this.richTextBoxNoteLink.Text = "Notes or Links";
             // 
             // EventNoteCards
             // 
@@ -150,7 +171,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
             this.Controls.Add(this.panelCards);
             this.Name = "EventNoteCards";
-            this.Size = new System.Drawing.Size(291, 86);
+            this.Size = new System.Drawing.Size(291, 100);
             this.panelCards.ResumeLayout(false);
             this.panelCards.PerformLayout();
             this.ResumeLayout(false);
@@ -166,5 +187,6 @@
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.RichTextBox richTextBoxLocation;
         private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.RichTextBox richTextBoxNoteLink;
     }
 }

@@ -35,14 +35,14 @@
             this.panel13 = new ReaLTaiizor.Controls.Panel();
             this.labelProductPromo = new System.Windows.Forms.Label();
             this.panel4 = new ReaLTaiizor.Controls.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnEventCount = new System.Windows.Forms.Button();
-            this.btnLabelAction = new System.Windows.Forms.Button();
             this.btnCSV = new System.Windows.Forms.Button();
             this.panel3 = new ReaLTaiizor.Controls.Panel();
+            this.btnLabelAction = new System.Windows.Forms.Button();
             this.panel2 = new ReaLTaiizor.Controls.Panel();
             this.btnPreviousMonth = new System.Windows.Forms.Button();
             this.btnNextMonth = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new ReaLTaiizor.Controls.Panel();
             this.btnShowTagPanel = new System.Windows.Forms.Button();
@@ -155,6 +155,17 @@
             this.panel4.TabIndex = 371;
             this.panel4.Text = "panel4";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Silver;
+            this.label3.Location = new System.Drawing.Point(179, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(297, 15);
+            this.label3.TabIndex = 336;
+            this.label3.Text = "Go to the Calendar tab to add or delete schedule notes!";
+            // 
             // btnEventCount
             // 
             this.btnEventCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -178,30 +189,6 @@
             this.btnEventCount.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnEventCount.UseVisualStyleBackColor = false;
             this.btnEventCount.Click += new System.EventHandler(this.btnEventCount_Click);
-            // 
-            // btnLabelAction
-            // 
-            this.btnLabelAction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLabelAction.BackColor = System.Drawing.Color.Transparent;
-            this.btnLabelAction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLabelAction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnLabelAction.FlatAppearance.BorderSize = 2;
-            this.btnLabelAction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnLabelAction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-            this.btnLabelAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLabelAction.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLabelAction.ForeColor = System.Drawing.Color.DarkGray;
-            this.btnLabelAction.Image = global::NotiHub.Properties.Resources.labels_24vpx;
-            this.btnLabelAction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLabelAction.Location = new System.Drawing.Point(583, 55);
-            this.btnLabelAction.Name = "btnLabelAction";
-            this.btnLabelAction.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnLabelAction.Size = new System.Drawing.Size(143, 30);
-            this.btnLabelAction.TabIndex = 370;
-            this.btnLabelAction.Text = "Change Status";
-            this.btnLabelAction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLabelAction.UseVisualStyleBackColor = false;
-            this.btnLabelAction.Click += new System.EventHandler(this.btnLabelAction_Click);
             // 
             // btnCSV
             // 
@@ -237,6 +224,30 @@
             this.panel3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel3.TabIndex = 370;
             this.panel3.Text = "panel3";
+            // 
+            // btnLabelAction
+            // 
+            this.btnLabelAction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLabelAction.BackColor = System.Drawing.Color.Transparent;
+            this.btnLabelAction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLabelAction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnLabelAction.FlatAppearance.BorderSize = 2;
+            this.btnLabelAction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnLabelAction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.btnLabelAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLabelAction.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLabelAction.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnLabelAction.Image = global::NotiHub.Properties.Resources.labels_24vpx;
+            this.btnLabelAction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLabelAction.Location = new System.Drawing.Point(583, 55);
+            this.btnLabelAction.Name = "btnLabelAction";
+            this.btnLabelAction.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnLabelAction.Size = new System.Drawing.Size(143, 30);
+            this.btnLabelAction.TabIndex = 370;
+            this.btnLabelAction.Text = "Change Status";
+            this.btnLabelAction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLabelAction.UseVisualStyleBackColor = false;
+            this.btnLabelAction.Click += new System.EventHandler(this.btnLabelAction_Click);
             // 
             // panel2
             // 
@@ -295,17 +306,6 @@
             this.btnNextMonth.UseVisualStyleBackColor = false;
             this.btnNextMonth.Click += new System.EventHandler(this.btnNextMonth_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(179, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(297, 15);
-            this.label3.TabIndex = 336;
-            this.label3.Text = "Go to the Calendar tab to add or delete schedule notes!";
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -315,7 +315,7 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 98);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(778, 427);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(778, 447);
             this.flowLayoutPanel1.TabIndex = 335;
             // 
             // panel6
@@ -364,7 +364,7 @@
             this.tableLayoutPanel2.Controls.Add(this.lbMonth, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnPreviousMonth, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnNextMonth, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(20, 55);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(20, 54);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));

@@ -496,6 +496,14 @@
               <see langword="true"/> if the <paramref name="value"/> is null, empty, or white space; otherwise, <see langword="false"/>.
             </returns>
         </member>
+        <member name="M:QRCoder.StringExtensions.StartsWith(System.String,System.Char)">
+            <summary>
+            Determines whether the beginning of this string instance matches the specified character.
+            </summary>
+            <param name="value">The string to check.</param>
+            <param name="c">The character to compare.</param>
+            <returns>true if value starts with c; otherwise, false.</returns>
+        </member>
         <member name="M:QRCoder.StringExtensions.HexColorToByteArray(System.String)">
             <summary>
             Converts a hex color string to a byte array.
@@ -4302,6 +4310,17 @@
             <exception cref="T:QRCoder.Exceptions.DataTooLongException">Thrown when the payload is too big to be encoded in a QR code.</exception>
             <returns>Returns the raw QR code data which can be used for rendering.</returns>
         </member>
+        <member name="M:QRCoder.QRCodeGenerator.CreateDataSegment(System.String,System.Boolean,System.Boolean,QRCoder.QRCodeGenerator.EciMode)">
+            <summary>
+            Creates a data segment from plain text, encoding it appropriately.
+            </summary>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.DetermineVersion(QRCoder.QRCodeGenerator.DataSegment,QRCoder.QRCodeGenerator.ECCLevel,System.Int32)">
+            <summary>
+            Determines the appropriate QR code version based on the data segment and error correction level.
+            Validates that the data fits within the requested version, or finds the minimum version if not specified.
+            </summary>
+        </member>
         <member name="M:QRCoder.QRCodeGenerator.GenerateMicroQrCode(System.String,QRCoder.QRCodeGenerator.ECCLevel,System.Int32)">
             <summary>
             Calculates the Micro QR code data which then can be used in one of the rendering classes to generate a graphical representation.
@@ -4449,29 +4468,6 @@
             <param name="forceUtf8">Flag indicating whether UTF-8 encoding is forced.</param>
             <returns>A BitArray containing the binary representation of the encoded data.</returns>
         </member>
-        <member name="M:QRCoder.QRCodeGenerator.PlainTextToBinaryNumeric(System.String)">
-            <summary>
-            Converts numeric plain text into a binary format specifically optimized for QR codes.
-            Numeric compression groups up to 3 digits into 10 bits, less for remaining digits if they do not complete a group of three.
-            </summary>
-            <param name="plainText">The numeric text to be encoded, which should only contain digit characters.</param>
-            <returns>A BitArray representing the binary data of the encoded numeric text.</returns>
-        </member>
-        <member name="M:QRCoder.QRCodeGenerator.PlainTextToBinaryByte(System.String,QRCoder.QRCodeGenerator.EciMode,System.Boolean,System.Boolean)">
-            <summary>
-            Converts plain text into a binary format using byte mode encoding, which supports various character encodings through ECI (Extended Channel Interpretations).
-            </summary>
-            <param name="plainText">The text to be encoded.</param>
-            <param name="eciMode">The ECI mode that specifies the character encoding to use.</param>
-            <param name="utf8BOM">Specifies whether to include a Byte Order Mark (BOM) for UTF-8 encoding.</param>
-            <param name="forceUtf8">Forces UTF-8 encoding regardless of the text content's compatibility with ISO-8859-1.</param>
-            <returns>A BitArray representing the binary data of the encoded text.</returns>
-            <remarks>
-            The returned text is always encoded as ISO-8859-1 unless either the text contains a non-ISO-8859-1 character or
-            UTF-8 encoding is forced. This does not meet the QR Code standard, which requires the use of ECI to specify the encoding
-            when not ISO-8859-1.
-            </remarks>
-        </member>
         <member name="M:QRCoder.QRCodeGenerator.ToBitArray(System.Byte[],System.Int32)">
             <summary>
             Converts an array of bytes into a BitArray, considering the proper bit order within each byte.
@@ -4480,6 +4476,15 @@
             <param name="byteArray">The byte array to convert into a BitArray.</param>
             <param name="prefixZeros">The number of leading zeros to prepend to the resulting BitArray.</param>
             <returns>A BitArray representing the bits of the input byteArray, with optional leading zeros.</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.CopyToBitArray(System.Byte[],System.Collections.BitArray,System.Int32)">
+            <summary>
+            Converts an array of bytes into a BitArray at a specified offset, considering the proper bit order within each byte.
+            Unlike the constructor of BitArray, this function preserves the MSB-to-LSB order within each byte.
+            </summary>
+            <param name="byteArray">The byte array to convert into a BitArray.</param>
+            <param name="bitArray">The target BitArray to write to.</param>
+            <param name="offset">The starting offset in the BitArray where bits will be written.</param>
         </member>
         <member name="M:QRCoder.QRCodeGenerator.XORPolynoms(QRCoder.QRCodeGenerator.Polynom,QRCoder.QRCodeGenerator.Polynom)">
             <summary>
@@ -4544,28 +4549,76 @@
             </summary>
             <returns>A dictionary where keys are QR code version numbers and values are AlignmentPattern structures detailing the positions of alignment patterns for each version.</returns>
         </member>
+        <member name="T:QRCoder.QRCodeGenerator.AlphanumericDataSegment">
+            <summary>
+            Data segment optimized for alphanumeric data encoding.
+            </summary>
+        </member>
+        <member name="P:QRCoder.QRCodeGenerator.AlphanumericDataSegment.EncodingMode">
+            <summary>
+            Gets the encoding mode (always Alphanumeric)
+            </summary>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.AlphanumericDataSegment.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the AlphanumericDataSegment class.
+            </summary>
+            <param name="alphanumericText">The alphanumeric text to encode</param>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.AlphanumericDataSegment.GetBitLength(System.Int32)">
+            <summary>
+            Calculates the total bit length for this segment when encoded for a specific QR code version.
+            </summary>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The total number of bits required for this segment</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.AlphanumericDataSegment.GetBitLength(System.Int32,System.Int32)">
+            <summary>
+            Calculates the total bit length for encoding alphanumeric text of a given length for a specific QR code version.
+            Includes mode indicator, count indicator, and data bits.
+            </summary>
+            <param name="textLength">The length of the alphanumeric text</param>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The total number of bits required</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.AlphanumericDataSegment.WriteTo(System.Collections.BitArray,System.Int32,System.Int32)">
+            <summary>
+            Writes this data segment to an existing BitArray at the specified index.
+            </summary>
+            <param name="bitArray">The target BitArray to write to</param>
+            <param name="startIndex">The starting index in the BitArray</param>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The next index in the BitArray after the last bit written</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.AlphanumericDataSegment.WriteTo(System.String,System.Int32,System.Int32,System.Collections.BitArray,System.Int32,System.Int32)">
+            <summary>
+            Writes a portion of alphanumeric text to a BitArray at the specified index.
+            Includes mode indicator, count indicator, and data bits.
+            </summary>
+            <param name="text">The full alphanumeric text</param>
+            <param name="offset">The starting index in the text to encode from</param>
+            <param name="length">The number of characters to encode</param>
+            <param name="bitArray">The target BitArray to write to</param>
+            <param name="bitIndex">The starting index in the BitArray</param>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The next index in the BitArray after the last bit written</returns>
+        </member>
         <member name="T:QRCoder.QRCodeGenerator.AlphanumericEncoder">
             <summary>
             Encodes alphanumeric characters (<c>0–9</c>, <c>A–Z</c> (uppercase), space, <c>$</c>, <c>%</c>, <c>*</c>, <c>+</c>, <c>-</c>, period, <c>/</c>, colon) into a binary format suitable for QR codes.
             </summary>
         </member>
-        <member name="F:QRCoder.QRCodeGenerator.AlphanumericEncoder._alphanumEncDict">
-            <summary>
-            A dictionary mapping alphanumeric characters to their respective positions used in QR code encoding.
-            This includes digits 0-9, uppercase letters A-Z, and some special characters.
-            </summary>
-        </member>
-        <member name="M:QRCoder.QRCodeGenerator.AlphanumericEncoder.CreateAlphanumEncDict(System.Char[])">
-            <summary>
-            Creates a dictionary mapping alphanumeric characters to their respective positions used in QR code encoding.
-            This includes digits 0-9, uppercase letters A-Z, and some special characters.
-            </summary>
-            <returns>A dictionary mapping each supported alphanumeric character to its corresponding value.</returns>
-        </member>
         <member name="M:QRCoder.QRCodeGenerator.AlphanumericEncoder.CanEncode(System.Char)">
             <summary>
             Checks if a character is present in the alphanumeric encoding table.
             </summary>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.AlphanumericEncoder.GetBitLength(System.Int32)">
+            <summary>
+            Calculates the bit length required to encode alphanumeric text of a given length.
+            </summary>
+            <param name="textLength">The length of the alphanumeric text to be encoded.</param>
+            <returns>The number of bits required to encode the text.</returns>
         </member>
         <member name="M:QRCoder.QRCodeGenerator.AlphanumericEncoder.GetBitArray(System.String)">
             <summary>
@@ -4575,6 +4628,127 @@
             </summary>
             <param name="plainText">The alphanumeric text to be encoded, which should only contain characters valid in QR alphanumeric mode.</param>
             <returns>A BitArray representing the binary data of the encoded alphanumeric text.</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.AlphanumericEncoder.WriteToBitArray(System.String,System.Int32,System.Int32,System.Collections.BitArray,System.Int32)">
+            <summary>
+            Writes a portion of alphanumeric plain text directly into an existing BitArray at the specified index.
+            Alphanumeric encoding packs characters into 11-bit groups for each pair of characters,
+            and 6 bits for a single remaining character if the total count is odd.
+            </summary>
+            <param name="plainText">The alphanumeric text to be encoded, which should only contain characters valid in QR alphanumeric mode.</param>
+            <param name="index">The starting index in the text to encode from.</param>
+            <param name="count">The number of characters to encode.</param>
+            <param name="codeText">The target BitArray to write to.</param>
+            <param name="codeIndex">The starting index in the BitArray where writing should begin.</param>
+            <returns>The next index in the BitArray after the last bit written.</returns>
+        </member>
+        <member name="T:QRCoder.QRCodeGenerator.ByteDataSegment">
+            <summary>
+            Data segment for byte mode encoding (used for UTF-8 and other text encodings).
+            </summary>
+        </member>
+        <member name="P:QRCoder.QRCodeGenerator.ByteDataSegment.ForceUtf8">
+            <summary>
+            Whether to force UTF-8 encoding
+            </summary>
+        </member>
+        <member name="P:QRCoder.QRCodeGenerator.ByteDataSegment.Utf8BOM">
+            <summary>
+            Whether to include UTF-8 BOM
+            </summary>
+        </member>
+        <member name="P:QRCoder.QRCodeGenerator.ByteDataSegment.EciMode">
+            <summary>
+            The ECI mode to use
+            </summary>
+        </member>
+        <member name="P:QRCoder.QRCodeGenerator.ByteDataSegment.HasEciMode">
+            <summary>
+            Whether this segment includes an ECI mode indicator
+            </summary>
+        </member>
+        <member name="P:QRCoder.QRCodeGenerator.ByteDataSegment.EncodingMode">
+            <summary>
+            Gets the encoding mode (always Byte)
+            </summary>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.ByteDataSegment.#ctor(System.String,System.Boolean,System.Boolean,QRCoder.QRCodeGenerator.EciMode)">
+            <summary>
+            Initializes a new instance of the ByteDataSegment class.
+            </summary>
+            <param name="text">The text to encode</param>
+            <param name="forceUtf8">Whether to force UTF-8 encoding</param>
+            <param name="utf8BOM">Whether to include UTF-8 BOM</param>
+            <param name="eciMode">The ECI mode to use</param>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.ByteDataSegment.GetBitLength(System.Int32)">
+            <summary>
+            Calculates the total bit length for this segment when encoded for a specific QR code version.
+            </summary>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The total number of bits required for this segment</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.ByteDataSegment.WriteTo(System.Collections.BitArray,System.Int32,System.Int32)">
+            <summary>
+            Writes this data segment to an existing BitArray at the specified index.
+            </summary>
+            <param name="bitArray">The target BitArray to write to</param>
+            <param name="startIndex">The starting index in the BitArray</param>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The next index in the BitArray after the last bit written</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.GetTargetEncoding(System.String,QRCoder.QRCodeGenerator.EciMode,System.Boolean,System.Boolean,System.Boolean@)">
+            <summary>
+            Determines the target encoding for the given text and encoding parameters.
+            </summary>
+            <param name="plainText">The text to be encoded.</param>
+            <param name="eciMode">The ECI mode that specifies the character encoding to use.</param>
+            <param name="utf8BOM">Specifies whether to include a Byte Order Mark (BOM) for UTF-8 encoding.</param>
+            <param name="forceUtf8">Forces UTF-8 encoding regardless of the text content's compatibility with ISO-8859-1.</param>
+            <param name="includeUtf8BOM">Output parameter indicating whether the UTF-8 BOM should be included.</param>
+            <returns>The encoding to use for the text.</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.GetPlainTextToBinaryByteBitLength(System.String,QRCoder.QRCodeGenerator.EciMode,System.Boolean,System.Boolean)">
+            <summary>
+            Calculates the bit length required to encode plain text using byte mode encoding.
+            </summary>
+            <param name="plainText">The text to be encoded.</param>
+            <param name="eciMode">The ECI mode that specifies the character encoding to use.</param>
+            <param name="utf8BOM">Specifies whether to include a Byte Order Mark (BOM) for UTF-8 encoding.</param>
+            <param name="forceUtf8">Forces UTF-8 encoding regardless of the text content's compatibility with ISO-8859-1.</param>
+            <returns>The number of bits required to encode the text.</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.PlainTextToBinaryByte(System.String,QRCoder.QRCodeGenerator.EciMode,System.Boolean,System.Boolean)">
+            <summary>
+            Converts plain text into a binary format using byte mode encoding, which supports various character encodings through ECI (Extended Channel Interpretations).
+            </summary>
+            <param name="plainText">The text to be encoded.</param>
+            <param name="eciMode">The ECI mode that specifies the character encoding to use.</param>
+            <param name="utf8BOM">Specifies whether to include a Byte Order Mark (BOM) for UTF-8 encoding.</param>
+            <param name="forceUtf8">Forces UTF-8 encoding regardless of the text content's compatibility with ISO-8859-1.</param>
+            <returns>A BitArray representing the binary data of the encoded text.</returns>
+            <remarks>
+            The returned text is always encoded as ISO-8859-1 unless either the text contains a non-ISO-8859-1 character or
+            UTF-8 encoding is forced. This does not meet the QR Code standard, which requires the use of ECI to specify the encoding
+            when not ISO-8859-1.
+            </remarks>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.PlainTextToBinaryByte(System.String,QRCoder.QRCodeGenerator.EciMode,System.Boolean,System.Boolean,System.Collections.BitArray,System.Int32)">
+            <summary>
+            Converts plain text into a binary format using byte mode encoding, writing directly to an existing BitArray at the specified offset.
+            </summary>
+            <param name="plainText">The text to be encoded.</param>
+            <param name="eciMode">The ECI mode that specifies the character encoding to use.</param>
+            <param name="utf8BOM">Specifies whether to include a Byte Order Mark (BOM) for UTF-8 encoding.</param>
+            <param name="forceUtf8">Forces UTF-8 encoding regardless of the text content's compatibility with ISO-8859-1.</param>
+            <param name="bitArray">The target BitArray to write to. Must be large enough to hold the encoded data.</param>
+            <param name="offset">The starting offset in the BitArray where bits will be written.</param>
+            <returns>The next offset in the BitArray after the last bit written.</returns>
+            <remarks>
+            The returned text is always encoded as ISO-8859-1 unless either the text contains a non-ISO-8859-1 character or
+            UTF-8 encoding is forced. This does not meet the QR Code standard, which requires the use of ECI to specify the encoding
+            when not ISO-8859-1.
+            </remarks>
         </member>
         <member name="T:QRCoder.QRCodeGenerator.CapacityTables">
             <summary>
@@ -4641,6 +4815,16 @@
             Thrown when the data length exceeds the maximum capacity for the specified encoding mode and error correction level.
             </exception>
         </member>
+        <member name="M:QRCoder.QRCodeGenerator.CapacityTables.TryCalculateMinimumVersion(QRCoder.QRCodeGenerator.DataSegment,QRCoder.QRCodeGenerator.ECCLevel,System.Int32@)">
+            <summary>
+            Attempts to determine the minimum QR code version required to encode a data segment with a specific error correction level.
+            This method accounts for the version-dependent size of mode and count indicators when calculating the total bit length.
+            </summary>
+            <param name="segment">The data segment to be encoded (includes encoding mode, character count, and data bits).</param>
+            <param name="eccLevel">The error correction level (e.g., Low, Medium, Quartile, High).</param>
+            <param name="version">When this method returns, contains the minimum version number (1-40) that can accommodate the data segment if a suitable version was found; otherwise, 0.</param>
+            <returns><see langword="true"/> if a suitable QR code version was found; otherwise, <see langword="false"/>.</returns>
+        </member>
         <member name="M:QRCoder.QRCodeGenerator.CapacityTables.CalculateMinimumMicroVersion(System.Int32,QRCoder.QRCodeGenerator.EncodingMode,QRCoder.QRCodeGenerator.ECCLevel)">
             <summary>
             Determines the minimum Micro QR code version required to encode a given amount of data with a specific encoding mode and error correction level.
@@ -4701,6 +4885,52 @@
             <summary>
             Gets the error correction codewords associated with this block.
             </summary>
+        </member>
+        <member name="T:QRCoder.QRCodeGenerator.DataSegment">
+            <summary>
+            Represents an abstract data segment for QR code encoding.
+            </summary>
+        </member>
+        <member name="P:QRCoder.QRCodeGenerator.DataSegment.Text">
+            <summary>
+            The text to encode
+            </summary>
+        </member>
+        <member name="P:QRCoder.QRCodeGenerator.DataSegment.EncodingMode">
+            <summary>
+            Gets the encoding mode for this segment (Numeric, Alphanumeric, Byte, etc.)
+            </summary>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.DataSegment.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the DataSegment class.
+            </summary>
+            <param name="text">The text to encode</param>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.DataSegment.WriteTo(System.Collections.BitArray,System.Int32,System.Int32)">
+            <summary>
+            Writes this data segment to an existing BitArray at the specified index for a specific QR code version.
+            Chains to the next segment if present.
+            </summary>
+            <param name="bitArray">The target BitArray to write to</param>
+            <param name="startIndex">The starting index in the BitArray where writing should begin</param>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The next index in the BitArray after the last bit written</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.DataSegment.ToBitArray(System.Int32)">
+            <summary>
+            Builds a complete BitArray from this data segment for a specific QR code version.
+            </summary>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>A BitArray containing the complete encoded segment</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.DataSegment.GetBitLength(System.Int32)">
+            <summary>
+            Calculates the total bit length for this segment when encoded for a specific QR code version.
+            Includes the length of all chained segments.
+            </summary>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The total number of bits required for this segment including mode indicator, count indicator, and data</returns>
         </member>
         <member name="T:QRCoder.QRCodeGenerator.ECCInfo">
             <summary>
@@ -5101,6 +5331,133 @@
             </summary>
             <param name="qrCode">The QR code data structure to be evaluated.</param>
             <returns>The total penalty score of the QR code.</returns>
+        </member>
+        <member name="T:QRCoder.QRCodeGenerator.NumericDataSegment">
+            <summary>
+            Data segment optimized for numeric data encoding.
+            </summary>
+        </member>
+        <member name="P:QRCoder.QRCodeGenerator.NumericDataSegment.EncodingMode">
+            <summary>
+            Gets the encoding mode (always Numeric)
+            </summary>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.NumericDataSegment.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the NumericDataSegment class.
+            </summary>
+            <param name="numericText">The numeric text to encode (should only contain digits)</param>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.NumericDataSegment.GetBitLength(System.Int32)">
+            <summary>
+            Calculates the total bit length for this segment when encoded for a specific QR code version.
+            </summary>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The total number of bits required for this segment</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.NumericDataSegment.GetBitLength(System.Int32,System.Int32)">
+            <summary>
+            Calculates the total bit length for encoding numeric text of a given length for a specific QR code version.
+            Includes mode indicator, count indicator, and data bits.
+            </summary>
+            <param name="textLength">The length of the numeric text</param>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The total number of bits required</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.NumericDataSegment.WriteTo(System.Collections.BitArray,System.Int32,System.Int32)">
+            <summary>
+            Writes this data segment to an existing BitArray at the specified index.
+            </summary>
+            <param name="bitArray">The target BitArray to write to</param>
+            <param name="startIndex">The starting index in the BitArray</param>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The next index in the BitArray after the last bit written</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.NumericDataSegment.WriteTo(System.String,System.Int32,System.Int32,System.Collections.BitArray,System.Int32,System.Int32)">
+            <summary>
+            Writes a portion of numeric text to a BitArray at the specified index.
+            Includes mode indicator, count indicator, and data bits.
+            </summary>
+            <param name="text">The full numeric text</param>
+            <param name="startIndex">The starting index in the text to encode from</param>
+            <param name="length">The number of characters to encode</param>
+            <param name="bitArray">The target BitArray to write to</param>
+            <param name="bitIndex">The starting index in the BitArray</param>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The next index in the BitArray after the last bit written</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.PlainTextToBinaryNumeric(System.String)">
+            <summary>
+            Converts numeric plain text into a binary format specifically optimized for QR codes.
+            Numeric compression groups up to 3 digits into 10 bits, less for remaining digits if they do not complete a group of three.
+            </summary>
+            <param name="plainText">The numeric text to be encoded, which should only contain digit characters.</param>
+            <returns>A BitArray representing the binary data of the encoded numeric text.</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.PlainTextToBinaryNumeric(System.String,System.Int32,System.Int32,System.Collections.BitArray,System.Int32)">
+            <summary>
+            Converts a portion of numeric plain text into a binary format specifically optimized for QR codes, writing directly to an existing BitArray.
+            Numeric compression groups up to 3 digits into 10 bits, less for remaining digits if they do not complete a group of three.
+            </summary>
+            <param name="plainText">The numeric text to be encoded, which should only contain digit characters.</param>
+            <param name="offset">The starting index in the text to encode from.</param>
+            <param name="length">The number of characters to encode.</param>
+            <param name="bitArray">The target BitArray to write to.</param>
+            <param name="bitIndex">The starting index in the BitArray where bits will be written.</param>
+            <returns>The next index in the BitArray after the last bit written.</returns>
+        </member>
+        <member name="T:QRCoder.QRCodeGenerator.OptimizedLatin1DataSegment">
+            <summary>
+            Data segment that optimizes encoding by analyzing character patterns and switching between
+            encoding modes (Numeric, Alphanumeric, Byte) to minimize the total bit length.
+            This implements the QR Code optimization algorithm from ISO/IEC 18004:2015 Annex J.2.
+            It does not support Kanji mode.
+            </summary>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.OptimizedLatin1DataSegment.CanEncode(System.String)">
+            <summary>
+            Checks if the given string can be encoded using optimized Latin-1 encoding.
+            Returns true if all characters are within the ISO-8859-1 range (0x00-0xFF).
+            </summary>
+            <param name="plainText">The text to check</param>
+            <returns>True if the text can be encoded as ISO-8859-1, false otherwise</returns>
+        </member>
+        <member name="P:QRCoder.QRCodeGenerator.OptimizedLatin1DataSegment.EncodingMode">
+            <summary>
+            Gets the encoding mode (used only for DataTooLongException)
+            </summary>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.OptimizedLatin1DataSegment.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the OptimizedDataSegment class.
+            </summary>
+            <param name="plainText">The text to encode with optimized mode switching</param>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.OptimizedLatin1DataSegment.GetBitLength(System.Int32)">
+            <summary>
+            Calculates the total bit length for this segment when encoded for a specific QR code version.
+            </summary>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The total number of bits required for this segment</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.OptimizedLatin1DataSegment.GetByteBitLength(System.Int32,System.Int32)">
+            <summary>
+            Calculates the bit length for a byte mode segment.
+            </summary>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.OptimizedLatin1DataSegment.WriteTo(System.Collections.BitArray,System.Int32,System.Int32)">
+            <summary>
+            Writes this data segment to an existing BitArray at the specified index.
+            </summary>
+            <param name="bitArray">The target BitArray to write to</param>
+            <param name="startIndex">The starting index in the BitArray</param>
+            <param name="version">The QR code version (1-40, or -1 to -4 for Micro QR)</param>
+            <returns>The next index in the BitArray after the last bit written</returns>
+        </member>
+        <member name="M:QRCoder.QRCodeGenerator.OptimizedLatin1DataSegment.WriteByteSegment(System.String,System.Int32,System.Int32,System.Collections.BitArray,System.Int32,System.Int32)">
+            <summary>
+            Writes a byte mode segment to the BitArray.
+            </summary>
         </member>
         <member name="T:QRCoder.QRCodeGenerator.Point">
             <summary>

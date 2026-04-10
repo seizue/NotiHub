@@ -134,6 +134,26 @@
             
             </summary>
         </member>
+        <member name="P:ReaLTaiizor.Controls.PoisonProgressBar.ProgressBarMarqueeWidth">
+            <summary>
+            Set to 0 if you want to apply default width.
+            </summary>
+        </member>
+        <member name="P:ReaLTaiizor.Controls.PoisonProgressBar.MarqueeAnimationSpeed">
+            <summary>
+            Same usage as Winforms originally included.
+            </summary>
+        </member>
+        <member name="P:ReaLTaiizor.Controls.PoisonProgressBar.EnableMaterialMarqueeStyleSpeed">
+            <summary>
+            If enabled, the marquee will change its speed like a material design ProgressBar like.
+            </summary>
+        </member>
+        <member name="P:ReaLTaiizor.Controls.PoisonProgressBar.MaterialStyleMarqueeSpeedRatio">
+            <summary>
+            Indicates the ratio material design ProgressBar will speed up.
+            </summary>
+        </member>
         <member name="F:ReaLTaiizor.Enum.Crown.WM.NULL">
             <summary>
             The WM_NULL message performs no operation. An application sends the WM_NULL message if it wants to post a message that the recipient window will ignore.
@@ -1420,6 +1440,21 @@
             Defines the tr
             </summary>
         </member>
+        <member name="F:ReaLTaiizor.Forms.MaterialFlexibleForm.TwoLetterISOLanguageID.zh">
+            <summary>
+            Defines the zh
+            </summary>
+        </member>
+        <member name="P:ReaLTaiizor.Forms.MaterialForm.Depth">
+            <summary>
+            Indicate if the form should respond to System Dpi Scaling Ratio
+            </summary>
+        </member>
+        <member name="P:ReaLTaiizor.Forms.MaterialForm.DrawerWidth">
+            <summary>
+            This num is DPI-aware
+            </summary>
+        </member>
         <member name="T:ReaLTaiizor.Forms.MaterialForm.WM">
             <summary>
             Window Messages
@@ -1582,6 +1617,13 @@
                 Window Style flags.<br/>
                 <see href="https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowlongptra">SetWindowLongPtr</see>
             </summary>
+        </member>
+        <member name="M:ReaLTaiizor.Manager.MaterialSkinManager.CreateTextBoxDescriptor(System.Int32)">
+            <summary>
+            Create LFont Descriptor Object for TextBox Rendering
+            </summary>
+            <param name="size">Should be in [12, 16]</param>
+            <returns></returns>
         </member>
         <member name="F:ReaLTaiizor.Native.User32.TabControlHitTest.TCHT_NOWHERE">
             <summary>

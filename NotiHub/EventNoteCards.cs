@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -94,6 +95,14 @@ namespace NotiHub
             // Combine the times into a single string
             labelTime.Text = $"{timeFromFormatted} - {timeToFormatted}";
 
+            // Display saved notes/links if available
+            richTextBoxNoteLink.DetectUrls = true;
+            richTextBoxNoteLink.LinkClicked -= RichTextBoxNoteLink_LinkClicked;
+            richTextBoxNoteLink.LinkClicked += RichTextBoxNoteLink_LinkClicked;
+            richTextBoxNoteLink.Text = !string.IsNullOrWhiteSpace(eventData.Notes)
+                ? eventData.Notes
+                : string.Empty;
+
             // Apply the status color if it exists
             if (!string.IsNullOrWhiteSpace(eventData.Status))
             {
@@ -170,6 +179,18 @@ namespace NotiHub
                 card.DeselectedCard();
             }
             _selectedCards.Clear();
+        }
+
+        private void RichTextBoxNoteLink_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo(e.LinkText) { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Could not open link: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void richTextBoxTitle_TextChanged(object sender, EventArgs e)

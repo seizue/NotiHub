@@ -278,9 +278,9 @@
             this.label12.ForeColor = System.Drawing.Color.Silver;
             this.label12.Location = new System.Drawing.Point(36, 390);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 17);
+            this.label12.Size = new System.Drawing.Size(89, 17);
             this.label12.TabIndex = 482;
-            this.label12.Text = "Notes";
+            this.label12.Text = "Notes or Link";
             // 
             // label11
             // 
