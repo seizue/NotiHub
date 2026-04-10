@@ -247,11 +247,9 @@ namespace NotiHub
 
             EventHandler clickHandler = (s, e) =>
             {
-                if (mainForm != null)
+                using (var viewForm = new ReminderViewEnvents(evt))
                 {
-                    mainForm.SetActiveView(Main.ActiveView.Calendar);
-                    mainForm.ShowEventOnCalendar(evt.EventDate);
-                    this.Close();
+                    viewForm.ShowDialog();
                 }
             };
             

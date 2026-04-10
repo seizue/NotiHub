@@ -157,6 +157,12 @@
     <Compile Include="NotifWindow.Designer.cs">
       <DependentUpon>NotifWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReminderViewEnvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReminderViewEnvents.Designer.cs">
+      <DependentUpon>ReminderViewEnvents.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +274,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReminderViewEnvents.resx">
+      <DependentUpon>ReminderViewEnvents.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchManager.resx">
       <DependentUpon>SearchManager.cs</DependentUpon>
     </EmbeddedResource>

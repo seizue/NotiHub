@@ -122,48 +122,20 @@ namespace NotiHub
             this.Close();
         }
 
+        private bool _openViewEvents = false;
+
         private void btnViewEvent_Click(object sender, EventArgs e)
         {
             if (eventData != null)
             {
-                // Open the main NotiHub window to the event
-                Main mainWindow = Application.OpenForms.OfType<Main>().FirstOrDefault();
-                
-                if (mainWindow != null)
-                {
-                    // Restore/Maximize the main window
-                    if (mainWindow.WindowState == FormWindowState.Minimized)
-                    {
-                        mainWindow.WindowState = FormWindowState.Normal;
-                    }
-                    
-                    mainWindow.BringToFront();
-                    mainWindow.Focus();
-                    
-                    // Show the calendar view
-                    mainWindow.SetActiveView(Main.ActiveView.Calendar);
-                    
-                    // Navigate to the event's date
-                    if (!string.IsNullOrEmpty(eventData.EventDate))
-                    {
-                        // This will be handled by the Main form's calendar control
-                        mainWindow.ShowEventOnCalendar(eventData.EventDate);
-                    }
-                    
-                }
-                else
-                {
-                    MessageBox.Show("NotiHub main window not found. Please open NotiHub.",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                _openViewEvents = true;
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Event details not available.",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            this.Close();
         }
 
         private void FlashWindow()
@@ -185,6 +157,25 @@ namespace NotiHub
             {
                 updateTimer.Stop();
                 updateTimer.Dispose();
+            }
+
+            // If opening view events, skip fade and close immediately
+            if (_openViewEvents)
+            {
+                var captured = eventData;
+                base.OnFormClosing(e);
+                // Use the main form to invoke after this form closes
+                Main mainWindow = Application.OpenForms.OfType<Main>().FirstOrDefault();
+                if (mainWindow != null)
+                {
+                    mainWindow.BeginInvoke(new Action(() => new ReminderViewEnvents(captured).Show()));
+                }
+                else
+                {
+                    // Fallback: open directly
+                    new ReminderViewEnvents(captured).Show();
+                }
+                return;
             }
 
             // Fade out animation

@@ -239,7 +239,7 @@
             this.btnLabelAction.ForeColor = System.Drawing.Color.DarkGray;
             this.btnLabelAction.Image = global::NotiHub.Properties.Resources.labels_24vpx;
             this.btnLabelAction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLabelAction.Location = new System.Drawing.Point(583, 55);
+            this.btnLabelAction.Location = new System.Drawing.Point(583, 56);
             this.btnLabelAction.Name = "btnLabelAction";
             this.btnLabelAction.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnLabelAction.Size = new System.Drawing.Size(143, 30);
@@ -346,7 +346,7 @@
             this.btnShowTagPanel.ForeColor = System.Drawing.Color.Silver;
             this.btnShowTagPanel.Image = global::NotiHub.Properties.Resources.show_sidepanel_24px;
             this.btnShowTagPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowTagPanel.Location = new System.Drawing.Point(763, 55);
+            this.btnShowTagPanel.Location = new System.Drawing.Point(763, 56);
             this.btnShowTagPanel.Name = "btnShowTagPanel";
             this.btnShowTagPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnShowTagPanel.Size = new System.Drawing.Size(30, 30);
